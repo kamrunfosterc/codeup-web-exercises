@@ -92,3 +92,9 @@ function product(item, premium_member, expiration) {
         return "Sorry we can't honor that promotional offer."
     }
 }
+
+/* alternatively
+* var member = confirm("Are you a premium member? ");
+* var item = confirm("How many items are you purchasing? " );
+* var expiration = confirm("Has our promotion expired? ");
+* alert("Enjoy your purchase! " + (!item || member && !expiration)); */
