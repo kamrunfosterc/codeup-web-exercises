@@ -7,7 +7,24 @@
 <body>
     <script src ="js/functions.js">
 
+        //this goes in external.js
+        var username = 'codeup';
+        var password = 'notastrongpassword';
+
+        var password_is_five_characters = password.length >= 5;
+        var username_not_in_password = !password.includes(username);
+        var username_less_than_20_characters = username.length <= 20;
+        var contains_no_whitespace = password === password.trim() && username === username.trim();
+
+        console.log(password_is_five_characters);
+        console.log(username_not_in_password);
+        console.log(username_less_than_20_characters);
+        console.log(contains_no_whitespace);
+
+
     </script>
 
 </body>
 </html>
+
+var password_is_five_characters =

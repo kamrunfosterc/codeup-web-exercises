@@ -10,7 +10,7 @@
  */
 
 function sayhello(name){// name of function & parameter
-    return "Hello, " + name;
+    return "Hello, " + name + "!";
 }
 
 
@@ -21,10 +21,8 @@ function sayhello(name){// name of function & parameter
  *
  * console.log 'helloMessage' to check your work
  */
-
-//var appelation = "Kamrun";
-var hello_message = sayhello("Kamrun");
-console.log(hello_message);
+var helloMessage = sayhello("Kam");
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -33,6 +31,8 @@ console.log(hello_message);
  * console.
  */
 
+var myName = "K.Foster"
+console.log(sayhello(myName));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
@@ -54,6 +54,16 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+function isTwo(number){
+    if (number = 2){
+        return(true);
+    } else {
+        return false;
+    }
+    console.log(isTwo(random));
+
+}
+
 
 /**
  * TODO:
@@ -88,3 +98,16 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+//var increment = increment(sameNumber){
+    //return sameNumber + 1;
+    //console.log("you will never see this.")
+//};
+
+//var two = increment(1);
+
+// MAKE sure return statement is our last statement
+// don't have to give function a name, can just create
+// if variable exist outside a function it is a global variable
+// however if it's in function then any global variable can share that name
+// global variables can be referenced in the console

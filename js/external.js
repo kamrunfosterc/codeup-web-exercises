@@ -21,6 +21,98 @@ alert('Welcome to my Website!');
 var fav_color = prompt("What is your favorite color?");
 alert("Great, " + fav_color + " is my favorite color too!");
 
+
+// Exercise 1
+/* > var a = 1; var b = a++; var c = ++a;
+    undefined
+    > a,b,c
+    3
+    > a
+    3
+    > b
+    1
+    > c
+    3
+    > var d = "hello";
+    undefined
+    > var e = false;
+    undefined
+    > d++;
+    NaN
+    > e++;
+    0
+    > var perplexed;
+    undefined
+    > perplexed + 2;
+    NaN
+    > var price = "2.7";
+    undefined
+    > price.toFixed(2);
+    Uncaught TypeError: price.toFixed is not a function
+    > var price = 2.7;
+    undefined
+    > price.toFixed(2);
+    '2.70'
+    > isNaN(0);
+    false
+    > isNaN(1);
+    false
+    > isNaN("");
+    false
+    > isNaN("string");
+    true
+    > isNaN("0");
+    false
+    > isNaN("1");
+    false
+    > isNaN("3.145");
+    false
+    > isNaN(Number.MAX_VALUE);
+    false
+    > isNaN(Infinity);
+    false
+    > isNaN("true");
+    true
+    > isNaN(true);
+    false
+    > isNaN("false");
+    true
+    > isNaN(false);
+    false
+    > NaN == NaN
+    false
+    > !true
+    false
+    > !false
+    true
+    > !!true
+    true
+    > !!false
+    false
+    > !!0
+    false
+    > !!-0
+    false
+    > !!1
+    true
+    > !!-1
+    true
+    > !!0.1
+    true
+    > !!"hello"
+    true
+    > !!''
+    false
+    > !!""
+    false
+    > !!"false"
+    true
+    > !!"0"
+    true
+    >
+    */
+
+
 // exercise 3 ******** ******* *******
 
 // part A movie rental
