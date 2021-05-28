@@ -15,7 +15,7 @@ console.log("hello world");
 
 // exercise 1 ******** ******* *******
 console.log("Hello from external JavaScript");
-
+/*
 alert('Welcome to my Website!');
 
 // exercise 2 ******** ******* *******
@@ -59,21 +59,27 @@ var total_pay = (google_rate*google_hours)+(amazon_rate*amazon_hours)+(facebook_
 
 alert("You worked a total of "+ total_hours + " hours this week!");
 alert( "Your compensation will be $"+ total_pay + " dollars. Thank you for your efforts!")
-console.log(total_hours+ "hours", "$"+total_pay);
-
+console.log(total_hours+ " hours", "$"+total_pay + " & earned this week.");
+*/  //********* ********** ***********
 
 // **** **** Exercise 3 getting into class **** ****
 
-var student_numb = prompt("How many students are there and does our schedule conflict with student?");
-var schedule_conflict = prompt("Is the a schedule conflict? (True/ False)" );
 
-var welcome = function course(student_numb, schedule_conflict) {
-    if (student_numb < 28 && schedule_conflict == false) {
-        return "Great news! You've been accepted into class!"
-    } else {
-        return "Sorry, please apply for a different semester."
+function course(student_numb, schedule_conflict) {
+    if ((student_numb <= 28) && (schedule_conflict === false || schedule_conflict === 'false')) {
+        return "Great news! You've been accepted into class!";
+        } else {
+            return "Sorry, please apply for a different semester.";
     }
 }
+var student = prompt("How many students are there in your class?");
+var schedule = prompt("Is the a schedule conflict? (True/ False)");
+
+var student_numb = student;
+var schedule_conflict = schedule;
+// console.log(attending);
+console.log(student + " students", "conflict " + schedule);
+alert(course(student_numb, schedule_conflict));
 
 
 //Promotional offer Exercise
