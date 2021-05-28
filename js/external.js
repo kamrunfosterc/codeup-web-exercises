@@ -15,10 +15,11 @@ console.log("hello world");
 
 // exercise 1 ******** ******* *******
 console.log("Hello from external JavaScript");
+
 alert('Welcome to my Website!');
 
 // exercise 2 ******** ******* *******
 var fav_color = prompt("What is your favorite color?");
 alert("Great, " + fav_color + " is my favorite color too!");
 
-
+// start at exercise 3 in JS with HTML..... .... ...
