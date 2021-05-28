@@ -42,9 +42,9 @@ var google_rate =400;// hourly pay rate
 var amazon_rate =380;// hourly pay rate
 var facebook_rate =350;// hourly pay rate
 
-hrs_at_google = prompt("How many hours did we work at Google?");// enter 6 hours
-hrs_at_amazon = prompt("How many hours did we work at Amazon?");// enter 4 hours
-hrs_at_facebook = prompt("How many hours did we work at Facebook?");// enter 10 hours
+var hrs_at_google = prompt("How many hours did we work at Google?");// enter 6 hours
+var hrs_at_amazon = prompt("How many hours did we work at Amazon?");// enter 4 hours
+var hrs_at_facebook = prompt("How many hours did we work at Facebook?");// enter 10 hours
 
 var amazon_hours = Number(hrs_at_amazon);
 var facebook_hours = Number(hrs_at_facebook);
