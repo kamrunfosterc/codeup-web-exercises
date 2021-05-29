@@ -13,9 +13,10 @@
 
 console.log("hello world");
 
-// exercise 1 ******** ******* *******
 console.log("Hello from external JavaScript");
-/*
+
+
+// exercise 1 ******** ******* *******
 alert('Welcome to my Website!');
 
 // exercise 2 ******** ******* *******
@@ -60,7 +61,7 @@ var total_pay = (google_rate*google_hours)+(amazon_rate*amazon_hours)+(facebook_
 alert("You worked a total of "+ total_hours + " hours this week!");
 alert( "Your compensation will be $"+ total_pay + " dollars. Thank you for your efforts!")
 console.log(total_hours+ " hours", "$"+total_pay + " & earned this week.");
-*/  //********* ********** ***********
+//********* ********** ***********
 
 // **** **** Exercise 3 getting into class **** ****
 
@@ -102,3 +103,5 @@ var expiration = deal_expiration;
 
 console.log(item + " items purchased/", premium_member + " membership confirmation/","Valid or not " + expiration);
 alert(product(item, premium_member,expiration));
+
+// ****** End of JavaScript with HTML Exercise ********
