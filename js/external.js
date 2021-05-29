@@ -84,11 +84,21 @@ alert(course(student_numb, schedule_conflict));
 
 //Promotional offer Exercise
 function product(item, premium_member, expiration) {
-    if (item > 2 && expiration == false) {
-        return "Congratulations on our product offer!"
-    } else if (premium_member == true && expiration == false) {
+    if (item > 2 && expiration <= 2000) {//expiration == false
+        return "Yay! your discount will be applied on our product offer!"
+    } else if (premium_member == true && expiration <= 2000) {//expiration == false
         return "Premium members always get our promotional offers!"
     } else {
         return "Sorry we can't honor that promotional offer."
     }
 }
+var item_variable = prompt("How many items did you buy? ");
+var membership = prompt("Are you a premium member? (true or false)");
+var deal_expiration = prompt("Enter 4 digit promo code to check if still valid.");
+
+var item = item_variable;
+var premium_member = membership;
+var expiration = deal_expiration;
+
+console.log(item + " items purchased/", premium_member + " membership confirmation/","Valid or not " + expiration);
+alert(product(item, premium_member,expiration));
