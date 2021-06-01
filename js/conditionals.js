@@ -2,7 +2,7 @@
 
 /* ########################################################################## */
 
-function analyzeColor(colorName){
+function analyzeColorIf(colorName){
     if (colorName === 'blue') {
         return "blue is the color of the sky";
     }
@@ -25,25 +25,33 @@ function analyzeColor(colorName){
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'cyan'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
+console.log(analyzeColorIf(randomColor));
+// ******** ******** ******** ******** ******** ******** ********
+function analyzeColor(colorName) {
+    switch (colorName){
+        case "blue":
+            return "blue is the color of the sky";
+        case "red":
+            return "Strawberries are red";
+        case "cyan":
+            return "I don't know anything about cyan";
+        default:
+            return colorName + " is not one of the  colors recognized, please refresh";
+    }
+}
+
 console.log(analyzeColor(randomColor));
-/**
- * TODO:
- * Pass the `randomColor` variable to your function and console.log the results.
- * You should see a different message every time you refresh the page
- */
-
-/**
- * TODO:
- * Refactor your above function to use a switch-case statement
- */
-
+console.log('****************************************');
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-
+var userColor = prompt("Please choose a color ")
+alert(analyzeColor(userColor));
+alert(analyzeColorIf(userColor));
+console.log(analyzeColor(userColor),(analyzeColorIf(userColor)));
 /* ########################################################################## */
 
 /**
