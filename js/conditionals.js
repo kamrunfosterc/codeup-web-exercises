@@ -42,12 +42,7 @@ function analyzeColor(colorName) {
 
 console.log(analyzeColor(randomColor));
 console.log('****************************************');
-/**
- * TODO:
- * Prompt the user for a color when the page loads, and pass the input from the
- * user to your `analyzeColor` function. Alert the return value from your
- * function to show it to the user.
- */
+
 var userColor = prompt("Please choose a color ")
 alert(analyzeColor(userColor));
 alert(analyzeColorIf(userColor));
@@ -56,15 +51,11 @@ console.log(analyzeColor(userColor),(analyzeColorIf(userColor)));
 
 /**
  * TODO:
- * Suppose there's a promotion in Walmart, each customer is given a randomly
- * generated "lucky number" between 0 and 5. If your lucky number is 0 you have
+ "lucky number" between 0 and 5. If your lucky number is 0 you have
  * no discount, if your lucky number is 1 you'll get a 10% discount, if it's 2,
  * the discount is 25%, if it's 3, 35%, if it's 4, 50%, and if it's 5 you'll get
  * all for free!.
- *
- * Write a function named `calculateTotal` that accepts a lucky number and total
- * amount, and returns the discounted price.
- *
+
  * Example:
  * calculateTotal(0, 100) // returns 100
  * calculateTotal(4, 100) // returns 50
@@ -73,6 +64,31 @@ console.log(analyzeColor(userColor),(analyzeColorIf(userColor)));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+console.log('****************************************');
+
+function calculateTotal(luckyNumber, totalAmount){
+    switch (luckyNumber) {
+        case 0:
+            return totalAmount;
+        case 1:
+            return totalAmount - (totalAmount * 0.10);
+        case 2:
+            return totalAmount - (totalAmount * 0.25);
+        case 3:
+            return totalAmount - (totalAmount * 0.35);
+        case 4:
+            return totalAmount - (totalAmount * 0.50);
+        case 5:
+            return 0 + " You get this free!";
+    }
+}
+console.log(calculateTotal(0,100));
+console.log(calculateTotal(1,100));
+console.log(calculateTotal(2,100));
+console.log(calculateTotal(3,100));
+console.log(calculateTotal(4,100));
+console.log(calculateTotal(5,100));
+
 
 /**
  * TODO:
