@@ -1,7 +1,7 @@
 "use strict";
 
 /* ########################################################################## */
-
+/* remove later
 function analyzeColorIf(colorName){
     if (colorName === 'blue') {
         return "blue is the color of the sky";
@@ -49,21 +49,6 @@ alert(analyzeColorIf(userColor));
 console.log(analyzeColor(userColor),(analyzeColorIf(userColor)));
 /* ########################################################################## */
 
-/**
- * TODO:
- "lucky number" between 0 and 5. If your lucky number is 0 you have
- * no discount, if your lucky number is 1 you'll get a 10% discount, if it's 2,
- * the discount is 25%, if it's 3, 35%, if it's 4, 50%, and if it's 5 you'll get
- * all for free!.
-
- * Example:
- * calculateTotal(0, 100) // returns 100
- * calculateTotal(4, 100) // returns 50
- * calculateTotal(5, 100) // returns 0
- *
- * Test your function by passing it various values and checking for the expected
- * return value.
- */
 console.log('****************************************');
 
 function calculateTotal(luckyNumber, totalAmount){
@@ -92,13 +77,16 @@ console.log(calculateTotal(5,100));
 
 /**
  * TODO:
- * Uncomment the line below to generate a random number between 0 and 6.
  * Prompt the user for their total bill, then use your `calculateTotal` function
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+var totalBill = prompt("Your total bill is " );
+alert("Your lucky number is " + luckyNumber + " !");
+alert("Your bill before discount was " + totalBill);
+alert("Your price after the discount is " + calculateTotal(luckyNumber, totalBill));
 
 /**
  * TODO:
