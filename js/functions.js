@@ -1,59 +1,37 @@
 "use strict";
 
-/**
- * TODO:
- * Create a function called 'sayHello' that takes a parameter 'name'.
- * When called, the function should return a message that says hello to the passed in name.
- *
- * Example
- * > sayHello("codeup") // returns "Hello, codeup!"
- */
 
 function sayhello(name){// name of function & parameter
-    return "Hello, " + name + "!";
+    return "Hello, " + name + "!";// bc a parameter of our function, name is declared
 }
 
-
-/**
- * TODO:
- * Call the function 'sayHello' and pass your name as a string literal argument.
- * Store the result of the function call in a variable named 'helloMessage'.
- *
- * console.log 'helloMessage' to check your work
- */
 var helloMessage = sayhello("Kam");
 console.log(helloMessage);
 
-/**
- * TODO:
- * Store your name as a string in a variable named 'myName', and pass that
- * variable to the 'sayHello' function. You should see the same output in the
- * console.
- */
 
 var myName = "K.Foster"
-console.log(sayhello(myName));
-// Don't modify the following line, it generates a random number between 1 and 3
+helloMessage = sayhello(myName);
+console.log(helloMessage);
+// // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
 
+function isTwo(number){
+    return number == 2;
+}
+console.log(isTwo(1)); // not returning correct t/f
+console.log(isTwo(2));
+console.log(isTwo(3));
+
 /**
- * TODO:
- * Create a function called 'isTwo' that takes a number as a parameter.
- * The function should return a boolean value based on whether or not the passed
- * number is the number 2.
- *
- * Example
+
  * > isTwo(1) // returns false
  * > isTwo(2) // returns true
  * > isTwo(3) // returns false
  *
  * Call the function 'isTwo' passing the variable 'random' as a argument.
- *
- * console.log *outside of the function* to check your work (you should see a
- * different result everytime you refresh the page if you are using the random
- * number)
- */
+*/
+
 function isTwo(number){
     if (number = 2){
         return(true);
@@ -64,26 +42,19 @@ function isTwo(number){
 
 }
 
+function calculateTip(tipPercent, totalBill){
+    var tipAmount = totalBill * tipPercent;
+    return tipAmount;
+}
+console.log(calculateTip(0.20, 20)); // returns 4
+console.log(calculateTip(0.25, 25.50)) // returns 6.375
+console.log(calculateTip(0.15, 33.42)); // returns 5.013
 
-/**
- * TODO:
- * Create a function named 'calculateTip' to calculate a tip on a bill at a
- * restaurant. The function should accept a tip percentage and the total of the
- * bill, and return the amount to tip
- *
- * Examples:
- * > calculateTip(0.20, 20) // returns 4
- * > calculateTip(0.25, 25.50) // returns 6.375
- * > calculateTip(0.15, 33.42) // returns 5.013
- */
-
-/**
- * TODO:
- * Use prompt and alert in combination with your calculateTip function to
- * prompt the user for the bill total and a percentage they would like to tip,
- * then display the dollar amount they should tip
- */
-
+var totalBill = 20;
+var tipPercentage = 0.2;
+totalBill = prompt('Enter the total bill' );
+tipPercentage = prompt('Enter the tip amount');
+alert('The tip should be' + calculateTip(tipPercentage, totalBill).toFixed(2));
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -99,15 +70,8 @@ function isTwo(number){
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-//var increment = increment(sameNumber){
-    //return sameNumber + 1;
-    //console.log("you will never see this.")
-//};
-
-//var two = increment(1);
-
-// MAKE sure return statement is our last statement
-// don't have to give function a name, can just create
-// if variable exist outside a function it is a global variable
-// however if it's in function then any global variable can share that name
-// global variables can be referenced in the console
+function applyDiscount(price, dicountPercent){
+    var result = price -(price * dicountPercent);
+    return result;
+}
+console.log(applyDiscount(45.99, 0.12));
