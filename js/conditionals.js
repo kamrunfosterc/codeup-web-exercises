@@ -74,7 +74,6 @@ console.log(calculateTotal(3,100));
 console.log(calculateTotal(4,100));
 console.log(calculateTotal(5,100));
 
-
 /**
  * TODO:
  * Prompt the user for their total bill, then use your `calculateTotal` function
@@ -87,6 +86,9 @@ var totalBill = prompt("Your total bill is " );
 alert("Your lucky number is " + luckyNumber + " !");
 alert("Your bill before discount was " + totalBill);
 alert("Your price after the discount is " + calculateTotal(luckyNumber, totalBill));
+// could also do
+// alert("Your lucky number is " + luckyNumber + " !" + "\nYour bill before discount was " + totalBill + "\nYour price after the discount is " + calculateTotal(luckyNumber, totalBill));
+console.log('****************************************');
 
 /**
  * TODO:
@@ -104,3 +106,24 @@ alert("Your price after the discount is " + calculateTotal(luckyNumber, totalBil
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+// confirm results in a true or false
+alert('your number is even/ odd');
+alert('your number plus 100 is ');
+alert('your number is negative/ positive');
+alert();
+
+var answer = confirm("Would you like to enter a number")//display a modal dialog with an optional message
+    // if OK is clicked, returns true
+    if (answer === true){
+        alert("Agreed to enter number " + answer + "!");
+    } else {
+        alert("Well, thank you for your time anyway");
+    }
+    console.log(answer);
+    if (number) {
+        var number = prompt("Please enter a number: ");
+       // if (isNaN(answer)){
+
+      //  }
+    }
