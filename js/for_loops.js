@@ -59,7 +59,8 @@ for (let value = 100; value >= 0; value -= 5){
     console.log(value);
 }
 
-floor vs ceiling: ceil() rounds number upwards to nearest integer and returns result
+// floor vs ceiling: ceil() rounds number upwards to nearest integer and returns result, floor() method rounds number
+// downward to nearest integer and returns result
 
 // kathleen number
 // for (var index = 1, number = ""; index < 10; index++){
