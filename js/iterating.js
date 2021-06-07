@@ -9,15 +9,16 @@
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
-console.log('creating a array of 4 people');
+console.log('*** creating a array of 4 people ***');
     var names = ['Captain Planet','Iron Man', 'Omni Man', 'Blue Marvel'];
+    console.log(names);
 
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-    console.log(names);
+    console.log('there are ' + names.length + ' names in our array');
 
     /**
      * TODO:
@@ -35,7 +36,7 @@ console.log('creating a array of 4 people');
     console.log('\n*** use for loop ***\n');
 
     for (let number = 0; number < names.length; number++){
-        console.log(names[number]);
+        console.log('At index ' + number + ' we have ' + names[number]);
         // this log is to go through our array
     }
     /**
@@ -44,7 +45,7 @@ console.log('creating a array of 4 people');
      */
     console.log('\n*** use forEach loop ***\n');
     names.forEach(function(name){
-        console.log('Here are the names refractored: ' + name + '.');
+        console.log('\n Here are the names re-factored: ' + name + '.');
     });
 
     /**

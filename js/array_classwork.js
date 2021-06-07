@@ -25,7 +25,7 @@ for (let number = 0; number < stuff.length; number++){
 console.log('\n*** For-Each loop on shapes ***');
 
 // syntax
-// someArray.forEach(function(element, index, array){}
+// someArray.forEach(function(element, index, array){} IMPORTANT IMPORTANT IMPORTANT
 
 var shapes = ['square', 'rectangle', 'circle', 'triangle'];
 
