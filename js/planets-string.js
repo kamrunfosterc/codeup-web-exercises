@@ -4,7 +4,7 @@
 
 (function(){
     "use strict";
-
+    var planetsArray;
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
     console.log('Original \n' + planetsString + '\n');
     /**
@@ -14,7 +14,7 @@
      * console.log planetsArray to check your work
      */
     console.log('\n*** Exercise 1 ***');
-    var planetsArray = planetsString.split(',');// converts string to array
+    planetsArray = planetsString.split("|");// converts string to array
     console.log(planetsArray);
 
 
@@ -31,19 +31,24 @@
     console.log('\n*** Exercise 2 ***');
     var planetsString = planetsArray.join(" <br> ");
     console.log(planetsString);
-    document.write(planetsString); // will print your planet string to the web page with the planets each on a new line
+    document.write(planetsString);
+    // document.write() will print your planet string to the web page with the planets each on a new line
 
     console.log('\n*** Exercise 2 Bonus ***');
-    <ul>
-        <li>Mercury</li>
-        <li>Venus</li>
-        <li>Earth</li>
-        <li>Mars</li>
-        <li>Jupiter</li>
-        <li>Saturn</li>
-        <li>Uranus</li>
-        <li>Neptune</li>
-    </ul>
+    var anotherString = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
+    console.log(anotherString);
+    document.write(anotherString);
+
+    // <ul>
+    //     <li>Mercury</li>
+    //     <li>Venus</li>
+    //     <li>Earth</li>
+    //     <li>Mars</li>
+    //     <li>Jupiter</li>
+    //     <li>Saturn</li>
+    //     <li>Uranus</li>
+    //     <li>Neptune</li>
+    // </ul>
 
 
 // document.write(newPlanetsString);
