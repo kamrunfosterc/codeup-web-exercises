@@ -23,14 +23,14 @@ do { //writing games, checking out shopping cart, input validation
     notDone = confirm("Do again? ");
 } while(notDone);
 
-// BREAK loops example, not running bc it's an infinite loop
+// // BREAK loops example, not running bc it's an infinite loop
 // while(true){
 //     alert('Here!');
 //     break;
 // }
-
-// CONTINUE example, using in case of emergency, seldomly used in class
-
+//
+// // CONTINUE example, using in case of emergency, seldom used in class
+//
 // for (var i = 1; i < 100; i++){
 //     if (i % 2 === 0){
 //         //number isn't even
