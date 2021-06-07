@@ -60,13 +60,19 @@ console.log('creating a array of 4 people');
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-    function newSet(numbers){
-        var numbers = [5, 7, 10, 13, 17, 21];
+    console.log('\n *** 3 function exercise ***')
+    var car = ['bmw', 'chevy', 'ford', 'chrystler', 'dodge'];
+    function first(x){
+        first([1, 2, 3, 4, 5])
+        return first(x=[0]);
+    }
+    console.log(first);
 
-        var first = numbers[0];// returns 5
-        var second = numbers[1];// returns 7
-        var last = numbers[5];// returns 21
-        return newSet(first, second, last);
+    function second(numbers){
+        // returns second item in the array
+    }
+    function last(numbers){
+        // returns last item in the array
     }
 
 })();
