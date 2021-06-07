@@ -62,18 +62,20 @@ console.log('*** creating a array of 4 people ***');
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
     console.log('\n *** 3 function exercise ***')
-    var car = ['bmw', 'chevy', 'ford', 'chrystler', 'dodge'];
-    function first(x){
-        first([1, 2, 3, 4, 5])
-        return first(x=[0]);
+
+    function first(array){
+        return array([0]);
     }
-    console.log(first);
+    console.log(first([1, 2, 3, 4, 5]));
 
     function second(numbers){
-        // returns second item in the array
+        return numbers([1]); // returns second item in the array
     }
+    console.log(second([1, 2, 3, 4, 5]));
+
     function last(numbers){
-        // returns last item in the array
+        return numbers([-1]);// returns last item in the array
     }
+    console.log(last([1, 2, 3, 4, 5]));
 
 })();
