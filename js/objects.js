@@ -51,12 +51,20 @@ document.write('Objects Exercises');
     //  * represents one shopper. Use a foreach loop to iterate through the array,
     //  * and console.log the relevant messages for each person
     //  */
-    // console.log("\n *** Attention HEB Shoppers! *** ")
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    console.log("\n *** Attention HEB Shoppers! *** ")
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    shoppers.forEach(function(shoppers){
+
+        if (spent > 200){
+            var discount = 0.12;
+            let newTotal = (shoppers.amount - (shoppers.amount * discount));
+            console.log(newTotal);
+        }
+    });
     // shoppers.forEach(function (shoppers) {
     //     shoppers.discount.foreach(function(amount >= 200) {
     //
@@ -68,18 +76,18 @@ document.write('Objects Exercises');
 // if (shoppers[0].title)
 
 
-    // /** TODO:
-    //  * Create an array of objects that represent books and store it in a
-    //  * variable named `books`. Each object should have a title and an author
-    //  * property. The author property should be an object with properties
-    //  * `firstName` and `lastName`. Be creative and add at least 5 books to the
-    //  * array
-    //  *
-    //  * Example:
-    //  * > console.log(books[0].title) // "The Salmon of Doubt"
-    //  * > console.log(books[0].author.firstName) // "Douglas"
-    //  * > console.log(books[0].author.lastName) // "Adams"
-    //  */
+    /** TODO:
+     * Create an array of objects that represent books and store it in a
+     * variable named `books`. Each object should have a title and an author
+     * property. The author property should be an object with properties
+     * `firstName` and `lastName`. Be creative and add at least 5 books to the
+     * array
+     *
+     * Example:
+     * > console.log(books[0].title) // "The Salmon of Doubt"
+     * > console.log(books[0].author.firstName) // "Douglas"
+     * > console.log(books[0].author.lastName) // "Adams"
+     */
 
     console.log("\n *** Books *** ")
     var books = {};
@@ -100,35 +108,37 @@ document.write('Objects Exercises');
             author: {
                 firstName: "David", lastName: "Flanagan",}},
         ];
-    console.log(books[0].title, books[0].author.firstName, books[0].author.lastName);
-    console.log(books[1].title, books[1].author.firstName, books[1].author.lastName);
-    console.log(books[2].title, books[2].author.firstName, books[2].author.lastName);
-    console.log(books[3].title, books[3].author.firstName, books[3].author.lastName);
-    console.log(books[4].title, books[4].author.firstName, books[4].author.lastName);
 
-    //  * TODO:
-    //  * Loop through the books array and output the following information about
-    //  * each book:
-    //  * - the book number (use the index of the book in the array)
-    //  * - the book title
-    //  * - author's full name (first name + last name)
-    //  *
-    //  * Example Console Output:
-    //  *
-    //  *      Book # 1
-    //  *      Title: The Salmon of Doubt
-    //  *      Author: Douglas Adams
-    //  *      ---
-    //  *      Book # 2
-    //  *      Title: Walkaway
-    //  *      Author: Cory Doctorow
-    //  *      ---
-    //  *      Book # 3
-    //  *      Title: A Brief History of Time
-    //  *      Author: Stephen Hawking
-    //  *      ---
-    //  *      ...
-    //  */
+    console.log(books[0].title + " " + "by " + books[0].author.firstName, books[0].author.lastName);
+    console.log(books[1].title + " " + "by " + books[1].author.firstName, books[1].author.lastName);
+    console.log(books[2].title + " " + "by " + books[2].author.firstName, books[2].author.lastName);
+    console.log(books[3].title + " " + "by " + books[3].author.firstName, books[3].author.lastName);
+    console.log(books[4].title + " " + "by " + books[4].author.firstName, books[4].author.lastName);
+
+    /**
+     * TODO:
+     * Loop through the books array and output the following information about
+     * each book:
+     * - the book number (use the index of the book in the array)
+     * - the book title
+     * - author's full name (first name + last name)
+     *
+     * Example Console Output:
+     *
+     *      Book # 1
+     *      Title: The Salmon of Doubt
+     *      Author: Douglas Adams
+     *      ---
+     *      Book # 2
+     *      Title: Walkaway
+     *      Author: Cory Doctorow
+     *      ---
+     *      Book # 3
+     *      Title: A Brief History of Time
+     *      Author: Stephen Hawking
+     *      ---
+     *      ...
+     */
 
     console.log("\n *** Looping through Books *** ")
 
