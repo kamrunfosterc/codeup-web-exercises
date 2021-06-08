@@ -51,20 +51,37 @@ document.write('Objects Exercises');
     //  * represents one shopper. Use a foreach loop to iterate through the array,
     //  * and console.log the relevant messages for each person
     //  */
+
+
     console.log("\n *** Attention HEB Shoppers! *** ")
-    var shoppers = [
+    var shoppers = {};
+    shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
-    ];
-    shoppers.forEach(function(shoppers){
+    ];// placed objects inside an arrary
 
-        if (spent > 200){
+    var total = shoppers.amount;
+    console.log(total);
+
+
+    // MOST RECENT VERSION OF THOUGHTS
+    shoppers.forEach(function(shoppers){
+        shoppers.forEach(function(discount){
+            console.log(shoppers[0].name + " before discount, your total is: " + shoppers[0].amount + "!")
+        });
+
+        if (shoppers.amount > 200){
             var discount = 0.12;
             let newTotal = (shoppers.amount - (shoppers.amount * discount));
             console.log(newTotal);
+        } else {
+            return "Sorry, your discount expired."
         }
     });
+    console.log(shoppers[0].name + " before discount, your total is: " + shoppers[0].amount + "!");
+
+    // OLD VERSION OF THOUGHTS
     // shoppers.forEach(function (shoppers) {
     //     shoppers.discount.foreach(function(amount >= 200) {
     //
@@ -163,5 +180,19 @@ document.write('Objects Exercises');
     //  *   outputs the information described above. Refactor your loop to use your
     //  *   `showBookInfo` function.
     //  */
+    var createBook = {};
+    function createBook(x,y){
+        let title = {title: x};
+        let author = {author: y};
+        var new_book = {
+            title, author
+        };
+        //returns a book obj w/ properties described previously
+        console.log(createBook(new_book));
+    }
 
+    function showBookInfo(){
+        // accepts a book object & outputs info described above
+        //refactored loop to use this function
+    }
 })();
