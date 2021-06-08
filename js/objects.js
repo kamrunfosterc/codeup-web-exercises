@@ -59,27 +59,41 @@ document.write('Objects Exercises');
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
-    ];// placed objects inside an arrary
+    ];// placed objects inside an array
 
-    var total = shoppers.amount;
-    console.log(total);
+    var discountPercent = 0.12;
+    shoppers.forEach(function (shopper){
+        var discount = shopper.amount * discountPercent;
+        var discountTotal = shopper.amount - discount;
 
-
-    // MOST RECENT VERSION OF THOUGHTS
-    shoppers.forEach(function(shoppers){
-        shoppers.forEach(function(discount){
-            console.log(shoppers[0].name + " before discount, your total is: " + shoppers[0].amount + "!")
-        });
-
-        if (shoppers.amount > 200){
-            var discount = 0.12;
-            let newTotal = (shoppers.amount - (shoppers.amount * discount));
-            console.log(newTotal);
+        if (shopper.amount < 200){
+            console.log(shopper.name + ":\n" + "Your total spent before discount: $" + shopper.amount);
         } else {
-            return "Sorry, your discount expired."
+            console.log(shopper.name + ":\n" + "Your total spent after discount: $" + discountTotal)
         }
     });
-    console.log(shoppers[0].name + " before discount, your total is: " + shoppers[0].amount + "!");
+
+    // MOST RECENT VERSION OF THOUGHTS
+
+    // var total = shoppers.amount;
+    // console.log(total);
+    //
+    // shoppers.forEach(function(shoppers){
+    //     shoppers.forEach(function(discount){
+    //         console.log(shoppers[0].name + " before discount, your total is: " + shoppers[0].amount + "!")
+    //     });
+    //
+    //     if (shoppers.amount > 200){
+    //         var discount = 0.12;
+    //         let newTotal = (shoppers.amount - (shoppers.amount * discount));
+    //         console.log(newTotal);
+    //     } else {
+    //         return "Sorry, your discount expired."
+    //     }
+    // });
+    // console.log(shoppers[0].name + " before discount, your total is: " + shoppers[0].amount + "!");
+
+
 
     // OLD VERSION OF THOUGHTS
     // shoppers.forEach(function (shoppers) {
