@@ -26,8 +26,16 @@ do{
      if (notEnoughCones < 0){
          console.log("We are out of ice cream cones!");
      }
+    // let conesSold = conesSold + conesPurchased;
+     //document.write(conesSold);
 } while(conesSold > conesPurchased);
 console.log("Awesome! We have sold all of our cones!!!");
+//document.write("Awesome! We have sold all of our cones!!!");
+
+
+
+
+
 
 
 console.log("******** break continue odd #  ********");
