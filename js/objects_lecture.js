@@ -8,7 +8,6 @@
      year: 2012,
      make: 'Honda',
      model:'Civic',
-     info: infoFunction;
  };
  console.log(car);
  document.write(car.year +' '+ car.make +' '+ car.model);// displays information on webpage
@@ -48,7 +47,8 @@ car.info1 = function infoFunction(name){// created function that allows us to ca
     }
     return this.year +', '+ this.make +','+ this.model; // replacing car == 'this'
 }
+
 console.log(car.info1);
 // 'this' keyword comes into play, where info needs to come from the current property we are on
-car.info1 = infoFunction;
+//car.info1 = infoFunction;
 //info: infoFunction;
