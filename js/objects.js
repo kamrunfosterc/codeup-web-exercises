@@ -196,19 +196,34 @@ document.write('Objects Exercises');
     //  *   outputs the information described above. Refactor your loop to use your
     //  *   `showBookInfo` function.
     //  */
-    var createBook = {};
-    function createBook(x,y){
-        let title = {title: x};
-        let author = {author: y};
-        var new_book = {
-            title, author
+
+    console.log(" *** BONUS *** ")
+
+    function createBook(){
+        var createBook = {};
+        createBook = {
+            title: prompt("What is the author of your favorite book? "),
+            author: prompt("Who is the author? "),
         };
-        //returns a book obj w/ properties described previously
-        console.log(createBook(new_book));
+        console.log(createBook);
+        // var fav_book = createBook.title;
+        // var fav_author = createBook.author;
+        // // var created_book =
+        // console.log(fav_book + ": is my favorite book!", "\nThe author is: " + fav_author);
+        // document.write(created_book);
+        // above RETURNS what i believe i want but isn't required for this function
     }
+    createBook();
 
     function showBookInfo(){
+        var fav_book = createBook.title;
+        var fav_author = createBook.author;
+        // var created_book =
+        console.log(fav_book + ": is my favorite book!", "\nThe author is: " + fav_author);
+        // document.write(created_book);
+
         // accepts a book object & outputs info described above
         //refactored loop to use this function
     }
+    showBookInfo();
 })();
