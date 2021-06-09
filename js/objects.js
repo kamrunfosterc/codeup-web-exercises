@@ -198,26 +198,39 @@ document.write('Objects Exercises');
     //  */
 
     console.log(" *** BONUS *** ")
+    console.log(" *** create book *** ")
 
     function createBook(){
-        var createBook = {};
-        createBook = {
-            title: prompt("What is the author of your favorite book? "),
-            author: prompt("Who is the author? "),
+        var create_book = {};// declared new array
+        create_book = {
+            title: prompt("What is the name of your favorite book? "),
+            author: {
+                firstName : prompt("What is the authors first name? "),
+                lastName : prompt("What is the authors last name? "),
+            }
         };
-        console.log(createBook);
-        // var fav_book = createBook.title;
-        // var fav_author = createBook.author;
+        console.log(create_book);
+
+        var fav_book = create_book.title;
+        var fav_author = create_book.author;
+        console.log(fav_book, fav_author);
         // // var created_book =
         // console.log(fav_book + ": is my favorite book!", "\nThe author is: " + fav_author);
-        // document.write(created_book);
         // above RETURNS what i believe i want but isn't required for this function
     }
     createBook();
+    console.log(" *** show book info *** ")
 
-    function showBookInfo(){
-        var fav_book = createBook.title;
-        var fav_author = createBook.author;
+    // var bookTest = createBook("Discord's Apple", "Carrie Vaughn");
+    // console.log(bookTest);
+    // books.push(bookTest);
+    // console.log(books);
+    //this should help to tie in to our function below
+
+    function showBookInfo(fav_book,fav_author){
+        var createBook = createBook;
+        // var fav_book = createBook(title); //createBook.title;
+        // var fav_author = createBook.createbook.author //createBook.author;
         // var created_book =
         console.log(fav_book + ": is my favorite book!", "\nThe author is: " + fav_author);
         // document.write(created_book);
@@ -225,5 +238,5 @@ document.write('Objects Exercises');
         // accepts a book object & outputs info described above
         //refactored loop to use this function
     }
-    showBookInfo();
+    //showBookInfo();
 })();
