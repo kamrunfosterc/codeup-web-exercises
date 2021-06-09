@@ -180,10 +180,11 @@ document.write('Objects Exercises');
         let y1 = books[i].author.firstName;
         let y2 = books[i].author.lastName;
         //console.log(y1);
-        console.log("Book #" + book_numb + " " + x + " " + y1 + " " + y2);
+        console.log("Book #" + book_numb + " " + x + "\n " + y1 + " " + y2);
+        console.log(' --- --- ');
     }
 
-
+//Kathleen has an updated forEach on this prob above
 
     // /**
     //  * Bonus:
@@ -238,4 +239,29 @@ document.write('Objects Exercises');
         //refactored loop to use this function
     }
     //showBookInfo();
+
+
+    console.log(' -Kathleen Bonus work --')
+    function createdBook(title, author){
+        var name = author.split("");
+        console.log(name[0]);
+        console.log(name[1]);
+        return {
+            title : title,
+            author : {
+                f_name : name[0],
+                l_name : name[1],
+            },
+        }
+    }
+    console.log(createdBook('this book here', 'Sir William' ));
+    //document.write(createdBook('this book here', 'aint nobody know'));
+
+    let books = [];
+    books.push(createdBook());
+    books.push(createdBook());
+    books.push(createdBook());
+    books.push(createdBook());
+    books.push(createdBook());
+
 })();
