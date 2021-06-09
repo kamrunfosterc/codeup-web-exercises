@@ -254,14 +254,18 @@ document.write('Objects Exercises');
             },
         }
     }
-    console.log(createdBook('this book here', 'Sir William' ));
-    //document.write(createdBook('this book here', 'aint nobody know'));
 
-    let books = [];
-    books.push(createdBook());
-    books.push(createdBook());
-    books.push(createdBook());
-    books.push(createdBook());
-    books.push(createdBook());
+
+    // console.log(createdBook('this book here', 'Sir William' ));
+    // //document.write(createdBook('this book here', 'aint nobody know'));
+    //
+    // let books = [];
+    // books.push(createdBook());
+    // books.push(createdBook());
+    // books.push(createdBook());
+    // books.push(createdBook());
+    // books.push(createdBook());
+
+
 
 })();
