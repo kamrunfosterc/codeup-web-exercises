@@ -53,7 +53,7 @@ document.write('Objects Exercises');
 
 
     console.log("\n *** Attention HEB Shoppers! *** ")
-   // var shoppers = {}; //object iteration works better in a forOf
+   // var shoppers = {}; //object iteration works better in a 'forOf'
     var shoppers = [// keep in array form bc forEach works best with array iteration
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
@@ -64,7 +64,6 @@ document.write('Objects Exercises');
     shoppers.forEach(function (shopper){// wrap forEach around stuff below
         var discount = shopper.amount * discountPercent;// create discount var
         var discountTotal = shopper.amount - discount;// create total discount bill var
-
 
         console.log(shopper.name + ":\n" + "Your total would've been $" + shopper.amount.toFixed(2) + " before discount!");
 
