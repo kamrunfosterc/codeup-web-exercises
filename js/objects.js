@@ -19,7 +19,6 @@ document.write('Objects Exercises');
     person = {
         firstName: 'Amari',
         lastName: 'Foster',
-
     }; console.log(person.firstName, person.lastName);
 
     /**
@@ -54,22 +53,25 @@ document.write('Objects Exercises');
 
 
     console.log("\n *** Attention HEB Shoppers! *** ")
-    var shoppers = {};
-    shoppers = [
+   // var shoppers = {}; //object iteration works better in a forOf
+    var shoppers = [// keep in array form bc forEach works best with array iteration
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];// placed objects inside an array
 
     var discountPercent = 0.12;
-    shoppers.forEach(function (shopper){
-        var discount = shopper.amount * discountPercent;
-        var discountTotal = shopper.amount - discount;
+    shoppers.forEach(function (shopper){// wrap forEach around stuff below
+        var discount = shopper.amount * discountPercent;// create discount var
+        var discountTotal = shopper.amount - discount;// create total discount bill var
 
-        if (shopper.amount < 200){
-            console.log(shopper.name + ":\n" + "Your total spent before discount: $" + shopper.amount);
+
+        console.log(shopper.name + ":\n" + "Your total would've been $" + shopper.amount.toFixed(2) + " before discount!");
+
+        if (shopper.amount <= 200){// if statement to give expected messages
+            console.log(shopper.name + ":\n" + "Your total spent after discount: $" + shopper.amount.toFixed(2));
         } else {
-            console.log(shopper.name + ":\n" + "Your total spent after discount: $" + discountTotal)
+            console.log(shopper.name + ":\n" + "Your total spent after discount: $" + discountTotal.toFixed(2));
         }
     });
 
