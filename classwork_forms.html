@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Forms</title>
+</head>
+<body>
+  <form method = 'GET' action="URL">
+    <!-- get is unsecured/ readable transfer of info.. sending for small info -->
+    <label for="zipcode">Zipcode</label>
+    <input type="text" name="zipcode" id="zipcode" placeholder="input a zipcode">
+    <button type="submit">Search</button>
+  </form>
+
+  <form method = 'POST' action="URL">
+    <!-- get is secured/ unreadable transfer of info -->
+    <label for="State">State</label>
+    <input type="text" name="State" id="State" placeholder="input a State">
+    <button type="submit">Search</button>
+  </form>
+
+</body>
+</html>
+<!--
+<label for="username">Username</label>
+<input id="username" name="username" type="text">
+<br>
+
+<label for="password">Password</label>
+<input id="password" name="password" type="password">
+<br>
+-->
