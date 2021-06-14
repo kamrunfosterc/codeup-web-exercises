@@ -5,14 +5,41 @@
       <title>Forms.html Exercise</title>
   </head>
   <body>
-    <form method = 'POST' action="URL">
+  <h1><title>Register With Us</title></h1>
+
+    <form method = 'POST' action=request-inspector.glitch.me/"><!-- issue with the action point -->
+      <h1>First Form</h1>
       <!-- get is secured/ unreadable transfer of info -->
+      <div id = 'email_pass_bio'>
       <label for="Email">Email</label>
       <input type="text" name="Email" id="Email" placeholder="input your email">
       <br>
       <label for="Password">Password</label>
       <input type="text" name="Password" id="Password" placeholder="input your password">
-      <button type="submit">Next</button>
+      <br>
+      <label for="Bio">Bio</label>
+      <input type="text" name="Password" id="Bio" placeholder="write a short description about yourself">
+      </div>
+      <br>
+      <div id = 'how_did_u_hear_about_us'>
+      <h3>How did you hear about us</h3>
+      A <input type="radio" name="How did you hear about us" value="a">billboard<br>
+      B <input type="radio" name="How did you hear about us" value="b">radio advertisement<br>
+      C <input type="radio" name="How did you hear about us" value="c">internet advertisement<br>
+      D <input type="radio" name="How did you hear about us" value="d">other<br>
+      </div>
+
+      <div id = 'dropdown'>
+      <br><select name="web_browser_preference">
+        <option value="Safari">Safari</option>
+        <option value="Chrome">Chrome</option>
+        <option value="Opera">Opera</option>
+      </select><br><br>
+      <!-- give above same 'name' and it elements ability to select several buttons-->
+      </div>
+      <button type="submit">Submit</button>
+
     </form>
+
   </body>
 </html>
