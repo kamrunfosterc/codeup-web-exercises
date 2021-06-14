@@ -7,34 +7,51 @@
   <body>
   <h1><title>Register With Us</title></h1>
 
-    <form method = 'POST' action=request-inspector.glitch.me/"><!-- issue with the action point -->
-      <h1>First Form</h1>
+    <form method = 'POST' action="https://request-inspector.glitch.me/"><!-- issue with the action point -->
+
       <!-- get is secured/ unreadable transfer of info -->
       <div id = 'email_pass_bio'>
       <label for="Email">Email</label>
-      <input type="text" name="Email" id="Email" placeholder="input your email">
+      <input type="Email" name="Email" id="Email" placeholder="input your email"><!-- can replace type = text with email, password-->
       <br>
+
       <label for="Password">Password</label>
-      <input type="text" name="Password" id="Password" placeholder="input your password">
+      <input type="Password" name="Password" id="Password" placeholder="input your password">
       <br>
-      <label for="Bio">Bio</label>
-      <input type="text" name="Password" id="Bio" placeholder="write a short description about yourself">
+
+        <label for="bio">Bio</label>
+        <textarea id = 'bio' name = 'bio' placeholder="Enter your bio"></textarea>
       </div>
       <br>
-      <div id = 'how_did_u_hear_about_us'>
+      <section>
+      <!--<div id = 'how_did_u_hear_about_us'>-->
       <h3>How did you hear about us</h3>
-      A <input type="radio" name="How did you hear about us" value="a">billboard<br>
-      B <input type="radio" name="How did you hear about us" value="b">radio advertisement<br>
-      C <input type="radio" name="How did you hear about us" value="c">internet advertisement<br>
-      D <input type="radio" name="How did you hear about us" value="d">other<br>
-      </div>
+
+        <input id = 'billboard'type="radio" name="How did you hear about us" value="billboard">
+        <label for="billboard">Billboard</label><br>
+
+        <input id = 'radioad'type="radio" name="How did you hear about us" value="radioad">
+        <label for="radioad">Radio ad</label><br>
+
+        <input id = 'Internet Ad'type="radio" name="How did you hear about us" value="Internet Ad">
+        <label for="Internet Ad">Internet Ad</label><br>
+
+        <input id = 'Other'type="radio" name="How did you hear about us" value="Other">
+        <label for="Other">Other</label><br>
+      <!--</div>-->
+      </section>
 
       <div id = 'dropdown'>
-      <br><select name="web_browser_preference">
-        <option value="Safari">Safari</option>
-        <option value="Chrome">Chrome</option>
-        <option value="Opera">Opera</option>
-      </select><br><br>
+      <br>
+        <label for ='browsertype'>What's your prefered browser?</label>
+          <select id = 'browsertype' name="browser">
+            <option selected value="Safari">Safari</option>
+            <option value="Chrome">Chrome</option>
+            <option value="Opera">Opera</option>
+            <option value="Edge">Edge</option>
+            <option value="Vivaldi">Vivaldi</option>
+            <option disabled value="Internert_Explorer">Internet Explorer</option>
+        </select><br><br>
       <!-- give above same 'name' and it elements ability to select several buttons-->
       </div>
       <button type="submit">Submit</button>
