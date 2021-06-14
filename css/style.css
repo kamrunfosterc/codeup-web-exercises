@@ -1,7 +1,9 @@
 .fancy-header {
     color:purple;
-    text-decoration: underline;
-    text-decoration-color: darkblue;
+}
+a {
+    color: #333333;
+    transition: 500ms;
 }
 /* unvisited link (:link) */
 a:link {
@@ -10,16 +12,53 @@ a:link {
 
 /* visited link (:visited) */
 a:visited {
-    color:black;
+    color:red;
 }
 
 /* mouse hover over link (:hover) */
 a:hover {
-    color:blue;
+    color:#eeeeee;
+    font-size: 1.2em;
+    transition: 500ms;
+
 }
 
 /* active/selected link (:active) */
 a:active {
     color:green;
 }
+
+h1 {
+    text-align: center;
+
+}
+h1, h2 {
+    text-decoration: underline;
+    text-decoration-color: darkblue;
+}
+
+body {
+    background-color: beige;
+    background-image: url("../.idea/practice_img/abstract_smooth_wave_background_vector_grapihic_art_569579.jpeg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    font-family: 'Viaoda Libre', cursive; /* cursive is the backup font */
+}
+
+ul > li {
+    list-style-type: square;
+}
+
+* {
+/* this selector selects everything on the page, every element on page*/
+}
+
+td, tr {
+    padding: 5px;
+    font-size: 1em;
+}
+
+
 
