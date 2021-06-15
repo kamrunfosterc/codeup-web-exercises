@@ -25,17 +25,23 @@ header {
 a {
     color: var(--link-color);
 }
+
 .top-nav {
     background: var(--light-bg);
     display: inline-block;
     padding: 1.5em;
     width: 100%;
     position: fixed; /*https://www.w3schools.com/howto/howto_css_fixed_menu.asp*/
+    z-index: 1000;/* https://developer.mozilla.org/en-US/docs/Web/CSS/z-index */
 }
 .nav {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    height: .05em;
+    margin-top: .05em;
+    display: inline-block;
+    padding: 1.5em;
+}
+.nav-item{
     display: inline-block;
     padding: 1.5em;
 }
@@ -51,9 +57,7 @@ a {
     display: inline-block;
     padding: 1.5em;
 }
-.profile {
-    background: var(--light-bg);
-}
+
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
@@ -66,9 +70,38 @@ a {
     font-size: 1.3em;
     padding: 10px;
 }
+
 .img-circle {
     border-radius: 100%;
     border: 4px solid var(--light-bg);
+}
+
+.profile {
+    background: var(--light-bg);
+    height: 80px;
+}
+.profile-image{
+    position: absolute;
+}
+.profile-form{
+    float: left;
+    line-height: normal;/* https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
+
+}
+.profile-details{
+    width: 25%;
+    float: ;
+    /*margin: 0 .5em;*/
+    margin-top: calc(100% );
+}
+
+.timeline{
+    width: 50%;
+    float: ;
+}
+.who-to-follow{
+    width: 25%;
+    float: ;
 }
 .text-right {
     text-align: right;
