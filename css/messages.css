@@ -5,3 +5,29 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
+.message {
+    border: solid lightgray 2px; /*1px wide border that is solid gray*/
+    margin: .5em;
+    padding: .5em;
+    border-radius: .5em;
+    width: 100%;
+}
+.message-info{
+    color: darkslateblue;
+    background-color: lightblue;
+    /*background-color: var(--info-bg-color);*/
+    /*color: var(--info-color);  example of using CSS variables*/
+}
+.message-success{
+    color: darkgreen;
+    background-color: lightgreen;
+
+}
+.message-warning{
+    color: lightgoldenrodyellow;
+    background-color: #ba9d37;
+}
+.message-error{
+    color: darkred;
+    background-color: lightcoral;
+}

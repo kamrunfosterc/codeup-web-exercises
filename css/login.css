@@ -11,10 +11,11 @@ body, html {
 }
 
 form {
-    margin: 1em;
-    border: 1em;
+    margin: 1em;/* spacing from other elements 1em = about 12px */
+    padding: 1em; /* There must be 1em between the content and the border of this element */
+
     /* This form should be separated from other elements by 1em */
-    /* There must be 1em between the content and the border of this element */
+
 }
 
 fieldset {
@@ -22,6 +23,7 @@ fieldset {
     -moz-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     padding: 1em;
+    border: none; /* could use 0 as well */
     background-color: white;
     /* There must be 1em between the content and the border of this element */
     /* It should have no border */
@@ -30,14 +32,15 @@ fieldset {
 
 .width-80 {
     width: 80%;
+    margin: 0 auto;/* 0 is top, bottom & second value is left and right*/
     /* The element with this class should 80% of the width and it must be centered */
     /* Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
 }
 
 .form-group {
     width: 100%;
-    top: 5em;
-    bottom: 5em;
+    margin-top: .5em; /* alt: margin: .5em 0, would give the same answer*/
+    margin-bottom: 5em;
     /* It should have a separation of .5em from elements on top of it and below it*/
 }
 
@@ -50,20 +53,20 @@ fieldset {
 }
 
 .btn {
-    text-decoration-color: white ; /* The text color of this element should be white and bold */
+    color: white ; /* The text color of this element should be white and bold */
     font-weight: bold;
-    border: 1em; /*used em instead of px*/
+    border:  1px lightgray; /*used em instead of px*/
     /* There must be a separation of 8px between the text and the border of this element */
-    border-color: lightgray;/* The border of this element should be 1px, and its color should be light grey */
+    /* The border of this element should be 1px, and its color should be light grey */
     background-color: #0fb784;
-    margin: 8em; /*used em instead of px*/
+    padding: 8px; /*used em instead of px*/
 }
 
 .form-control {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    padding: .5em;
-    width: 100%;
+    padding: 4px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    width: calc(100% - 12px);
     /* why is this 100% different than the button's 100% width? That's the puzzle */
 
 

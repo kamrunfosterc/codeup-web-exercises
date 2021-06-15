@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relative Positioning to container</title>
+    <style>
+        /*#container {*/
+        /*    margin: 50px auto;*/
+        /*    width: 500px;*/
+        /*    height: 200px;*/
+        /*    border: 1px solid #000;*/
+        /*}*/
+        /*.box {*/
+        /*    background-color: #1969B2;*/
+        /*    height: 100px;*/
+        /*    width: 100px;*/
+        /*    position: relative;*/
+        /*    top: 10px;*/
+        /*    right: 10px;*/
+        /*    !*edit these features to move blue box around the container*! relative*/
+        /*}*/
+
+        /*#container {*/
+        /*    margin: 50px auto;*/
+        /*    width: 500px;*/
+        /*    height: 200px;*/
+        /*    border: 1px solid #000;*/
+        /*    position: relative;*/
+        /*}*/
+        /*.box {*/
+        /*    background-color: #1969B2;*/
+        /*    height: 100px;*/
+        /*    width: 100px;*/
+        /*    position: absolute; !* absolute position, relative to body*!*/
+        /*    top: 10px;*/
+        /*    right: 10px;*/
+        /*}*/
+
+        #container {
+            margin: 50px auto;
+            width: 500px;
+            height: 2000px;
+            border: 1px solid #000;
+        }
+        .box {
+            background-color: #1969B2;
+            height: 100px;
+            width: 100px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            /* fixed positioning */
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="box"></div>
+</div>
+</body>
+</html>
