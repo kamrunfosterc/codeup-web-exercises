@@ -36,17 +36,17 @@ a {
     border-bottom: 1px;
     border-bottom-color: var(--separator-color);
     padding: .5em;
+    overflow: auto;
 }
 .media-image{
-    width: 50px;
+    /*width: 50px;*/
     margin-top: 1.33em;
-    /*should float*/
+    float: left;
+    max-width: 50px;
 }
 .media-body{
-    width: 100%;
-    /* use calc to subtract width of image*/
-    /*should float*/
-
+    width: calc(100% - 50px);
+    float: right;
 }
 
 .top-nav {
@@ -92,6 +92,7 @@ a {
 .btn-large {
     font-size: 1.3em;
     padding: 10px;
+    /*float: right;*/
 }
 
 .img-circle {
@@ -101,23 +102,27 @@ a {
 
 .profile {
     background: var(--light-bg);
-    height: 80px;
+    /*height: 80px;*/
+}
+.profile-header{
+    position: relative;
 }
 .profile-entry{
     margin: .5em;
 }
 .profile-image{
     position: absolute;
+    top: -2em;
+    /*float: right;*/
 }
 .profile-form{
-    float: left;
-    line-height: normal;/* https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
-
+    float: right;/* EDIT button */
+    line-height: 80px;/* https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
 }
 .profile-details{
     /*--width1: 25%;*/
     /*--width2: 50%;*/
-    --width: 25%;
+    width: calc(25% - 1em);
     float: left;
     /*margin: 0 .5em;*/
     /*margin:0;*/
@@ -125,20 +130,22 @@ a {
     /*margin-right: calc(100% - 95.5em);*/
 }
 .profile-items{
-    /* removebullets and padding
+    /* remove bullets and padding*/
 }
 
 .timeline {
-    width: 50%;
+    /*width: 50%;*/
     float: left;
+    width: calc(50% - 1em);
     /*margin: 0;*/
-    /*margin-left: calc(100% - 95.5em);*/
-    /*margin-right: calc(100% - 95.5em);*/
+    margin-left: .5em;
+    margin-right: .5em;
 }
 
 .who-to-follow{
-    width: 25%;
-    float: left;
+    /*width: 25%;*/
+    float: right;
+    width: calc(25% - 1em);
     /*margin:0;*/
     /*margin-left: calc(100% - 95.5em);*/
     /*margin-right: calc(100% - 95.5em);*/

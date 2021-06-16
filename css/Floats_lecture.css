@@ -1,0 +1,37 @@
+/*.displayFloat{*/
+/*    display: flex;!* looks sim to inline, *!*/
+/*    border: solid #0fb784 3px;*/
+/*    padding: 2px;*/
+/*    justify-content: start;!*by default it's left/ start*!*/
+/*    !*flex-display: column;*!*/
+/*    !*!*flex-wrap: wrap;*! good for images like on Pinterest*!*/
+/*}*/
+/*.float_item{*/
+/*    border: solid #8a4182 2px;*/
+/*    margin: 2px;*/
+/*}*/
+
+body{
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    background-color: #aaaaaa;
+    /*height: 50px;*/
+    justify-content: space-between; /* applies to immediate children, can group using divs now*/
+}
+.flex{
+    display: flex;
+}
+.nav-item{
+    padding: 5px;
+    font-size: larger;
+    transition: 1s;
+
+}
+.nav-item:hover{
+    transition: 1s;
+    background-color: #007069;
+    color: #aaaaaa;
+}
