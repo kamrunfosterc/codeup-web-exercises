@@ -4,6 +4,8 @@
     --main-link-color: #848487;
     --light-bg: #FFF;
     --separator-color: #DDD;
+    --width1: 25%;
+    --width2: 50%;
 }
 * {
     box-sizing: border-box;
@@ -24,6 +26,27 @@ header {
 }
 a {
     color: var(--link-color);
+}
+.container{
+    /*space between avatar and new 3 columns 2em*/
+}
+.media{
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px;
+    border-bottom-color: var(--separator-color);
+    padding: .5em;
+}
+.media-image{
+    width: 50px;
+    margin-top: 1.33em;
+    /*should float*/
+}
+.media-body{
+    width: 100%;
+    /* use calc to subtract width of image*/
+    /*should float*/
+
 }
 
 .top-nav {
@@ -80,6 +103,9 @@ a {
     background: var(--light-bg);
     height: 80px;
 }
+.profile-entry{
+    margin: .5em;
+}
 .profile-image{
     position: absolute;
 }
@@ -89,23 +115,39 @@ a {
 
 }
 .profile-details{
-    width: 25%;
-    float: ;
+    /*--width1: 25%;*/
+    /*--width2: 50%;*/
+    --width: 25%;
+    float: left;
     /*margin: 0 .5em;*/
-    margin-top: calc(100% );
+    /*margin:0;*/
+    /*margin-left: calc(100% - var(width));*/
+    /*margin-right: calc(100% - 95.5em);*/
+}
+.profile-items{
+    /* removebullets and padding
 }
 
-.timeline{
+.timeline {
     width: 50%;
-    float: ;
+    float: left;
+    /*margin: 0;*/
+    /*margin-left: calc(100% - 95.5em);*/
+    /*margin-right: calc(100% - 95.5em);*/
 }
+
 .who-to-follow{
     width: 25%;
-    float: ;
+    float: left;
+    /*margin:0;*/
+    /*margin-left: calc(100% - 95.5em);*/
+    /*margin-right: calc(100% - 95.5em);*/
 }
+
 .text-right {
     text-align: right;
 }
 .text-muted {
     color: var(--main-link-color);
 }
+/*border-bottom: 1px solid var(--separator-color);*/
