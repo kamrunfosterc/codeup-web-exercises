@@ -25,7 +25,9 @@ h2, h3 {
     width: 2em;
 }
 
-.border {border: 2px solid black;}
+.border {
+    border: 2px solid black;
+}
 
 .card {
     width: 400px;
@@ -33,34 +35,43 @@ h2, h3 {
     background: white;
     padding: 1em;
     margin: 0 auto;
-    /* enter needed declarations here */
+    /*display: flex; redundant command called*/
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 section {
-    /* enter needed declarations here */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
 }
 
 section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
-    /* enter needed declarations here */
+    justify-content: space-between;
+    align-items: center;
+
 }
 section:nth-of-type(1) div:last-child {
-    /* enter needed declarations here */
+    align-self: flex-start;
 }
 
 .purple-box {
     background: fuchsia;
     width: 3em;
     height: 1em;
+    margin-bottom: 1em;
 }
 
 .purple-box:nth-of-type(1) {
-    /* enter needed declarations here */
+    flex-grow: 2;
 }
 
 .purple-box:nth-of-type(2) {
-    /* enter needed declarations here */
+    flex-grow: 1;
+
 }
 
 .blue-box {
@@ -70,11 +81,12 @@ section:nth-of-type(1) div:last-child {
 }
 
 section:nth-of-type(3) {
-    /* enter needed declarations here */
+    align-items: center;
+
 }
 
 section:nth-of-type(3) h3 {
-    /* enter needed declarations here */
+    justify-items: self-end;
 
 }
 
@@ -110,13 +122,15 @@ section:nth-of-type(5) {
 section:nth-of-type(6) {
     background: coral;
     height: 14em;
-    /* enter needed declarations here */
+    align-items: flex-end;
+    align-content: space-between;
 }
 
 .grey-box {
     background: grey;
     width: 3em;
     height: 3em;
+
 }
 
 .grey-box:nth-of-type(odd) {
