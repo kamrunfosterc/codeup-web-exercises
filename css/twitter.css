@@ -28,7 +28,7 @@ a {
     color: var(--link-color);
 }
 .container{
-    /*space between avatar and new 3 columns 2em*/
+    /*Use the container to add some space between the avatar and the new 3 columns (2em).*/
 }
 .media{
     width: 100%;
@@ -113,6 +113,7 @@ a {
 .profile-image{
     position: absolute;
     top: -2em;
+    margin: 1em;
     /*float: right;*/
 }
 .profile-form{
@@ -120,17 +121,12 @@ a {
     line-height: 80px;/* https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
 }
 .profile-details{
-    /*--width1: 25%;*/
-    /*--width2: 50%;*/
     width: calc(25% - 1em);
     float: left;
-    /*margin: 0 .5em;*/
-    /*margin:0;*/
-    /*margin-left: calc(100% - var(width));*/
-    /*margin-right: calc(100% - 95.5em);*/
 }
 .profile-items{
-    /* remove bullets and padding*/
+    padding: 0; /*wants to remove bullets and padding but how*/
+
 }
 
 .timeline {
