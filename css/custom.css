@@ -1,0 +1,13 @@
+.jumbotron{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: center;
+
+}
+h1{
+
+}
+.display-4{
+    position: absolute;
+}
