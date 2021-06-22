@@ -14,3 +14,16 @@ h1{
     background-color: white;
     opacity: .5;
 }
+.card-header {
+    padding-bottom: 1em;
+}
+
+footer{
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(247,247,247);
+    padding: 10px;
+}
+#header{
+    background-color: dodgerblue;
+}
