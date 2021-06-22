@@ -1,13 +1,16 @@
 .jumbotron{
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
-    align-self: stretch;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: stretch;*/
+    /*align-self: stretch;*/
+    background-image: url("../images/pizza.png");
+    background-size: cover;
 }
 h1{
 
 }
 .display-4{
-    display: flex;
-    position: absolute;
+    text-align: center;
+    background-color: white;
+    opacity: .5;
 }
