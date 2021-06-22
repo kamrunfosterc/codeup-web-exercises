@@ -16,6 +16,7 @@ h1{
 }
 .card-header {
     padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 footer{
@@ -27,3 +28,5 @@ footer{
 #header{
     background-color: dodgerblue;
 }
+
+
