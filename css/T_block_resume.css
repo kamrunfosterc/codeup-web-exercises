@@ -38,4 +38,10 @@ li{
     border: 1px solid black
 }
 
+.low {
+    border-bottom: 1px solid darkgreen;
+}
+
+
 /*<span class="twitter"></span> twitter*/
+/*very small to medium size devices: */
