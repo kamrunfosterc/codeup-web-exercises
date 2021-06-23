@@ -1,8 +1,20 @@
+.chs{
+    background-color: #cbffcd;
+    border: black;
+}
 .lhs{
     /*this is to assign container to left side of page and its contents*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*float: left;*/
     background-color: lightblue;
+    border: black;
 }
 .rhs{
     /*this is to assign container to right side of page and its contents*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*float: right;*/
     background-color: indianred;
+    border: black;
 }
