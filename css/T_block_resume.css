@@ -24,28 +24,18 @@
 p {
     font-size: 0.8em;
 }
+.fsiz{
+    font-size: 0.8em;
+}
 
+li{
+    font-size: 0.8em
+}
 #firstentry{
     text-align: center;
 }
-
-.icon::before {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+.frame{
+    border: 1px solid black
 }
 
-.login::before {
-    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f007";
-}
-
-.twitter::before {
-    font-family: "Font Awesome 5 Brands"; content: "\f099";
-}
-
-.fa-mobile-alt {
-    padding-right: 1em;
-}
 /*<span class="twitter"></span> twitter*/
