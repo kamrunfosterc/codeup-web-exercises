@@ -1,0 +1,8 @@
+.lhs{
+    /*this is to assign container to left side of page and its contents*/
+    background-color: lightblue;
+}
+.rhs{
+    /*this is to assign container to right side of page and its contents*/
+    background-color: indianred;
+}
