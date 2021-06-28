@@ -6,10 +6,10 @@
     /*justify-content: center;*/
 }
 
-#R2{
-
+.my-col {
+    border: 5px dotted red;
 }
-#r6{
-    font-size: x-small;
 
+.my-row {
+    border: 2px solid black;
 }
