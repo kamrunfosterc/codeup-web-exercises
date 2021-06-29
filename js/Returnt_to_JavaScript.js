@@ -27,10 +27,23 @@ if (aNumber%2 === 0){ //nested if statements
     // is odd
     // not even
 }
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 
 if (aNumber % 2 === 0 && aNumber % 3 === 0 && typeof(aNumber) !== "boolean"){
-    // aNumber is even & divisiable by 2 and divisiable by 3
+    // aNumber is even & divisible by 2 and divisible by 3
     console.log(aNumber + " is a number")
 } else{
     console.log(aNumber + " ,sorry, please select another number.")
 }
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+if ((aNumber % 2 === 0 || aNumber % 3 === 0) && aNumber > 24){
+    // aNumber is divisible by 2 or 3 and is greater than 24
+    console.log("looks good, proceed");
+}
+
+
+
+
+
+
