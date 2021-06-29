@@ -1,215 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-        <div id="intro">
-            <h1>Hello Polaris!</h1>
-            <p>Don't live by your own rules, but in hamrony with nature,
-            <strong>Stoihc quotes</strong>!</p>
-        </div>
-        <script>
-            //Working W. Data Types, Operators & Variables
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome HTML Part 1, Veridian Dynamics!</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
 
-            // Exercise 1
-            /* > var a = 1; var b = a++; var c = ++a;
-                undefined
-                > a,b,c
-                3
-                > a
-                3
-                > b
-                1
-                > c
-                3
-                > var d = "hello";
-                undefined
-                > var e = false;
-                undefined
-                > d++;
-                NaN
-                > e++;
-                0
-                > var perplexed;
-                undefined
-                > perplexed + 2;
-                NaN
-                > var price = "2.7";
-                undefined
-                > price.toFixed(2);
-                Uncaught TypeError: price.toFixed is not a function
-                > var price = 2.7;
-                undefined
-                > price.toFixed(2);
-                '2.70'
-                > isNaN(0);
-                false
-                > isNaN(1);
-                false
-                > isNaN("");
-                false
-                > isNaN("string");
-                true
-                > isNaN("0");
-                false
-                > isNaN("1");
-                false
-                > isNaN("3.145");
-                false
-                > isNaN(Number.MAX_VALUE);
-                false
-                > isNaN(Infinity);
-                false
-                > isNaN("true");
-                true
-                > isNaN(true);
-                false
-                > isNaN("false");
-                true
-                > isNaN(false);
-                false
-                > NaN == NaN
-                false
-                > !true
-                false
-                > !false
-                true
-                > !!true
-                true
-                > !!false
-                false
-                > !!0
-                false
-                > !!-0
-                false
-                > !!1
-                true
-                > !!-1
-                true
-                > !!0.1
-                true
-                > !!"hello"
-                true
-                > !!''
-                false
-                > !!""
-                false
-                > !!"false"
-                true
-                > !!"0"
-                true
-                >
-                */
+    <link rel="stylesheet" href="css/style.css">
 
-            // **** **** Exercise 2 (performed in console; this is copy of results) **** ****
+</head>
+<body>
+<!--
+    <div>
+    <h1> Hello, B.L.U.E! </h1>
+        <p>
+            This is a <span id = 'bold red'>paragraph</span>.
+        </p>
+    </div>
+    <div>
+        <p>
+            TYPE here and see what I have.TYPE here and see what I have. TYPE here and see what I have
+            TYPE here and see what I have.TYPE here and see what I have.TYPE here and see what I have
+            <br><br>
+            TYPE here and see what I have
+        </p>
+    </div>
+    <div>
+        <em>Really <strong>Important</strong></em>
+        <p> unordered list</p>
+        <ul>
+            <li>Cat</li>
+            <li>Dog</li>
+            <li>Fish</li>
+        </ul>
 
-            /*	> var sample = "Hello Codeup";
-                undefined
-                > sample
-                'Hello Codeup'
-                > sample.length
-                12
-                > sample.toUpperCase();
-                'HELLO CODEUP'
-                > sample = sample + 'students';
-                'Hello Codeupstudents'
-                > sample.replace(students, Class);
-                Uncaught ReferenceError: students is not defined
-                > sample.replace(students, Class);
-                Uncaught ReferenceError: students is not defined
-                > sample.replace('students', 'Class');
-                'Hello CodeupClass'
-                > sample.replace('students', ' Class');
-                'Hello Codeup Class'
-                > sample = sample.replace("students", " Class");
-                'Hello Codeup Class'
-                > sample.indexOf("C");
-                6
-                > sample.substring("5","12");
-                ' Codeup'
-                > sample.substring(sample.indexOf("C"), sample.indexOf("p") + 1);
-                'Codeup'
-            */
+        <p> ordered list</p>
 
-            // exercise 3 ******** ******* *******
+        <ol>
+            <li>Cat</li>
+            <li>Dog</li>
+            <li>Fish</li>
+        </ol>
 
-            // part A movie rental
-            alert("Let's check out your three movies.");
-            alert("Movie rentals are $3.00 per day.");
-            var movie_per_day = 3.00;// cost per day of a movie
+        <a href="www.google.com">Visit google</a>
+        <br><br>
+        <a href="www.google.com" target = '_blank'>Visit google in new tab/ window.</a><!-- _blank is important-->
+<!--<br><br> -->
+<!-- <a href="#top">Back to Top</a> -->
+<!-- <img src="/images" alt = "Alternate image description"> -->
+<!-- TABLE EXAMPLE
+                <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Iced Tea</td>
+            <td>$2.99</td>
+        </tr>
+        <tr>
+            <td>Hamburger and French Fries</td>
+            <td>$11.99</td>
+        </tr>
+    </table>
+</div> -->
+<header style="align-content: center">
 
-            var days_lil_mermaid = 3;// days rented 3 days
-            var days_brother_bear = 5;// days rented 5 days
-            var days_hercules = 1;// rented for a day
+</header>
+<nav-bar></nav-bar>
+<section>
+    <h2>CODEUP</h2>
+</section>
+<div id = 'Heading'>
+    <hr>
+    <h1 class='fancy-header';>Welcome to Veridian Dynamics!</h1>
 
-            var total_rental_cost = (days_lil_mermaid + days_brother_bear + days_hercules) * movie_per_day;
-            console.log(total_rental_cost.toFixed(2));
-            alert("Your total rental cost is $" + total_rental_cost.toFixed(2) + " for Little Mermaid, Hercules & Brother Bear");
-
-            // *********** ************ *********** *************
-
-            //part B hourly pay ******** ******* *******
-            var google_rate =400;// hourly pay rate
-            var amazon_rate =380;// hourly pay rate
-            var facebook_rate =350;// hourly pay rate
-
-            var hrs_at_google = prompt("How many hours did we work at Google? ");//enter 6 hours
-            var hrs_at_amazon = prompt("How many hours did we work at Amazon? ");// enter 4 hours
-            var hrs_at_facebook = prompt("How many hours did we work at Facebook? ");// enter 10 hours
-
-            var amazon_hours = Number(hrs_at_amazon);
-            var facebook_hours = Number(hrs_at_facebook);
-            var google_hours = Number(hrs_at_google);
-
-            console.log(amazon_hours + "hrs", facebook_hours + "hrs", google_hours + "hrs");
-
-
-            var total_hours = parseInt(amazon_hours + facebook_hours + google_hours);
-
-            var total_pay = (google_rate*google_hours)+(amazon_rate*amazon_hours)+(facebook_rate*facebook_hours);
-            // var totaly_pay = (googlhr*googlrate + amazonhr*amazonrate + fbhr*fbrate);
-            alert("You worked a total of "+ total_hours + " hours this week!");
-            alert( "Your compensation will be $"+ total_pay + " dollars. Thank you for your efforts!")
-            console.log(total_hours+ "hours", "$"+total_pay);
-
-
-
-            //Student exercise for getting into class ******** ******* *******
-
-            alert("How many students are there and does our schedule conflict with student?")
-            function course(student_numb, schedule_conflict) {
-                if (student_numb < 28 && schedule_conflict == false) {
-                    return "Great news! You've been accepted into class!"
-                } else {
-                    return "Sorry, please apply for a different semester."
-                }
-            }
-            /* alternatively
-            * alert if class is full, alert if theres a conflict converted to boolean
-            * to answer above question
-            * var full = confirm("is the class full?);
-            * var conflict = confirm("is there a conflict with your schedule")
-            * alert("you can enroll in class" + (!full && !conflict)); */
-
-
-            //Promotional offer Exercise ******** ******* *******
-            function product(item, premium_member, expiration) {
-                if (item > 2 && expiration == false) {
-                    return "Congratulations on our product offer!"
-                } else if (premium_member == true && expiration == false) {
-                    return "Premium members always get our promotional offers!"
-                } else {
-                    return "Sorry we can't honor that promotional offer."
-                }
-            }
-
-            /* alternatively
-            * var member = confirm("Are you a premium member? ");
-            * var item = confirm("How many items are you purchasing? " );
-            * var expiration = confirm("Has our promotion expired? ");
-            * alert("Enjoy your purchase! " + (!item || member && !expiration)); */
-        </script>
-    </body>
+    <p> At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong>technology</strong></p>
+    <hr>
+</div>
+<div id = 'core values'>
+    <h2> Core Values </h2>
+    <ul>
+        <li>Competence</li>
+        <li>Involvement</li>
+        <li>Technology</li>
+    </ul>
+</div>
+<div id = 'Our Process'>
+    <h2> Our Process </h2>
+    <ol>
+        <li>Plan</li>
+        <li>Evaluate</li>
+        <li>Implement</li>
+    </ol>
+</div>
+<div id = '2020 Vision'>
+    <h2> 2020 Vision </h2>
+    <ul>
+        <li>Become #1 in Technology</li>
+        <li>Increase Success by 20%</li>
+        <li>Increase Business by 30%</li>
+    </ul>
+</div>
+<hr>
+<div id="Company Vision">
+    <h2> Company Vision </h2>
+    <img src=".idea/practice_img/Office_meeting.jpeg" height = '300px'; width = '400px' alt="Office meeting">
+    <img src=".idea/practice_img/coding_picture.jpeg" height = '300px'; width = '400px' alt="coding picture">
+    <br>
+    <img src=".idea/practice_img/confused.jpeg" height = '300px'; width = '400px' alt="confused">
+    <img src=".idea/practice_img/coding_block.jpeg" height = '300px'; width = '400px' alt="coding block">
+</div>
+<div id="Our Product">
+    <h2> Our Process </h2>
+    <table>
+        <tr>
+            <th>Plan</th>
+            <th>Price</th>
+            <th>Features</th>
+        </tr>
+        <tr>
+            <td>Starter</td>
+            <td>$99</td>
+            <td>Basic Technology</td>
+        </tr>
+        <tr>
+            <td>Advanced</td>
+            <td>$199</td>
+            <td>Additional Features</td>
+        </tr>
+        <tr>
+            <td>Premium</td>
+            <td>$499</td>
+            <td>Unlimited Support</td>
+        </tr>
+    </table>
+    <p><em>All products come with our quality guarantee &#8482;</em></p>
+    <!-- &#8482; also &trade;  =  trade mark symbol-->
+</div>
+<a href="#top">Go to the top of the page.</a>
+</body>
 </html>
