@@ -1,0 +1,59 @@
+body{
+    background-color: #e6e6e6; /* rgba(213, 209, 209, 0.68) */
+}
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid white 5px;
+    /*background-color: red;*/
+    margin: 10px;
+    font-family: 'Anton', sans-serif;
+    color: white;
+}
+.reddish {
+    background-color: #E6563B;
+}
+.orangish {
+    background-color: #eb9d3a;
+}
+.greenish {
+    background-color: #7CB06C;
+}
+.blueish {
+    background-color: #00ABA9;
+}
+
+.circles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*padding: 40px 40px 0 40px;*/
+}
+
+#emptyb{
+    background-color: #F0F0F0;
+    height: 60px;
+    /*width: 100%;*/
+    /*margin: 0*/
+    margin-top: 30px;
+}
+
+#adjust{
+    margin-top: -90px;
+}
+
+
+#line{
+    border-top: 1px solid #ada9a9;
+}
+
+
+/********* font link below *********/
+/*<link rel="preconnect" href="https://fonts.googleapis.com">*/
+/*                                                              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>*/
+/*                                                                                                                  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">*/
+/*                                                                                                                                                                                                           */
