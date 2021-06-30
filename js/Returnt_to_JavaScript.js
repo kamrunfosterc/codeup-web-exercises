@@ -43,6 +43,43 @@ if ((aNumber % 2 === 0 || aNumber % 3 === 0) && aNumber > 24){
 }
 
 
+// ***** ***** ***** ***** ***** FUNCTION ***** ***** ***** ***** ***** ***** *****
+
+function multiplyTwoNumbers(myParameter1, myParameter2){ // basic function
+    return myParameter1 + myParameter2;
+}
+console.log("call to multiply 2 numbers is: " + multiplyTwoNumbers(4,5));
+console.log("call to multiply 2 numbers is: " + multiplyTwoNumbers(10,20));
+
+//write function that concatenates string of first and last name
+// first and last name cannot be blank
+//returns an empty string if either first or last name are blank
+function firstAndLastName(firstName, lastName){
+    if (firstName.length < 1){
+        console.log("ERror: First name cannot be blank!");
+        return "";
+    }
+    if (lastName.length < 1){
+        console.log("ERror: last name cannot be blank!");
+        return "";
+    }
+    return firstName + " " + lastName;
+}
+
+console.log("firstAndLastName bob and smith: " + firstAndLastName("bob","smith"));
+console.log("firstAndLastName bob and <blank>: " + firstAndLastName("bob"," "));
+console.log("firstAndLastName <blank> and smith: " + firstAndLastName(" ","smith"));
+
+//return shortened version of full name given first and last name
+// i.e. at most 10 characters of full name
+// if name is longer than 10 chars, return first 7 characters and...
+function shortenedFullName(firstName, lastName){
+    var shortName = firstAndLastName(firstName, lastName);
+    return shortName;
+}
+
+console.log(shortenedFullName("larry","hoover"))
+
 
 
 
