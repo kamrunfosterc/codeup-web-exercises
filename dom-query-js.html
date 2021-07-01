@@ -64,12 +64,19 @@
 
         // TODO: Set text color of li with dbid = 1 to blue
         // answered above
+        // alternatively we could do the follow....
+
+        // for (let item of listItems){ // this will make sure we deal with only 1 of these items
+        //     if (item[i].getAttribute("data-dbId") === "1"){
+        //         item.style.color = "blue";
+        //     }
+        // }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName("sub-paragraph");
-
+        // var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        var subParagraphs = document.querySelector(".sub-paragraph")
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs.innerHTML = "Mission Accomplished!";
+        subParagraphs.innerHTML = "Mission Accomplished!";// innerHTML doesn't work bc of the inner tag?
     })();
 </script>
 
