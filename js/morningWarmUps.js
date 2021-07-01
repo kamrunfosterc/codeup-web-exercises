@@ -10,5 +10,5 @@ function countSpaces(totalNumberOfSpaces){
 }
 var counting = countSpaces("Akuna Matata");
 console.log(counting);
-// i counted the number of characters and not the number of spaces in a string
+// i misunderstood and counted the number of characters and not the number of spaces in a string
 
