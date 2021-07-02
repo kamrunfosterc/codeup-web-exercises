@@ -51,24 +51,19 @@
     }// be able to explain this up until this point
 
     // TODO: Set text color of li with dbid = 1 to blue
-      var dbId = listItems[i].getAttribute("data-dbid");
+    for (var i = 0; i < listItems.length; i++){
+    var dbId = listItems[i].getAttribute("data-dbid");
           alert(dbId);
       if (dbId === "1"){
         listItems[i].style.color = "blue";
-      }
-
-
-    // var dbId = listItems[i].getAttribute("data-dbid");
-    // // alert(dbId);
-
-    // if (dbId === "1"){
-    //   listItems[i].style.color = "red"; // pulls listitem 1 and changes text color to blue
-    // }
+      } // am i only able to treat listItems as an array inside the loop?
+    }
 
     // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+    var subParagraph = document.querySelector(".sub-paragraph");
 
     // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-
+    subParagraph.innerHTML = "Mission Accomplished!";
     // var endOfExercise = document.querySelector(".sub-paragraph");
     // endOfExercise = "Mission Accomplished";
   })();
