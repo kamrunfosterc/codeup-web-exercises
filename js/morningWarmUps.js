@@ -19,11 +19,13 @@ console.log(counting);
 // Example:  capitalizeAllNames(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["BOB","SETH","TOFU","TOYOTA"]
 function capitalizeAllNames(names){
     var arr1 = ["bob","Seth","TOFU","Toyota"];
-    for (var i = 0;  i <= arr1.length; i++){
+    for (var i = 0;  i <= arr1.length; i++){// first attempt
         var arr2 = arr1[i].toUpperCase();
         return arr2;
     }
 }
+
+
 console.log(capitalizeAllNames());
 // TODO: Create a function named capitalizeFirstLetter that accepts an array of strings and returns the array with all of the first letters in
 //  each string being capitalized while having the rest of the string lowercase look at the example below for reference.

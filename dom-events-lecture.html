@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hello World</h1>
+<label>Search<input id = 'searchBar'type="text"></label>
+
+<script>
+
+//  var myheader = document.querySelector('h1');
+//  myheader.innerText = "I am JS edited version";
+//
+//  //event listener
+//  // example
+//  myheader.addEventListener("click", function(){
+//    console.log("You clicked me!!");
+//  })
+
+var potentialResults = ["How to basic", "how to bake a cake", "I need help changing my brakes"];
+
+var searchBarElement = document.getElementById("searchBar");
+searchBarElement.addEventListener("keyup", function(){
+  // console.log(searchBarElement.value);
+  potentialResults.forEach(function (result){// for each is looping through our array
+    var whatUserIsSearchingFor = searchBarElement.value;// storing info into this var
+    result.includes(whatUserIsSearchingFor);// searching to see if this is included
+    if (result.includes(whatUserIsSearchingFor)){
+      console.log("Here is a potential result");
+      console.log(result);
+    }
+  })
+})
+console.log(searchBarElement);
+
+</script>
+</body>
+</html>
