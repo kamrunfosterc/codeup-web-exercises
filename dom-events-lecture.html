@@ -7,6 +7,7 @@
 <body>
 <h1>Hello World</h1>
 <label>Search<input id = 'searchBar'type="text"></label>
+<button>Remove all Events</button>
 
 <script>
 
@@ -19,21 +20,37 @@
 //    console.log("You clicked me!!");
 //  })
 
+//adding an Event
 var potentialResults = ["How to basic", "how to bake a cake", "I need help changing my brakes"];
 
 var searchBarElement = document.getElementById("searchBar");
-searchBarElement.addEventListener("keyup", function(){
-  // console.log(searchBarElement.value);
+
+searchBarElement.addEventListener("change", searchCallBack)
+
+function searchCallBack(){
   potentialResults.forEach(function (result){// for each is looping through our array
     var whatUserIsSearchingFor = searchBarElement.value;// storing info into this var
-    result.includes(whatUserIsSearchingFor);// searching to see if this is included
-    if (result.includes(whatUserIsSearchingFor)){
-      console.log("Here is a potential result");
+    // result.includes(whatUserIsSearchingFor);// searching to see if this is included
+    if (result.toLowerCase().includes(whatUserIsSearchingFor).toLowerCase()){
+      console.log("Here is a potential result...");
       console.log(result);
     }
   })
-})
+}
+
+var buttonToDestroyAll = document.querySelector("button");
+buttonToDestroyAll.addEventListener("click", destroyEvents);
+
+function destroyEvents(){
+  searchBarElement.removeEventListener("change", searchCallBack)
+  buttonToDestroyAll.removeEventListener("click" destroyEvents()
+  console.log(searchBarElement)
+}
+
 console.log(searchBarElement);
+
+//Removing an Event
+// when done with an event we can just call removeEventListener on same target
 
 </script>
 </body>
