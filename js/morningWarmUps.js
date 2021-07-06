@@ -23,9 +23,6 @@ function capitalizeAllNames(names){
         var arr2 = arr1[i].toUpperCase();
         return arr2;
     }
-    // for(var i = 0; i < array2.length; i++){
-    //     array2[i] = array2[i].toUpperCase();
-    // }
 }
 console.log(capitalizeAllNames());
 // TODO: Create a function named capitalizeFirstLetter that accepts an array of strings and returns the array with all of the first letters in
