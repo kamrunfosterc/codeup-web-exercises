@@ -972,21 +972,24 @@ addToDone("Exercise 61 is correct.")
 
 // Exercise 62
 // Write a function definition named median that takes in sequence of numbers and returns the average value
+function median(seq_of_numbers){
 
-function median(values){
-    if(values.length ===0) return 0;
-
-    values.sort(function(a,b){
-        return a-b;
-    });
-
-    var half = Math.floor(values.length / 2);
-
-    if (values.length % 2)
-        return values[half];
-
-    return (values[half - 1] + values[half]) / 2.0;
+    const sorted = [...seq_of_numbers].slice().sort((x,y) => x-y); //... allows us to set up a concept without defining x,y
+    const half = Math.floor(sorted.length / 2);
+    if (sorted.length % 2 === 0){
+        return (sorted[half -1] + sorted[half]) / 2;
+    }
+    return sorted[half];
 }
+// slice allows us to select elements from an array x.slice(1,3)
+// sort() sorts an array alphabetically x.sort()
+// Math.floor rounds number downward to its nearest integer
+//https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-88.php
+//https://discuss.codecademy.com/t/where-did-arr-and-newarr-come-from-and-what-do-they-do-or-mean/376214
+//send and receive parameters we use the standard parentheses "( )"
+//curly brackets are used to define the start and end of the function
+
+//#Source https://bit.ly/2neWfJ2
 
 assert(median([1, 2, 3, 4, 5]), 3.0, "Exercise 62");
 assert(median([1, 2, 3]), 2.0, "Exercise 62");
