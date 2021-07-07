@@ -22,9 +22,7 @@
 
 //adding an Event
 var potentialResults = ["How to basic", "how to bake a cake", "I need help changing my brakes"];
-
 var searchBarElement = document.getElementById("searchBar");
-
 searchBarElement.addEventListener("change", searchCallBack)
 
 function searchCallBack(){
@@ -51,6 +49,17 @@ console.log(searchBarElement);
 
 //Removing an Event
 // when done with an event we can just call removeEventListener on same target
+
+
+// ***** ***** ***** ***** ***** ***** ***** *****
+// learning dom exercises...
+// const body = document.body;
+// const div = document.createElement("div");// create element, by passing the type you want to create, we haven't added this
+// body.append("Hello Mr. Foster");//method allows us to add strings to html & multiple things just seperate with comma
+// body.appendChild();// requires node/ not string,
+// body.append(div);// adds div to our html
+// div.innerText = 'Hello Texas';
+
 
 </script>
 </body>

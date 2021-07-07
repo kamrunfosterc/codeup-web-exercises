@@ -5,80 +5,132 @@
     <title>DOM: Query and Modify</title>
 </head>
 <body>
+    <button id="main">Main Header</button> <!--working-->
+    <button id="subHead">subHeader Blue</button>
+    <button id="listItems">Every other List Gray</button>
+    <button id="subpara">Sub Paragraph</button>
+    <h1 id="main-header">Hello World!</h1>
+    <ul>
+        <li data-dbid="1">Item 1</li>
+        <li data-dbid="2">Item 2</li>
+        <li data-dbid="3">Item 3</li>
+        <li data-dbid="4">Item 4</li>
+        <li data-dbid="5">Item 5</li>
+    </ul>
+    <h2 id="sub-header">Hello Again.</h2>
+    <p class="sub-paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <script>
+        (function() {
+            "use strict";
+            // TODO: Uncomment next line and get the main header element by id
+            // var mainHeader = document.getElementById("main-header");
+            var mainHeader = document.querySelector("#main-header");
 
-<h1 id="main-header">Hello World!</h1>
-<ul>
-    <li data-dbid="1">Item 1</li>
-    <li data-dbid="2">Item 2</li>
-    <li data-dbid="3">Item 3</li>
-    <li data-dbid="4">Item 4</li>
-    <li data-dbid="5">Item 5</li>
-</ul>
-<h2 id="sub-header">Hello Again.</h2>
-<p class="sub-paragraph">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat. Duis aute irure dolor in
-    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.
-</p>
+    // ****** ****** ****** ****** ****** ****** ****** ****** ****** ******
+    //         main subHead listItems subPara main-header
+            // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+            // mainHeader.innerHTML = "JavaScript is Cool";
+            var mainHeadButton = document.querySelector("#main");
+            //element.addEventListener(event, function, useCapture);
+            var mainHeadChange = function () {
+                mainHeader.innerHTML = "JavaScript is Cool";
+            }
+            mainHeadButton.addEventListener("click", mainHeadChange);//calls main button, adds event w/ click and executes
+            // function mainHeadChange
 
-<script>
-    (function() {
-        "use strict";
-        // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.getElementById("main-header");
-        // var mainHeader = document.querySelector("#main-header");
+            // var buttonToDestroyAll = document.querySelector("button");
+            // buttonToDestroyAll.addEventListener("click", destroyEvents);
+            //
+            // function destroyEvents(){
+            //     searchBarElement.removeEventListener("change", searchCallBack)
+            //     console.log(searchBarElement)
+            // }
 
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+            // TODO: Uncomment the next line and get the sub header element by id
+            // var subHeader = document.getElementById("sub-header");
+            var subHeader = document.querySelector("#subHead");
 
-        // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById("sub-header");
-        // var subHeader = document.querySelector("sub-header");
+            // TODO: Set the text color of subHeader to blue
+            var subHeadChange = function () {
+                subHeader.style.color = "blue";
+            }
+            var subHeadButton = document.querySelector("#subHead");
+            subHeadButton.addEventListener("click", subHeadChange)
+            // subHeader.style.color = "blue";
 
-        // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+            // TODO: Uncomment the next line and get all list items
+            // var listItems = document.getElementsByTagName("li");
+            var listItems = document.querySelectorAll("li");
 
-        // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName("li");
-        // var listItems = document.querySelectorAll("li");
+            // TODO: Set text color on every other list item to grey
+            var changeListItems = function () {
+                for (var i = 0; i < listItems.length; i += 2) {
+                    listItems[i].style.color = "grey";
+                }
+            }
+                var listItemsChange = document.querySelector("#listItems");
+                listItemsChange.addEventListener('click', changeListItems);
+            // for (var i=0; i < listItems.length; i++){ //i+=2 is saying i+2 to get every other one
+            //     if (i%2 === 1){// if 'i' is odd then execute next line
+            //     listItems[i].style.color = "grey";
+            //     }
 
-        // TODO: Set text color on every other list item to grey
-        for (var i=0; i < listItems.length; i++){ //i+=2 is saying i+2 to get every other one
-            if (i%2 === 1){// if 'i' is odd then execute next line
-            listItems[i].style.color = "grey";
+            //     var dbId = listItems[i].getAttribute("data-dbid");
+            //     // alert(dbId);
+            //     if (dbId === "1"){
+            //         listItems[i].style.color = "blue";// pulls listitem 1 and changes text color to blue
+            //     }// PLEASE NOTE this 2nd if statement only works bc it's inside of our 'for loop' NOT SURE WHY
+            // }   // ask professors
+                // for (var i=0; i < listItems.length; i+=2){
+                //     listItems[i].style.color = "grey";
+                // } shorter version to mine above, both do the same thing
+
+            // TODO: Set text color of li with dbid = 1 to blue
+            // answered above
+            // alternatively we could do the follow....
+
+            // for (let item of listItems){ // this will make sure we deal with only 1 of these items
+            //     if (item[i].getAttribute("data-dbId") === "1"){
+            //         item.style.color = "blue";
+            //     }
+            // }
+            for (let item of listItems){// had to use RY example on this one, haven't worked let in parameters before
+                if (item.getAttribute("data-dbId") === "1"){
+                    item.style.color = "blue";
+                }
             }
 
-            var dbId = listItems[i].getAttribute("data-dbid");
-            // alert(dbId);
-            if (dbId === "1"){
-                listItems[i].style.color = "blue";// pulls listitem 1 and changes text color to blue
-            }// PLEASE NOTE this 2nd if statement only works bc it's inside of our 'for loop' NOT SURE WHY
-        }// ask professors
-        // for (var i=0; i < listItems.length; i+=2){
-        //     listItems[i].style.color = "grey";
-        // } shorter version to mine above, both do the same thing
+            // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+            // var subParagraphs = document.getElementsByClassName("sub-paragraph");
+            var subParagraphs = document.querySelector(".sub-paragraph");
 
-        // TODO: Set text color of li with dbid = 1 to blue
-        // answered above
-        // alternatively we could do the follow....
+            // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+            var subParaButton = document.querySelector("#subpara");
+            var subParaChange = function () {
+                subParagraphs[0].innerHTML = "<h1>Mission Accomplished!</h1>";
+            }
+            // subParagraphs.innerHTML = "Mission Accomplished!";// innerHTML doesn't work bc of the inner tag?
+            subHeadButton.addEventListener("click", subParaChange);
 
-        // for (let item of listItems){ // this will make sure we deal with only 1 of these items
-        //     if (item[i].getAttribute("data-dbId") === "1"){
-        //         item.style.color = "blue";
-        //     }
-        // }
+            // <button>Remove all Events</button>
+            // var buttonToDestroyAll = document.querySelector("button");
+            // addEventListener("click", searchCallBack)
+            // 1. Add 4 buttons to the page. Attach click event listeners to each of the buttons and have the handlers perform
+            // the modifications that were automatically taking place. For example, the first button should set inner html
+            // of mainHeader to "JavaScript is Cool".
+            // 2. View the results in your browser to test for the expected output.
+            // 3. Finally, save your work, commit the changes to your git repository, and push to GitHub.
 
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = document.getElementsByClassName("sub-paragraph");
-        var subParagraphs = document.querySelector(".sub-paragraph")
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs.innerHTML = "Mission Accomplished!";// innerHTML doesn't work bc of the inner tag?
-    })();
-</script>
 
+        })();
+    </script>
 </body>
 </html>
