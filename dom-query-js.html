@@ -8,7 +8,7 @@
     <button id="main">Main Header</button> <!--working-->
     <button id="subHead">subHeader Blue</button>
     <button id="listItems">Every other List Gray</button>
-    <button id="subpara">Sub Paragraph</button>
+    <button id="subPara">Sub Paragraph</button>
     <h1 id="main-header">Hello World!</h1>
     <ul>
         <li data-dbid="1">Item 1</li>
@@ -56,13 +56,14 @@
 
             // TODO: Uncomment the next line and get the sub header element by id
             // var subHeader = document.getElementById("sub-header");
-            var subHeader = document.querySelector("#subHead");
+            var subHeader = document.querySelector("#sub-header");// grabs sub-header section Hello World
 
             // TODO: Set the text color of subHeader to blue
             var subHeadChange = function () {
                 subHeader.style.color = "blue";
             }
             var subHeadButton = document.querySelector("#subHead");
+
             subHeadButton.addEventListener("click", subHeadChange)
             // subHeader.style.color = "blue";
 
@@ -104,21 +105,21 @@
             // }
             for (let item of listItems){// had to use RY example on this one, haven't worked let in parameters before
                 if (item.getAttribute("data-dbId") === "1"){
-                    item.style.color = "blue";
+                    item.style.color = "blue";// colors item1 blue
                 }
             }
 
             // TODO: Uncomment the next line and get all elements with class name sub-paragraph
             // var subParagraphs = document.getElementsByClassName("sub-paragraph");
-            var subParagraphs = document.querySelector(".sub-paragraph");
+            var subParagraphs = document.querySelectorAll(".sub-paragraph");
 
             // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-            var subParaButton = document.querySelector("#subpara");
+            var subParaButton = document.querySelector("#subPara");
             var subParaChange = function () {
                 subParagraphs[0].innerHTML = "<h1>Mission Accomplished!</h1>";
             }
             // subParagraphs.innerHTML = "Mission Accomplished!";// innerHTML doesn't work bc of the inner tag?
-            subHeadButton.addEventListener("click", subParaChange);
+            subParaButton.addEventListener("click", subParaChange);
 
             // <button>Remove all Events</button>
             // var buttonToDestroyAll = document.querySelector("button");
