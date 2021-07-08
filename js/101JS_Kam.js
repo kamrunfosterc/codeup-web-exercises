@@ -1978,8 +1978,13 @@ function median(seq_of_numbers){
 
 
 // Exercise 63
-// Write a function definition named maxMinusMin that takes in an array of numbers and returns the difference of the maximum minus theminimum.
-
+// Write a function definition named maxMinusMin that takes in an array of numbers and returns the difference of the maximum minus the minimum.
+        function maxMinusMin(value){
+            value.sort();// sort array order
+            var max = value[value.length-1];// had to look up how to find max value, using here
+            var min = value[0];// based on ordering, first entry should be the min value
+            return max - min;
+        }
 
         assert(maxMinusMin([1, 2, 2, 8, 3, 4]), 7, "Exercise 63");
         assert(maxMinusMin([1, 1, 2, 3, 9]), 8, "Exercise 63");
@@ -1989,6 +1994,15 @@ function median(seq_of_numbers){
 
 // Exercise 64
 // Write a function definition named productOfAll that takes in sequence of numbers and returns the product of multiplying all the numbers together
+        function productOfAll(value){
+            value.sort();// sort array into order
+            var prod = 1;// starting from 2nd position bc 0 would be in 1st pos on one of the test
+            for (var i = 0; i<value.length; i++){
+                prod = prod*value[i];// alternatively prod *= value[0]
+            }
+            return prod;
+        }
+
 
         assert(productOfAll([1, 2, 3]), 6, "Exercise 64");
         assert(productOfAll([3, 4, 5]), 60, "Exercise 64");
@@ -1998,7 +2012,10 @@ function median(seq_of_numbers){
 
 // Exercise 65
 // Write a function definition named getHighestNumber that takes in sequence of numbers and returns the largest number.
-
+        function getHighestNumber(number){
+            number.sort();
+            return number[number.length-1]; //copied max value from problem #63
+        }
 
         assert(getHighestNumber([1, 2, 3]), 3, "Exercise 65");
         assert(getHighestNumber([1, 5, 2, 3, 4]), 5, "Exercise 65");
@@ -2010,8 +2027,10 @@ function median(seq_of_numbers){
 
 // Exercise 66
 // Write a function definition named getSmallestNumber that takes in sequence of numbers and returns the smallest number.
-
-
+        function getSmallestNumber(seq){
+            seq.sort();
+            return seq[0];// copied min value from prob #63
+        }
         assert(getSmallestNumber([1, 2, 3]), 1, "Exercise 66");
         assert(getSmallestNumber([3, 5, 9, 8, 1]), 1, "Exercise 66");
         assert(getSmallestNumber([8, 9, 4, 5, 7]), 4, "Exercise 66");
@@ -2020,13 +2039,32 @@ function median(seq_of_numbers){
 
 // Exercise 67
 // Write a function definition named onlyOddNumbers that takes in sequence of numbers and returns the odd numbers in an array.
-
+        function onlyOddNumbers(value){
+            var oddNumbers = [];
+            for (var i = 0; value.length; i++){
+                if (isOdd(value[i])){
+                    return oddNumbers.push(value[i]);
+                }
+                return oddNumbers;
+            }
+            // value.sort(); 2nd attempt
+            // var oddNumbers = [];
+            // for (var i = 0; value.length; i++){
+            //     if (value[i]%2 === 1){
+            //         return oddNumbers.push(value[i]);
+            //     }
+            //     return oddNumbers;
+            // }
+            //initial attempt but not working
+            // value.sort();
+            // if (value%2 === 1){
+            //     return value;
+            // }
+        }
         assert(onlyOddNumbers([1, 2, 3]), [1, 3], "Exercise 67");
         assert(onlyOddNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-5, -3, -1, 1, 3, 5], "Exercise 67");
         assert(onlyOddNumbers([-4, -3, 1]), [-3, 1], "Exercise 67");
         addToDone("Exercise 67 is correct.")
-
-
 
 // Exercise 68
 // Write a function definition named onlyEvenNumbers that takes in sequence of numbers and returns the even numbers in an array.
