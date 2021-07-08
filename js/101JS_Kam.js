@@ -2042,24 +2042,11 @@ function median(seq_of_numbers){
         function onlyOddNumbers(value){
             var oddNumbers = [];
             for (var i = 0; value.length; i++){
-                if (isOdd(value[i])){
-                    return oddNumbers.push(value[i]);
+                if (isOdd(value[i])){// checks to see if array value is odd
+                   oddNumbers.push(value[i]);//.push() adds one or more elements to the end of an array and returns the new length of the array.
                 }
-                return oddNumbers;
-            }
-            // value.sort(); 2nd attempt
-            // var oddNumbers = [];
-            // for (var i = 0; value.length; i++){
-            //     if (value[i]%2 === 1){
-            //         return oddNumbers.push(value[i]);
-            //     }
-            //     return oddNumbers;
-            // }
-            //initial attempt but not working
-            // value.sort();
-            // if (value%2 === 1){
-            //     return value;
-            // }
+            } return oddNumbers;
+
         }
         assert(onlyOddNumbers([1, 2, 3]), [1, 3], "Exercise 67");
         assert(onlyOddNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-5, -3, -1, 1, 3, 5], "Exercise 67");
