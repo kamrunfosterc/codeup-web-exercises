@@ -2,7 +2,6 @@
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    // html += '<td>' + coffee.id + '</td>';
     html += '<h2>' + coffee.name + '</h2>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
@@ -12,21 +11,35 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = 0; i < coffees.length; i++) {//var i = coffees.length - 1; i >= 0; i--, reverse order
+    for(var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
 
-function updateCoffees(e) {// e = is presenting the default of the event
+function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
+    var selectedCoffee = coffeeName.value.toLowerCase();
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
+        if (coffee.roast === selectedRoast &&// have to make first statement true each time
+            coffee.name.toLowerCase().includes(selectedCoffee)) {
+
+        }
+        if (coffee.roast === selectedRoast &&
+            coffee.name.toLowerCase().includes(selectedCoffee)) {//.includes()
             filteredCoffees.push(coffee);
         }
     });
+    // var selectedCoffee = coffeeName.value;
+    // var filteredNames = [];
+    // coffees.forEach(function (coffee) {
+    //     if (coffee.name === selectedCoffee.toLowerCase()) {
+    //         filteredNames.push(coffee);
+    //     }
+    // })
+
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
@@ -48,11 +61,11 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-var tbody = document.querySelector('#coffees');// creates variable for id coffees and grabs it
-var submitButton = document.querySelector('#submit');// creates submit button from id submit
-var roastSelection = document.querySelector('#roast-selection');// creates drop down for roast type
-var coffeeName = document.querySelector("#coffeeName");
-
+var tbody = document.querySelector('#coffees');
+var submitButton = document.querySelector('#submit');
+var roastSelection = document.querySelector('#roast-selection');
+var coffeeName = document.querySelector('#coffeeName');// our search bar
 tbody.innerHTML = renderCoffees(coffees);
 
+// tbody.addEventListener("", )// form, HTML element content display management,
 submitButton.addEventListener('click', updateCoffees);

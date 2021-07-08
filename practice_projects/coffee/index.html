@@ -7,10 +7,11 @@
 </head>
 <body>
     <h1>Coffee!</h1>
-
+    <div class="dropdown-menu">
     <form>
         <label for="roast-selection"></label>
         <select id="roast-selection">
+            <option>All</option>
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
@@ -19,6 +20,7 @@
 <!--         add a search input in this form-->
         <input type="text" id="coffeeName">
     </form>
+    </div>
 
 <!--    <table>-->
 <!--        <thead>-->
@@ -30,6 +32,18 @@
 <!--        </thead>-->
         <div id="coffees"></div>
 <!--    </table>-->
+
+    <h1>Add Coffee</h1>
+    <form>
+        <label for="roast-selection"></label>
+        <select id="roast-selection">
+            <option>light</option>
+            <option>medium</option>
+            <option>dark</option>
+        </select>
+        <input id="additional" type="submit" />
+        <input type="text" id="additionalCoffeeName">
+    </form> <!-- adding coffee menu -->
 
     <script src="main.js"></script>
 </body>
