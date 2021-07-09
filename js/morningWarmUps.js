@@ -13,8 +13,8 @@ console.log(counting);
 // i misunderstood and counted the number of characters and not the number of spaces in a string
 
 
-
-// July 6th 2021
+// xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx
+// July 6th 2021 xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx
 // TODO: Create a function named capitalizeAllNames that accepts an array of strings and returns the array with all of its elements capitalized.
 // Example:  capitalizeAllNames(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["BOB","SETH","TOFU","TOYOTA"]
 function capitalizeAllNames(names){
@@ -33,8 +33,8 @@ console.log(capitalizeAllNames());
 function capitalizeFirstLetter(){
 
 }
-
-// July 7th 2021
+// xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx
+// July 7th 2021 xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx
 // TODO: Create a method on the object down below named getFullName that when called returns the users full name using the "this" key term.
 // Example: personOne.getFullName() ---- returns ----> "silvia floopertan"
 var personOne = {
@@ -75,8 +75,8 @@ var personThree = {
 }
 console.log(personThree.intro());
 
-
-// July 8th 2021
+// xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx
+// July 8th 2021 xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx
 // Part 1
 // TODO: Create a function that takes an array of strings and returns an array of objects
 //  where each object has 2 properties: originalString and countOfLetters
@@ -99,22 +99,21 @@ var arrayOfObjects = arrayOfStringsToObjects(["hello","dave"]);
 console.log(arrayOfObjects);
 
 
-// function originalCount(input){ 2ND attempt
-//     var input = [];
-//     for (var i = 0, i < input.length, i++)
-//     {
-//         var input = [{
-//             originalString: input[0],
-//             lengthOfOriginalString: input[0].length,
-//         }];
-//         return input;
-//     }
-// }
-    // } console.log(originalCount("hello"));
-    // var originalStrings = [];
-    // var lengthOfOriginalStrings = [];
-    // var arr1 = [{"originalString":"", lengthOfOriginalString:""}, {"originalString":"", lengthOfOriginalString:""}];
-    // arr1.originalStrings = "hello" "dave";
+function originalCount(input){ // 2ND attempt
+    var input = [];
+    for (var i = 0, i < input.length, i++)
+    {
+        var input = [{
+            originalString: input[0],
+            lengthOfOriginalString: input[0].length,
+        }];
+        return input;
+    }
+    } console.log(originalCount("hello"));
+    var originalStrings = [];
+    var lengthOfOriginalStrings = [];
+    var arr1 = [{"originalString":"", lengthOfOriginalString:""}, {"originalString":"", lengthOfOriginalString:""}];
+    arr1.originalStrings = "hello" "dave";
 
 
 // Part 2
@@ -141,5 +140,24 @@ var people = [personOne,personTwo,personThree];
 // Example: getTallUsers(people)
 // ---- returns ----> [{firstName: "silvia", lastName: "floopertan", ageInYears: 34, heightInInches: 65},
 //
+
+var people = [personOne, personTwo, personThree];
+function getTallUsers(arrayOfUsers){
+    var tallUsers = [];
+    for (let i = 0; i < arrayOfUsers.length; i++) {
+        console.log(arrayOfUsers[i]);
+        console.log(arrayOfUsers[i].heightInInches);// returns value of each person
+
+        var userHeight = arrayOfUsers[i].heightInInches;
+
+        if (userHeight >= 65){
+            //if true, push to tallUsers array
+            tallUsers.push(userHeight);// pushes those 65in or taller into tallUsers array
+        }
+    } return tallUsers;
+}
+
+console.log(getTallUsers(people));
+// xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx
 
 
