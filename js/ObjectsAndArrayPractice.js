@@ -5,6 +5,27 @@
 // 1. Create a function called `removeDuplicates` that accepts an array of strings and returns the array with all duplicate elements filtered out.
 //     ### Examples
 //     ```js
+// ******** ******** ******** ******** ******** ********
+function removeDuplicates(arrOfStrings){
+    //return all duplicate elements filtered out
+    return [...new Set(arrOfStrings)]// SPECIAL OPERATION HERE
+} //(OPTION 1)
+
+function removeDuplicates(arrOfStrings){
+    var uniqueString = []; // empty array we will push to
+    for (let i = 0; i < arrOfStrings.length; i++) {
+        if (uniqueString.includes(arrOfStrings[i])){
+
+        } else{
+            uniqueString.push(arrOfStrings[i]);
+        }
+    }
+    return uniqueStrings
+} //(OPTION 2) more complicated thinking though doesn't hurt to know
+console.log(removeDuplicates(arrOfStrings));
+// ******** ******** ******** ******** ******** ********
+
+
 // removeDuplicates(["bob","squid","samantha","bob"]);
 // // Should return the following
 // ["bob","squid","samantha"]
@@ -213,18 +234,29 @@ function mostOccuringNumber(arrayOfNumbers){
 // 6. Create a function called `reverseString` that that accepts a string and returns a string with the characters in reverse order.
 //     ### Examples
 //     ```js
-function reverseString(str){
-    var splitReverseJoin = str.split().reverse().join("");//taking stringk splittingk reverse order, and rejoin together to reverse string
-    return splitReverseJoin;
-} console.log(reverseString("Amanda"));// (OPTION 1)
+// ******** ******** ******** ******** ******** ********
 
-function reverseString(str){
-    var splitArray = str.split("");
-    var reverseArray= str.reverse();
-    var joinArray = str.join("");
+// function reverseString(str){
+//     var splitReverseJoin = str.split().reverse().join("");//taking stringk splittingk reverse order, and rejoin together to reverse string
+//     return splitReverseJoin;
+// } console.log(reverseString("Amanda"));// (OPTION 1)
+// function reverseString(str){
+//     var splitArray = str.split("");// hello.split("") --> ["h" "e" "l" "l" "o"]
+//     var reverseArray= str.reverse();// takes split array returning it backwards
+//     var joinArray = str.join("");// joins the seperated array back together
+//
+//     return joinArray;
+// }// (OPTION 2)
+// function reverseString(str){
+//     var revString = ""; // variable we will push into
+//     for (let i = str.length-1; i>= 0 ;i--) {
+//         revString += str.charAt(i);
+//     }
+//     return revString;
+// }//(OPTION 3) GREAT DECREMENT ARGUMENT
 
-    return joinString;
-}
+// ******** ******** ******** ******** ******** ********
+
 // reverseString("squid");
 // // Should return the following "diuqs"
 //
@@ -238,16 +270,29 @@ function reverseString(str){
 // 7. Create a function called `numberInfo` that accepts a number and returns an object with the properties isPositive, isEven, isZero. The properties should either be true or false based on if the parameter meets the criteria.
 //     ### Examples
 //     ```js
-function numberInfo(numb){
+// ******** ******** ******** ******** ******** ********
 
+// function numberInfo(numb){
+//             return { // returning object
+//                 isPositive: (numb > 0),// looks like should return boolean value/ like putting an if statement in here
+//                 isEven: (numb%2 === 0),
+//                 isZero: (numb === 0),
+//             }
+// }// (OPTION 1)
+// function numberInfo(numb){
+//     var isNumberPositive = (numb > 0);
+//     var isNumberEven = (numb%2 === 0);
+//     var isNumberZero = (numb === 0);
+//
+//     return{//returning object
+//         isPositive: isNumberPositive,
+//         isEven: isNumberEven,
+//         isZero: isNumberZero,
+//     }
+// } //(OPTION 2)
 
-            return {
-                isPositive: (numb > 0),// looks like should return boolean value/ like putting an if statement in here
-                isEven: (numb%2 === 0),
-                isZero: (numb === 0),
+// ******** ******** ******** ******** ******** ********
 
-            }
-}
 // numberInfo(-1);
 // // Should return the following
 // {
