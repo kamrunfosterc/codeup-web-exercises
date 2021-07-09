@@ -1,5 +1,9 @@
-// # Objects and Arrays Practice
-//
+// # Objects and Arrays REVIEW
+// ******** ******** ******** ******** ******** ******** ******** ******** ******** ******** ******** ********
+// ******** ******** ******** ******** ******** ******** ******** ******** ******** ******** ******** ********
+// ******** ******** ******** ******** ******** ******** ******** ******** ******** ******** ******** ********
+// numberInfo reverseString dateStringToObject whoIsPassing mostOccuringNumber max removeDuplicates
+
 // This is practice to help you with Objects and arrays. There are no test associated with these exercises, so you will need to test them manually.
 //
 // 1. Create a function called `removeDuplicates` that accepts an array of strings and returns the array with all duplicate elements filtered out.
@@ -38,6 +42,7 @@ console.log(removeDuplicates(arrOfStrings));
 // // Should return the following
 // ["1994-12-21","2016-02-13","2005-11-29"]
 // ```
+
 
 // 2. Create a function called `max` that accepts an array of numbers and returns the largest number from that array.
 //     ### Examples
@@ -82,13 +87,13 @@ console.log(removeDuplicates(arrOfStrings));
 //         } // (OPTION 3) should return 54.5
 // ******** ******** ******** ******** ******** ********
 
-
 // 3. Create a function called `mostOccuringNumber` that accepts an array of numbers and returns the number that occurs the most within that array.
 //     ### Examples
 //     ```js
 function mostOccuringNumber(arrayOfNumbers){
 
-}
+}//
+
 // mostOccuringNumber([8,93,28,8,27,-62,32,8,-62]);
 // // Should return the following 8
 //
