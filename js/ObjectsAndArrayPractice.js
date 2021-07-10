@@ -57,34 +57,34 @@ console.log(removeDuplicates(arrOfStrings));
 // // Should return the following 54.5
 // ```
 // ******** ******** ******** ******** ******** ********
-//         function max(arrayOfNumbers){
-//           // return Math.max(...arrayOfNumbers); // (OPTION 1) should return 54.5
-//         var largestNumber = [];// setting up empty array bc we are dealing w/ an array of numbers
-//             for (var i = 0; i < arrayOfNumbers.length; i++) {
-//                 if (largestNumber === undefined){
-//                     // since it's an empty array we assume 1st loop will give nothing so we assign a value for it being undefined
-//                     largestNumber = arrayOfNumbers[0];// QUESTION does the [0] give a value of 0 or place in array of 0
-//                 }
-//                 if (arrayOfNumbers[i] > largestNumber){
-//                     console.log("new array is larger than previous");
-//                     largestNumber = arrayOfNumbers[i];// assigns new largest number if it's larger than the previous iteration
-//                 }
-//             }
-//             return largestNumber;
-//         } console.log(max([54.5, 2, 34, -93]));// (OPTION 2) should return 54.5
+        function max(arrayOfNumbers){
+          // return Math.max(...arrayOfNumbers); // (OPTION 1) should return 54.5
+        var largestNumber = [];// setting up empty array bc we are dealing w/ an array of numbers
+            for (var i = 0; i < arrayOfNumbers.length; i++) {
+                if (largestNumber === undefined){
+                    // since it's an empty array we assume 1st loop will give nothing so we assign a value for it being undefined
+                    largestNumber = arrayOfNumbers[0];// QUESTION does the [0] give a value of 0 or place in array of 0
+                }
+                if (arrayOfNumbers[i] > largestNumber){
+                    console.log("new array is larger than previous");
+                    largestNumber = arrayOfNumbers[i];// assigns new largest number if it's larger than the previous iteration
+                }
+            }
+            return largestNumber;
+        } console.log(max([54.5, 2, 34, -93]));// (OPTION 2) should return 54.5
 //
-//         function max(arrOfNumbers){
-//             var largestNumber = [];
-//             arrOfNumbers.forEach(function (singleNumber){
-//                 if (largestNumber === undefined){
-//                     largestNumber = singleNumber;
-//                 }
-//                 if (singleNumber > largestNumber){
-//                     largestNumber = singleNumber;
-//                 }
-//             })
-//             return largestNumber;
-//         } // (OPTION 3) should return 54.5
+        function max(arrOfNumbers){
+            var largestNumber = [];
+            arrOfNumbers.forEach(function (singleNumber){
+                if (largestNumber === undefined){
+                    largestNumber = singleNumber;
+                }
+                if (singleNumber > largestNumber){
+                    largestNumber = singleNumber;
+                }
+            })
+            return largestNumber;
+        } // (OPTION 3) should return 54.5
 // ******** ******** ******** ******** ******** ********
 
 // 3. Create a function called `mostOccuringNumber` that accepts an array of numbers and returns the number that occurs the most within that array.
@@ -108,102 +108,102 @@ function mostOccuringNumber(arrayOfNumbers){
 //     ### Examples
 //     ```js
 // ******** ******** ******** ******** ******** ********
-// function whoIsPassing(arrayOfStudents){
-//             var passingResult = [];
-//     for (let i = 0; i < arrayOfStudents.length; i++) {
-//         if (arrayOfStudents[i].classAverage >= 60){
-//             //meaning this student avg grade is passing
-//             passingResult.push({
-//                     name: arrayOfStudents[i].name,
-//                     passing: true
-//                 })
-//         } else {
-//             passingResult.push({
-//                 name: arrayOfStudents[i].name,
-//                 passing: false
-//             })
-//         }
+function whoIsPassing(arrayOfStudents){
+            var passingResult = [];
+    for (let i = 0; i < arrayOfStudents.length; i++) {
+        if (arrayOfStudents[i].classAverage >= 60){
+            //meaning this student avg grade is passing
+            passingResult.push({
+                    name: arrayOfStudents[i].name,
+                    passing: true
+                })
+        } else {
+            passingResult.push({
+                name: arrayOfStudents[i].name,
+                passing: false
+            })
+        }
+
+    } return passingResult;
+} console.log(whoIsPassing(students));// (OPTION 1)
 //
-//     } return passingResult;
-// } console.log(whoIsPassing(students));// (OPTION 1)
-//
-// function whoIsPassing(arrayOfStudents){
-//     var passingResults = [];
-//     for (let i = 0; i < arrayOfStudents.length; i++) {
-//         var currentStudentName = arrayOfStudents[i].name;
-//         var isCurrentStudentPassing = (arrayOfStudents[i].classAverage >= 60);
-//         passingResults.push({
-//             name: currentStudentName,
-//             passing: isCurrentStudentPassing,
-//         })
-//     }
-//
-//     return  passingResults;// we want to return what we pass
-// }// (OPTION 2)
+function whoIsPassing(arrayOfStudents){
+    var passingResults = [];
+    for (let i = 0; i < arrayOfStudents.length; i++) {
+        var currentStudentName = arrayOfStudents[i].name;
+        var isCurrentStudentPassing = (arrayOfStudents[i].classAverage >= 60);
+        passingResults.push({
+            name: currentStudentName,
+            passing: isCurrentStudentPassing,
+        })
+    }
+
+    return  passingResults;// we want to return what we pass
+}// (OPTION 2)
 // ******** ******** ******** ******** ******** ********
-// var students = [
-//     {
-//         name: "Phill Rundy",
-//         classAverage: 53
-//     },
-//     {
-//         name: "Samuel Moore",
-//         classAverage: 71
-//     },
-//     {
-//         name: "Mark Tendly",
-//         classAverage: 84
-//     },
-//     {
-//         name: "Dough Mosh",
-//         classAverage: 87
-//     },
-//     {
-//         name: "Bran Thomb",
-//         classAverage: 93
-//     },
-//     {
-//         name: "Mario Yushi",
-//         classAverage: 82
-//     },
-//     {
-//         name: "Nathan Skywalker",
-//         classAverage: 52
-//     }
-// ]
-//
-// whoIsPassing(students);
-// // Should return the following
-// [
-//     {
-//         name: "Phill Rundy",
-//         passing: false
-//     },
-//     {
-//         name: "Samuel Moore",
-//         passing: true
-//     },
-//     {
-//         name: "Mark Tendly",
-//         passing: true
-//     },
-//     {
-//         name: "Dough Mosh",
-//         passing: true
-//     },
-//     {
-//         name: "Bran Thomb",
-//         passing: true
-//     },
-//     {
-//         name: "Mario Yushi",
-//         passing: true
-//     },
-//     {
-//         name: "Nathan Skywalker",
-//         passing: false
-//     }
-// ]
+var students = [
+    {
+        name: "Phill Rundy",
+        classAverage: 53
+    },
+    {
+        name: "Samuel Moore",
+        classAverage: 71
+    },
+    {
+        name: "Mark Tendly",
+        classAverage: 84
+    },
+    {
+        name: "Dough Mosh",
+        classAverage: 87
+    },
+    {
+        name: "Bran Thomb",
+        classAverage: 93
+    },
+    {
+        name: "Mario Yushi",
+        classAverage: 82
+    },
+    {
+        name: "Nathan Skywalker",
+        classAverage: 52
+    }
+]
+
+whoIsPassing(students);
+// Should return the following
+[
+    {
+        name: "Phill Rundy",
+        passing: false
+    },
+    {
+        name: "Samuel Moore",
+        passing: true
+    },
+    {
+        name: "Mark Tendly",
+        passing: true
+    },
+    {
+        name: "Dough Mosh",
+        passing: true
+    },
+    {
+        name: "Bran Thomb",
+        passing: true
+    },
+    {
+        name: "Mario Yushi",
+        passing: true
+    },
+    {
+        name: "Nathan Skywalker",
+        passing: false
+    }
+]
 // ```
 
 // 5. Create a function called `dateStringToObject` that accepts a date in the following string format "YYYY-MM-DD" and returns an object that contains month, day, and year properties.
@@ -211,19 +211,19 @@ function mostOccuringNumber(arrayOfNumbers){
 //     ```js
 
 // ******** ******** ******** ******** ******** ********
-// function dateStringToObject(date){
-//             var splitString = date.split("-");// gonna set up our YYYY-MM-DD format
-//             var dateObject = {}; // object variable we will push results to
-//     // date should have a year(1), month(2), day(3) array input
-//     dateObject.year = splitString[0];
-//     dateObject.month = splitString[1];
-//     dateObject.day = splitString[2];
-//     return dateObject;
-// } //(OPTION 1)
-// function dateStringToObject(date){
-//     var splitDate = date.split("-");
-//     return {year: splitDate[0], month: splitDate[1], day: splitDate[3]};
-// } //(OPTION 2)
+function dateStringToObject(date){
+            var splitString = date.split("-");// gonna set up our YYYY-MM-DD format
+            var dateObject = {}; // object variable we will push results to
+    // date should have a year(1), month(2), day(3) array input
+    dateObject.year = splitString[0];
+    dateObject.month = splitString[1];
+    dateObject.day = splitString[2];
+    return dateObject;
+} //(OPTION 1)
+function dateStringToObject(date){
+    var splitDate = date.split("-");
+    return {year: splitDate[0], month: splitDate[1], day: splitDate[3]};
+} //(OPTION 2)
 // ******** ******** ******** ******** ******** ********
 
 // dateStringToObject("2016-2-13");
@@ -241,24 +241,24 @@ function mostOccuringNumber(arrayOfNumbers){
 //     ```js
 // ******** ******** ******** ******** ******** ********
 
-// function reverseString(str){
-//     var splitReverseJoin = str.split().reverse().join("");//taking stringk splittingk reverse order, and rejoin together to reverse string
-//     return splitReverseJoin;
-// } console.log(reverseString("Amanda"));// (OPTION 1)
-// function reverseString(str){
-//     var splitArray = str.split("");// hello.split("") --> ["h" "e" "l" "l" "o"]
-//     var reverseArray= str.reverse();// takes split array returning it backwards
-//     var joinArray = str.join("");// joins the seperated array back together
-//
-//     return joinArray;
-// }// (OPTION 2)
-// function reverseString(str){
-//     var revString = ""; // variable we will push into
-//     for (let i = str.length-1; i>= 0 ;i--) {
-//         revString += str.charAt(i);
-//     }
-//     return revString;
-// }//(OPTION 3) GREAT DECREMENT ARGUMENT
+function reverseString(str){
+    var splitReverseJoin = str.split().reverse().join("");//taking stringk splittingk reverse order, and rejoin together to reverse string
+    return splitReverseJoin;
+} console.log(reverseString("Amanda"));// (OPTION 1)
+function reverseString(str){
+    var splitArray = str.split("");// hello.split("") --> ["h" "e" "l" "l" "o"]
+    var reverseArray= str.reverse();// takes split array returning it backwards
+    var joinArray = str.join("");// joins the seperated array back together
+
+    return joinArray;
+}// (OPTION 2)
+function reverseString(str){
+    var revString = ""; // variable we will push into
+    for (let i = str.length-1; i>= 0 ;i--) {
+        revString += str.charAt(i);
+    }
+    return revString;
+}//(OPTION 3) GREAT DECREMENT ARGUMENT
 
 // ******** ******** ******** ******** ******** ********
 
@@ -337,152 +337,152 @@ function mostOccuringNumber(arrayOfNumbers){
 // PLEASE NOTE: .sort() works well for strings, however numeric values, be carefull bc can return max as -62 even though 34 is the larger value
 
 // 2nd time
-// function max(arrayOfNumbers){
-//     //google how to get largest number in array
-//     var largestNumber;
-//     for (let i = 0; i < arrayOfNumbers.length; i++){
-//         // arrayOfNumbers[i];
-//         if (largestNumber === undefined){// the first largest number we never defined
-//             largestNumber = arrayOfNumbers[i];// will store 'current largest' number
-//         }
-//         if (arrayOfNumbers[i] > largestNumber){//checks current vs previous looped largest number
-//             console.log("i got in here");
-//             largestNumber = arrayOfNumbers[i]// new large number is set here if new is larger than old
-//         }
-//     }
-//     return largestNumber;
-// }
+function max(arrayOfNumbers){
+    //google how to get largest number in array
+    var largestNumber;
+    for (let i = 0; i < arrayOfNumbers.length; i++){
+        // arrayOfNumbers[i];
+        if (largestNumber === undefined){// the first largest number we never defined
+            largestNumber = arrayOfNumbers[i];// will store 'current largest' number
+        }
+        if (arrayOfNumbers[i] > largestNumber){//checks current vs previous looped largest number
+            console.log("i got in here");
+            largestNumber = arrayOfNumbers[i]// new large number is set here if new is larger than old
+        }
+    }
+    return largestNumber;
+}
 // console.log(max([4,34,193,2,345,46,0]));
 // 3rd attempt, google search result
-// function max(input){
-//     if(toString.call(input) !== "[object Array]")
-//         return false;
-//     return Math.max.apply(null, input);
-// }
+function max(input){
+    if(toString.call(input) !== "[object Array]")
+        return false;
+    return Math.max.apply(null, input);
+}
 //
 // console.log(max([4,34,193,2,345,46,0]));
 // console.log(max([-34,83,21,38,-2039,3.2]));
 // console.log(max([54.5,2,34,-93]));
 //4th time FOR EACH METHOD
-// function max(arrayOfNumbers){ // need to see this to practice
-//     //google how to get largest number in array
-//     var largestNumber;
-//     arrayOfNumbers.forEach(function (singleNumber){
-//         if (largestNumber === undefined){// the first largest number we never defined
-//             largestNumber = arrayOfNumbers[i];// will store 'current largest' number
-//         }
-//         if (arrayOfNumbers[i] > largestNumber){//checks current vs previous looped largest number
-//             console.log("i got in here");
-//             largestNumber = arrayOfNumbers[i]// new large number is set here if new is larger than old
-// }})
+function max(arrayOfNumbers){ // need to see this to practice
+    //google how to get largest number in array
+    var largestNumber;
+    arrayOfNumbers.forEach(function (singleNumber){
+        if (largestNumber === undefined){// the first largest number we never defined
+            largestNumber = arrayOfNumbers[i];// will store 'current largest' number
+        }
+        if (arrayOfNumbers[i] > largestNumber){//checks current vs previous looped largest number
+            console.log("i got in here");
+            largestNumber = arrayOfNumbers[i]// new large number is set here if new is larger than old
+}})
 
 // ************ ************ ************ ************ ************ ************
 
 // problem 4 1st attempt whos passing
-// function whoIsPassing(arrayOfStudents){
-//     var passingResults = [];// set up of empty array
+function whoIsPassing(arrayOfStudents){
+    var passingResults = [];// set up of empty array
+
+    for (var i = 0; i < arrayOfStudents; i++){
+
+        if (arrayOfStudents[i].classAverage >= 60){
+            //this means they are passing
+            passingResults.push({
+                name: arrayOfStudents[i].name,//pulling array of students
+                passing: true,
+            })
+        } else {
+            //this means student is failing
+            passingResults.push({
+                name: arrayOfStudents[i].name,
+                passing: false,
+            })
+        }
+    }
+    return passingResults;
+}
 //
-//     for (var i = 0; i < arrayOfStudents; i++){
-//
-//         if (arrayOfStudents[i].classAverage >= 60){
-//             //this means they are passing
-//             passingResults.push({
-//                 name: arrayOfStudents[i].name,//pulling array of students
-//                 passing: true,
-//             })
-//         } else {
-//             //this means student is failing
-//             passingResults.push({
-//                 name: arrayOfStudents[i].name,
-//                 passing: false,
-//             })
-//         }
-//     }
-//     return passingResults;
-// }
-//
-// var students = [
-//     {
-//         name: "Phill Rundy",
-//         classAverage: 53
-//     },
-//     {
-//         name: "Samuel Moore",
-//         classAverage: 71
-//     },
-//     {
-//         name: "Mark Tendly",
-//         classAverage: 84
-//     },
-//     {
-//         name: "Dough Mosh",
-//         classAverage: 87
-//     },
-//     {
-//         name: "Bran Thomb",
-//         classAverage: 93
-//     },
-//     {
-//         name: "Mario Yushi",
-//         classAverage: 82
-//     },
-//     {
-//         name: "Nathan Skywalker",
-//         classAverage: 52
-//     }
-// ]
+var students = [
+    {
+        name: "Phill Rundy",
+        classAverage: 53
+    },
+    {
+        name: "Samuel Moore",
+        classAverage: 71
+    },
+    {
+        name: "Mark Tendly",
+        classAverage: 84
+    },
+    {
+        name: "Dough Mosh",
+        classAverage: 87
+    },
+    {
+        name: "Bran Thomb",
+        classAverage: 93
+    },
+    {
+        name: "Mario Yushi",
+        classAverage: 82
+    },
+    {
+        name: "Nathan Skywalker",
+        classAverage: 52
+    }
+]
 //
 // console.log(whoIsPassing(students));
 
 // 2nd attempt on #4
-// function whoIsPassing(arrayOfStudents){
-//     var passingResults = [];// set up of empty array
+function whoIsPassing(arrayOfStudents){
+    var passingResults = [];// set up of empty array
+
+    for (var i = 0; i < arrayOfStudents; i++){
+
+        var isCurrentStudentPassing = (arrayOfStudents[i].classAverage >= 60);// created a boolean variable vs what we did above
+
+        passingResults.push(
+                {
+                    name: arrayOfStudents[i].name,//pulling array of students
+                    passing: isCurrentStudentPassing,
+                }
+            )
+    }
+    return passingResults;
+}
 //
-//     for (var i = 0; i < arrayOfStudents; i++){
-//
-//         var isCurrentStudentPassing = (arrayOfStudents[i].classAverage >= 60);// created a boolean variable vs what we did above
-//
-//         passingResults.push(
-//                 {
-//                     name: arrayOfStudents[i].name,//pulling array of students
-//                     passing: isCurrentStudentPassing,
-//                 }
-//             )
-//     }
-//     return passingResults;
-// }
-//
-// var students = [
-//     {
-//         name: "Phill Rundy",
-//         classAverage: 53
-//     },
-//     {
-//         name: "Samuel Moore",
-//         classAverage: 71
-//     },
-//     {
-//         name: "Mark Tendly",
-//         classAverage: 84
-//     },
-//     {
-//         name: "Dough Mosh",
-//         classAverage: 87
-//     },
-//     {
-//         name: "Bran Thomb",
-//         classAverage: 93
-//     },
-//     {
-//         name: "Mario Yushi",
-//         classAverage: 82
-//     },
-//     {
-//         name: "Nathan Skywalker",
-//         classAverage: 52
-//     }
-// ]// created array of objects to pass through our method/ function
-//
+var students = [
+    {
+        name: "Phill Rundy",
+        classAverage: 53
+    },
+    {
+        name: "Samuel Moore",
+        classAverage: 71
+    },
+    {
+        name: "Mark Tendly",
+        classAverage: 84
+    },
+    {
+        name: "Dough Mosh",
+        classAverage: 87
+    },
+    {
+        name: "Bran Thomb",
+        classAverage: 93
+    },
+    {
+        name: "Mario Yushi",
+        classAverage: 82
+    },
+    {
+        name: "Nathan Skywalker",
+        classAverage: 52
+    }
+]// created array of objects to pass through our method/ function
+
 // console.log(whoIsPassing(students));
 
 //1st attempt #5
@@ -538,17 +538,17 @@ function reverseString(str){
 // {month: 12, day: 21, year: 1994}
 
 // #7 1st attempt
-// function numberInfo(number){
-//     var isNumberPostive = (number > 0);// stores a boolean value
-//     var isNumberEven = (number %2 === 0);
-//     var isNumberZero = (number === 0);
-//
-//     return {
-//         isPositive: isNumberPostive, //(number > 0)
-//         isEven: isNumberEven, //(number %2 === 0)
-//         isZero: isNumberZero, // (number === 0);
-//     }
-// }
+function numberInfo(number){
+    var isNumberPostive = (number > 0);// stores a boolean value
+    var isNumberEven = (number %2 === 0);
+    var isNumberZero = (number === 0);
+
+    return {
+        isPositive: isNumberPostive, //(number > 0)
+        isEven: isNumberEven, //(number %2 === 0)
+        isZero: isNumberZero, // (number === 0);
+    }
+}
 
 console.log(numberInfo(-1));
 console.log(numberInfo(6));
