@@ -1341,6 +1341,25 @@ addToDone("Exercise 80 is correct.")
 
 // Exercise 81
 // Write a function definition named shortestString that takes in an array of strings and returns the shortest string in the array.
+function shortestString(shortStr) {
+    var leastAmntOfCharacters = shortStr.reduce((x,y) => x.length <= y.length ? x : y);
+    return leastAmntOfCharacters
+}
+    // for (let i = 0; i < shortStr.length; i++) {
+    //     if (shortStr[i].length < smallest.length){}
+    //         smallest = shortStr[i];// makes new smallest if argument is met
+    //
+    // }
+    // return smallest; I KNOW IT CAN WORK, JUST ISN'T HAD TO LOOK UP INSTEAD
+
+    //shortStr.sort();// sorting in ascending order| assuming 1st entry is smallest string
+// INITIAL THINKING FOR THIS ONE
+    // for (let i = 0; i < shortStr.length; i++) {
+    //     if (shortStr[i] < shortStr[0]){
+    //         shortest = shortStr[i];
+    //     }
+    // }
+    // return shortest;
 
 assert(shortestString(["kiwi", "mango", "strawberry"]), "kiwi", "Exercise 81");
 assert(shortestString(["hello", "everybody"]), "hello", "Exercise 81");
@@ -1350,7 +1369,10 @@ addToDone("Exercise 81 is correct.")
 
 // Exercise 82
 // Write a function definition named longestString that takes in sequence of strings and returns the longest string in the array.
-
+function longestString(longStr){
+    var mostAmntOfCharacters = longStr.reduce((x,y) => x.length >= y.length ? x : y);
+    return mostAmntOfCharacters
+}
 assert(longestString(["kiwi", "mango", "strawberry"]), "strawberry", "Exercise 82");
 assert(longestString(["hello", "everybody"]), "everybody", "Exercise 82");
 assert(longestString(["mary", "had", "a", "little", "lamb"]), "little", "Exercise 82");
@@ -1359,7 +1381,18 @@ addToDone("Exercise 82 is correct.")
 
 // Exercise 83
 // Write a function definition named getUniqueValues that takes in an array and returns an with only the unique values from that array.
-
+function getUniqueValues(uniqueValueArray){
+    var uniqueArray = [];
+    //returns an with only the unique (non duplicated values) values from that array
+    for (let i = 0; i < uniqueValueArray.length; i++) {
+        if (uniqueArray.includes(uniqueValueArray[i])){
+            //includes() boolean returns if array includes certain values among entries
+            continue;
+        }
+        uniqueArray.push(uniqueValueArray[i])
+    }
+    return uniqueArray;
+}
 assert(getUniqueValues(["ant", "ant", "mosquito", "mosquito", "ladybug"]), ["ant", "mosquito", "ladybug"], "Exercise 83");
 assert(getUniqueValues(["b", "a", "n", "a", "n", "a", "s"]), ["b", "a", "n", "s"], "Exercise 83");
 assert(getUniqueValues(["mary", "had", "a", "little", "lamb", "little", "lamb", "little", "lamb"]), ["mary", "had", "a", "little", "lamb"], "Exercise 83");
@@ -1368,7 +1401,15 @@ addToDone("Exercise 83 is correct.")
 
 // Exercise 84
 // Write a function definition named elementsTimesTwo that takes in an array of numbers and returns an array with each value multiplied by 2.
-
+function elementsTimesTwo(element){
+    //returns an array with each value multiplied by 2
+    var newElement = [];//note, believe this isn't needed, could just return element w/out need to push
+    for (let i = 0; i < element.length; i++) {
+        element[i] *= 2;
+        newElement.push(element[i]);
+    }
+    return newElement;
+}
 
 assert(elementsTimesTwo([1, 2, 3]), [2, 4, 6], "Exercise 84")
 assert(elementsTimesTwo([0, 0, 0]), [0, 0, 0], "Exercise 84")
@@ -1378,7 +1419,11 @@ addToDone("Exercise 84 is correct.")
 
 // Exercise 85
 // Write a function named flatten that takes in an array of arrays. Return the flattened array.
-
+function flatten(flattenedArray){
+    var flattened = flattenedArray.reduce((x,y) => x.concat(y));
+    //had to look up, also pulled idea from #81
+    return flattened;
+}
 
 assert(flatten([[1, 2], [3, 4], [5, 6]]), [1, 2, 3, 4, 5, 6], "Exercise 85");
 assert(flatten([[1, 2, 3], [1, 2, 3], [1, 2, 3]]), [1, 2, 3, 1, 2, 3, 1, 2, 3], "Exercise 85");
@@ -1389,7 +1434,15 @@ addToDone("Exercise 85 is correct.")
 
 // Exercise 86
 // Write a function definition named addOneToArray that adds one to every number in an array
-
+function addOneToArray(addingOne){
+    //that adds one to every number in an array
+    var added = [];
+    for (let i = 0; i < addingOne.length; i++) {
+        addingOne[i]++;
+        added.push(addingOne[i]);
+    }
+    return addingOne;
+}
 assert(addOneToArray([1, 2, 3]), [2, 3, 4], "Exercise 86");
 assert(addOneToArray([4, 4, 4]), [5, 5, 5], "Exercise 86");
 assert(addOneToArray([9, 10, 11]), [10, 11, 12], "Exercise 86");
@@ -1413,22 +1466,28 @@ const thomasPaper = {
     "year_published": 2008
 }
 
-
 // Exercise 87
 // Write a function named getPaperTitle that takes in a object and returns the title property
-
+function getPaperTitle(paperObj){
+    //takes in a object and returns the title property
+    // title is part of the above const,
+    var titleObject = paperObj.title;// takes in variable and request title from obj, then return obj below
+    return titleObject;
+}
 assert(getPaperTitle(tukeyPaper), "The Future of Data Analysis", "Exercise 87");
 assert(getPaperTitle(thomasPaper), "A mathematical model of glutathione metabolism", "Exercise 87");
 addToDone("Exercise 87 is correct.")
 
-
 // Exercise 88
 // Write a function named getYearPublished that takes in an objects and returns the value behind the "year_published" key.
-
+function getYearPublished(yearObj){
+    //takes in an objects and returns the value behind the "year_published" key
+    var year = yearObj.year_published;
+    return year; // similar setip to prev #87
+}
 assert(getYearPublished(tukeyPaper), 1962, "Exercise 88");
 assert(getYearPublished(thomasPaper), 2008, "Exercise 88");
 addToDone("Exercise 88 is correct.")
-
 
 // this code defines a JS object with information about a book.
 const book = {
@@ -1439,7 +1498,11 @@ const book = {
 
 // Exercise 89
 // Write a function named getPrice that takes in a object and returns the price
-
+function getPrice(oriceObj){
+    //takes in a object and returns the price
+    var pricing = oriceObj.price;
+    return pricing;
+}
 assert(getPrice(book), 36.99, "Exercise 89");
 addToDone("Exercise 89 is complete.")
 
@@ -1447,8 +1510,11 @@ addToDone("Exercise 89 is complete.")
 
 // Exercise 90
 // Write a function named getBookAuthor that takes in a object (the above declared book variable) and returns the author's name
-
-
+function getBookAuthor(authObj){
+    //takes in a object (the above declared book variable) and returns the author's name
+    var authName = authObj.author;
+    return authName; // similar logic as last few problems
+}
 assert(getBookAuthor(book), "Frances Buontempo", "Exercise 90");
 addToDone("Exercise 90 is complete.")
 
