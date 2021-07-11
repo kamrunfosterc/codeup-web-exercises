@@ -1512,7 +1512,7 @@ addToDone("Exercise 89 is complete.")
 // Write a function named getBookAuthor that takes in a object (the above declared book variable) and returns the author's name
 function getBookAuthor(authObj){
     //takes in a object (the above declared book variable) and returns the author's name
-    var authName = authObj.author;
+    var authName = authObj.author;// pulls author in from object created above
     return authName; // similar logic as last few problems
 }
 assert(getBookAuthor(book), "Frances Buontempo", "Exercise 90");
@@ -1548,7 +1548,13 @@ const books = [
 
 // Exercise 91
 // Write a function named getNumberOfBooks that takes in a array of objects and returns the number of objects in that array.
-
+function getNumberOfBooks(booksInLibrary){
+    //takes in a array of objects
+    // returns the number of objects in that array.
+    // assuming we just need to find length of object
+    var howManyBooks = booksInLibrary.length;
+    return howManyBooks;
+}
 assert(getNumberOfBooks(books), 4, "Exercise 91");
 addToDone("Exercise 91 is complete.")
 
@@ -1556,14 +1562,34 @@ addToDone("Exercise 91 is complete.")
 
 // Exercise 92
 // Write a function named totalOfBookPrices that takes in a array of objects and returns the sum total of all the book prices added together
-
+function totalOfBookPrices(bookPrices){
+    //takes in a array of objects
+    // returns the sum total of all the book prices added together
+    //remember counting need a starting value
+    var costOfBooks = 0;
+    for (let i = 0; i < bookPrices.length; i++) {
+        costOfBooks+=bookPrices[i].price
+    }
+    return costOfBooks;
+}
 assert(totalOfBookPrices(books), 122.9, "Exercise 92")
 addToDone("Exercise 92 is complete.")
 
 
 // Exercise 93
 // Write a function named getAverageBookPrice that takes in a array of objects and returns the average book price.
-
+function getAverageBookPrice(avgBookCost){
+    //takes in a array of objects
+    // returns the average book price
+    // reminder this is a counting type again
+    var totPrice = 0;// Starting point
+    for (let i = 0; i < avgBookCost.length; i++) {
+        // avg  = total/length of obj
+        totPrice+= avgBookCost[i].price;
+        var avg = totPrice / avgBookCost.length;
+    }
+    return avg;// could also --> return totPrice / avgBookCost.length;
+}
 assert(getAverageBookPrice(books), 30.725, "Exercise 93");
 addToDone("Exercise 93 is complete.")
 
@@ -1571,7 +1597,23 @@ addToDone("Exercise 93 is complete.")
 // Exercise 94
 // Write a function called highestPriceBook that takes in the above defined array of objects "books" and returns the object containing the title, price, and author of the book with the highest priced book.
 // Hint: Much like sometimes start functions with a variable set to zero, you may want to create a object with the price set to zero to compare to each object's price in the array
-
+function highestPriceBook(mostExpensiveBookHere){
+    //takes in the above defined array of objects "books"
+    //returns the object containing the title, price, and author of the book with the highest priced book.
+    // essentially we are looping through obj to find the highest cost or largest price
+    var mostExpensive = {
+        "price": "0.00"
+    }
+    for (let i = 0; i < mostExpensiveBookHere.length; i++) {
+        if (mostExpensiveBookHere[i].price > mostExpensive.price){
+            mostExpensive = mostExpensiveBookHere[i];
+            // statement checks for testing variable price, if it's higher than
+            //our var mostExpensive then it will replace and become our new mostExpensive
+            //before looping back to check rest of object
+        }
+    }
+    return mostExpensive;// shows us what is most expensive book
+}
 assert(highestPriceBook(books), {
     "title": "The Visual Display of Quantitative Information",
     "price": 38.00,
@@ -1585,7 +1627,20 @@ addToDone("Exercise 94 is complete")
 // Exercise 95
 // Write a function called lowestPriceBook that takes in the above defined array of objects "books" and returns the object containing the title, price, and author of the book with the lowest priced book.
 // Hint: Much like sometimes start functions with a variable set to zero or float('inf'), you may want to create a object with the price set to float('inf') to compare to each object in the array
-
+function lowestPriceBook(leastExpensiveBookHere){
+    //takes in the above defined array of objects "books"
+    //returns the object containing the title, price, and author of the book with the lowest priced book.
+    var floating = Math.isinf;// tried this but isn't required
+    var leastExpensive = {
+        "price": Infinity, // float('inf') == Infinity
+    }
+    for (let i = 0; i < leastExpensiveBookHere.length; i++) {
+        if (leastExpensiveBookHere[i].price < leastExpensive.price){
+            leastExpensive = leastExpensiveBookHere[i];
+        }
+    }
+    return leastExpensive;// shows us what is most expensive book
+}
 
 assert(lowestPriceBook(books), {
     "title": "Weapons of Math Destruction",
@@ -1630,7 +1685,9 @@ const shoppingCart = {
 // Exercise 96
 // Write a function named getTaxRate that takes in the above shopping cart as input and returns the tax rate.
 // Hint: How do you access a key's value on a object? The tax rate is one key of the entire shoppingCart object.
+function getTaxRate(){
 
+}
 assert(getTaxRate(shoppingCart), .08, "Exercise 96");
 addToDone("Exercise 96 is complete")
 
