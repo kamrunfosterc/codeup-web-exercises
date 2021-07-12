@@ -5,12 +5,17 @@
     <title>JQuery Events</title>
 </head>
 <body>
-<h1 id="codeup1">Hello Codeup 1</h1>
-<h1 id="codeup2">Hello Codeup 2</h1>
-<h1 id="codeup3">Hello Codeup 3</h1>
-<h1 id="codeup4">Hello Codeup 4</h1>
+<!--<h1 id="codeup1">Hello Codeup 1</h1>-->
+<!--<h1 id="codeup2">Hello Codeup 2</h1>-->
+<!--<h1 id="codeup3">Hello Codeup 3</h1>-->
+<!--<h1 id="codeup4">Hello Codeup 4</h1>-->
 
-
+<div>
+    <p>Please type something into this form:</p>
+    <form>
+        <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
+    </form>
+</div>
 <!--<script src="./js/jQuery_Events_Lecture.js"></script>-->
 <script src="./js/jquery-2.2.4.js"></script>
 <script>
@@ -30,6 +35,7 @@
     $(e.target).css("color", "orange")
   }
   // *************** *************** *************** *************** *************** ***************
+  // JQuery mouse event lecture
   $("#codeup1").click(function (e){
     alert("codeup1 clicked");
   });
@@ -51,6 +57,42 @@
   $("#codeup4").hover(hoverIn, hoverOut);// HOW COME THIS ISN'T WORKING
 
   // *************** *************** *************** *************** *************** ***************
+
+  //*************** *************** *************** *************** *************** ***************
+  // JQuery Keyboard event lecture
+  function doKeyDown(event){
+      // console.log("key down called in textfield input"); //one option
+      console.log("the key that caused keydown is " + event.keyCode); //second option to play with tells us key code associated with entry
+      if (event.key.toLowerCase() === 'a'){ // can also use event.keyCode === 65
+          console.log("a pressed");
+      } else if(event.key.toLowerCase()){// can also use event.key.toLowerCase() === 'b'
+          console.log("b pressed");
+      } else if(event.key.toLowerCase() === "arrowleft"){
+          console.log("left arrow pressed");
+      } else {
+          console.log(event.key + " pressed");
+          console.log(event);
+      } //not returning anything other than b when anything other than a is pressed
+
+  }
+
+  $("#textfield").keydown(doKeyDown);// monitors specific tag
+  $('#textfield').keyup(function(event) {
+      console.log(event.key + 'a key was released!');
+  });
+  // $('#textfield').on('keyup', function(event) {
+  //     console.log(event.key + 'a key was released!');
+  // });//register this event to happen when key up is called
+  console.log(event.target.value + ' change happened')
+
+//   $('#textfield').on('change', function(event) {
+//   console.log(event.target.value + ' change happened');
+// }); //turns on by targeting specific target value
+
+// store and check, how to first
+
+
+
 </script>
 </body>
 </html>
