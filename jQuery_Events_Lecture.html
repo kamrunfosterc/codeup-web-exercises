@@ -5,8 +5,52 @@
     <title>JQuery Events</title>
 </head>
 <body>
+<h1 id="codeup1">Hello Codeup 1</h1>
+<h1 id="codeup2">Hello Codeup 2</h1>
+<h1 id="codeup3">Hello Codeup 3</h1>
+<h1 id="codeup4">Hello Codeup 4</h1>
 
-<script src="./js/jQuery_Events_Lecture.js"></script>
+
+<!--<script src="./js/jQuery_Events_Lecture.js"></script>-->
 <script src="./js/jquery-2.2.4.js"></script>
+<script>
+  "use strict";
+// MOUSE EVENTS
+  function hoverIn(e){
+    // lets us know how many times we've hovered over a function both on and off
+    //if passed w/ another function, this should only be hover in
+    // console.log("hover in for codeup4");
+    $(e.target).css("background-color", "blue");//change background color when we hover out
+    $(e.target).css("color", "yellow")
+  }
+  function hoverOut(e){
+    // hover out/away
+    // console.log("hover out for codeup4");
+    $(e.target).css("background-color", "blue");//change background color when we hover out
+    $(e.target).css("color", "orange")
+  }
+  // *************** *************** *************** *************** *************** ***************
+  $("#codeup1").click(function (e){
+    alert("codeup1 clicked");
+  });
+  $("#codeup2").dblclick(function (e){
+    alert("codeup2 double-clicked");
+  });
+  $("#codeup3").hover(function (e){
+    // lets us know how many times we've hovered over a function both on and off
+    //if passed w/ another function, this should only be hover in
+    console.log("hover in for codeup3");
+    $(this).css("background-color", "#000");//change background color when we hover out
+    $(this).css("color", "#fff")
+  }, function (e){
+    // hover out/away
+    console.log("hover out for codeup3");
+    $(this).css("background-color", "#FFFFFF");//change background color when we hover out
+    $(this).css("color", "#000")
+  });
+  $("#codeup4").hover(hoverIn, hoverOut);// HOW COME THIS ISN'T WORKING
+
+  // *************** *************** *************** *************** *************** ***************
+</script>
 </body>
 </html>
