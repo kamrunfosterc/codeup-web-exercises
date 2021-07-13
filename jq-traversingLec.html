@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<section>
+
+</section>
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+  'use strict'
+  $(document).ready(function(){
+      // deals with the FOR EACH method
+
+    // var unOrderedList_Each = $('#each').css({'color': 'blue'})// selected unordered list --- initial color of the text
+    // console.log(unOrderedList_Each);// grabs all parent elements in ul
+
+    //xxxxxxxxxxx  grab all list items  xxxxxxxxxxx
+    // var listItems = $('#each > li');
+    // console.log(listItems);// returns just the list items under the id each
+    // var vanilla = document.querySelector('#each > li');
+    //   console.log(vanilla);
+
+    //   // xxxxxxxxxxx  calling each method, xxxxxxxxxxx
+    // listItems.each(function (index, listItemElement){//listItemElementnot a jquery element but is a js vanilla one
+    //   // index = element we are on for each one we are on, 0-4, sim to array
+    //   //changing each one
+    //   // console.log(listItemElement)
+    //     if (index %2 === 1){
+    //         $(this).css({'color':'red'});// any time index is odd, it'll color it red
+    //     } else {
+    //         $(this).css({'color':'orange'})
+    //     }
+    //
+    //   console.log($(this).html());
+    // })
+
+      // // xxxxxxxxxxx deals with first() method xxxxxxxxxxx
+      //
+      // var listItems = $('#first > li');
+      // listItems.css({'color':'pink'});
+      // listItems.first().css({'background-color':'yellow'})// extra we could do .html('I am the first value')
+      // //above grabs and changes first 'array' pos background to yellow
+      // // do not put numbers into .first()
+      //
+      // //xxxxxxxxxxx this deals with the last() method xxxxxxxxxxx
+      //
+      // var lastListItems = $('#last > li');
+      // lastListItems.last().css({'color':'purple'})
+
+
+      // xxxxxxxxxxx children method xxxxxxxxxxx
+      // var childListItems = $('#children');// ul list by itself
+      // console.log(childListItems);
+      //
+      // // childListItems.html('I am a child');// grabs all of them
+      // childListItems.children().html('I am a child');// grabs all ul child
+      // childListItems.children('reallyCoolPark').html('I am a child');
+      // // grabs a specific by class in the list by reallyCoolPark & applies change
+      //
+
+      // xxxxxxxxxxx parent method xxxxxxxxxxx
+      // var childLi = $(".loneChild")
+      // console.log(childLi);
+      // console.log("THIS is the parent");
+      // childLi.parent().css({'background-color': 'yellow'}).html("I ate my children");
+
+      // // xxxxxxxxxxx Next method xxxxxxxxxxx
+      // var firstSection = $('section').first()
+      // console.log(firstSection);
+      // console.log(firstSection.next());
+      // // grabs the next element regardless of type after the one we currently have selected
+
+
+  })
+</script>
+
+</body>
+</html>
