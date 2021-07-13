@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami jquery keyboard event exercise</title>
+</head>
+<body>
+    <h1>Konami Code</h1>
+
+
+    <div class="plane">
+        <img src="https://www.wallpaperflare.com/static/361/332/876/military-navy-united-states-navy-mcdonnell-douglas-f-a-18-hornet-wallpaper.jpg"
+             width="500em" height="250em">
+    </div>
+
+<script src="./js/jquery-2.2.4.js"></script>
+<!--<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>-->
+<!--<script src="jquery.fireworks.js"></script>-->
+<script id="queryJ-Edit">
+    "use strict"
+
+    $(document).ready(function (){
+
+    var konamiCheatCode = [38,38,40,40,37,39,37,39,66,65];//holds 10 characters in array
+    //up up down down left right left right B A
+    var initiated = false;
+    var count = 0;
+    // var allKeysPress = '';
+    // var key = event.keyCode;
+
+        $(document).on('keyup',(function (event){
+            var reset = function() {
+                var initiated = false;
+                var count = 0;
+                return;
+            }//declared reset function
+            var key = event.keyCode;
+            console.log(key);
+            // let key = event.keyCode;
+            //checking to see if up key is hit first, then start counting
+            if (!initiated) {
+                if (key == 38) {//UP KEY
+                    initiated = true;
+                    // console.log("start key entered");
+                }
+            }
+                // starts the count
+            if (initiated) {
+                if (konamiCheatCode[count] == key) {
+                    count++;
+                } else {
+                    reset();// bc incorrect key entered, restarts
+                }
+                if (count == 10) {
+                    //completed cheat
+                    console.log("completed cheat");
+                    $('body').css("background-color", "blue");
+                    // $(".plane").click(function(){
+                        $("img").animate({
+                            left: 500,
+                        });
+                    // });
+                    reset();
+                } else {
+                    reset();
+                }
+            }
+    }));
+
+});
+
+    //SAM EXAMPLE
+    // $(document).ready(function (){// 1st step
+    //     function keyPressEventHandler(event){
+    //         console.log(event);
+    //     }
+    //     $(document).keydown(keyPressEventHandler);
+    //     allKeysPress+= event.key;
+    //     var didKeySequence = allKeysPress.includes("key sequence that shold be here");
+    //
+    //     if (didKeySequence){
+    //         allKeysPress = ""// when func gets to this point it will reset things back to zero
+    //         alert("I love castlevania");
+    //     }
+    // })
+    //
+    //     }));
+    //
+    // });
+
+</script>
+</body>
+</html>
