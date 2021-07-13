@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .huge{
+        font-size: 5em;
+    }
+    .white{
+        color: white;
+    }
+
+</style>
+<h1>Essential Oils</h1>
+<main>
+
+</main>
+
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+    'use strict'
+    $(document).ready(function (){
+        //this is dynamically generating html pages content
+        $('main').html('<h1>Essential Oils Brand</h1>').css({'background-color':'red', 'border': 'solid 1px blue'});
+        //using object for css to add multiple css
+        $('h2').html('<h2>Esstablisehd 7/13/2020</h2>');
+
+        var mainsCurrentHtml = $('main').html()
+        $('main').html(mainsCurrentHtml + ' <p>I am the owner of this company</p>');
+        // var headerValue = $('h1').html();//used to grab or change values
+        var headerValue = $('h1').html('Essential Methods');
+        $('main').append('<p>I was <strong>appended</strong></p>')
+        console.log(headerValue);
+
+        $('p').addClass('huge');// adds huge text to our p tags
+
+        function removeClassFromPTags(){
+            $('p').removeClass('huge') //.addClass('white'); // try to have this happen
+            // $('h2').addClass('white'); //need to TRY to figure this out
+        }
+
+        var AnHOne = $('h1');
+        function toggleHugeClass (element){
+            AnHOne.toggleClass('huge');
+        }
+
+        function removeAllClasses(){
+            $(selector).removeClass()
+        }
+        setTimeout(function (){
+            removeAllClasses("main")
+        },500);
+
+        setTimeout(removeClassFromPTags, 2000); // removes the large text after 2secs on the page... EXECUTES once
+
+        //setInterval(toggleHugeClass,2000); // should alternate h1 class every 2 seconds
+
+        AnHOne.click(toggleHugeClass);// will toggle classes after each click!!!
+    })
+</script>
+
+
+</body>
+</html>
