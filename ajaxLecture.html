@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Jquery</title>
+</head>
+<body>
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+  "use strict"
+  $(document).ready(function (){
+    // $.ajax('data/stuff.json').done(function(data, status, jqXhr) {// min we want the data so can comment out rest
+    //   // alert("AJAX call completed successfully!");
+    //   // console.log("Request status: " + status);
+    //   // console.log("Data returned from server:");
+    //   console.log(data);
+    // });
+  $.ajax("data/stuff.json").done(function(data, status, jqXhr) {
+      alert("AJAX call completed successfully!");
+      console.log("Request status: " + status);
+      console.log("Data returned from server:");
+      console.log(data);// consoles all data from our json file
+    })
+      .fail(function(jqXhr, status, error) {
+          alert("There was an error! Check the console for details");
+          console.log("Response status: " + status);
+          console.log("Error object: " + error);
+      }).always(function() {
+      alert("This function always finishes and runs!");
+
+      })
+      // $.ajax("data/stuff.json",{
+      //     url: "/users",
+      //     type: "GET",
+      //     data: {
+      //         limit:  10,
+      //         offset: 20
+      //     }
+      // }).done(function(data) {
+      //     // do something with the data
+      // });
+      // $.post("data/stuff.json", {
+      //     first_name: "George",
+      //     last_name:  "Weathers",
+      //     city:       "Denver",
+      //     state:      "CO"
+      // }).done(function(data) {
+      //     // do something with the response
+      // });
+      var currentUser = data[i];
+      var htmlMessage = "<p>"+ currentUser.first_Name + " " + currentUser.last_Name +"</p>"
+      $('#mainContent').html(htmlMessage);
+
+      for (let i = 0; i < data.length; i++) {
+          var currentUser
+
+      }
+
+
+  })
+</script>
+
+</body>
+</html>

@@ -123,6 +123,9 @@
     </dd>
   </dl>
   </section><!--attributes and css exercise-->
+  <section>
+  <button class="toggler">Toggle DD's Visibility</button>
+</section><!--toggler button-->
 
   <section>
     <ul>
@@ -158,9 +161,6 @@
 <!--    <button>Reset</button>-->
 <!--  </section>-->
 
-<section>
-  <button class="toggler">Toggle DD's Visibility</button>
-</section><!--toggler button-->
 
 <section>
     <button id="changebcg" class="bcgColor">Change background color</button>
@@ -185,9 +185,21 @@
 
     $('.bcgColor').click(function (e){
       // var listItems = $('#each > li');
-      $('.newBcg').css({'background-color':'yellow'})//currently grabbing all list and changing backgrounds
-    })
+      // $('.newBcg').css({'background-color':'yellow'})//currently grabbing all list and changing backgrounds
+      $('ul').each(function (){
+        $(this).children().last().css({'background-color': 'yellow'})// children makes us take all children of the ul which is li
+      });
+    });
+    $('h3').click(function (){
+      $(this).next().children().css({'font-weight': 'bold'})//grabs ul below h3 and the children of li... edited with css which bolds when h3 clicked
+    });
+    $('li').click(function (){
+      $(this).parent().children().first().css({'color': 'blue'});
+    });
 
+
+
+    // GO TO POLARIS EXERCISES FOR THE JQUERY FAQ
     // function toggleInvisibleClass (element){
     //   //$('dd').toggleClass('invisible'); //.css('visibile','hidden')
     // }
