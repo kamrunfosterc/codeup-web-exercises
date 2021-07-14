@@ -27,9 +27,17 @@
     "use strict";
     $(document).ready(function (){
       $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
-
+        alert("AJAX call completed successfully!");
+        console.log("Request status: " + status);
+        console.log("Data returned from server");
+        console.log(data);//
       });
     })
+    $.ajax("data/inventory.json",{
+          url: "/data/inventory.json",
+          type: "GET",
+          data: {}
+      })
     // TODO: Create an AJAX GET request for the file under data/inventory.json
 
     // TODO: Take the data from inventory.json and append it to the products table
