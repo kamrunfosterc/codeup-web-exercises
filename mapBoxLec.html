@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAPbox</title>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<div id='map' style='width: 98vw; height: 98vh;'></div>
+<script src="./js/keys.js"></script>
+<script src="./js/mapbox-geocoder-utils.js"></script>
+<script>
+  mapboxgl.accessToken = mapboxAPIKey;
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',//opt 1:'mapbox://styles/mapbox/satellite-v9','mapbox://styles/mapbox/light-v10'
+    zoom: 10,
+    center: [-98.4916, 29.4252]// starting coordinates
+  });
+      var marker = new mapboxgl.Marker()
+          .setLngLat([-98.4916, 29.4260])
+          .addTo(map);
+
+      var popup = new mapboxgl.Popup()
+          .setLngLat([-98.489615, 29.426827])
+          .setHTML("<p>Codeup Rocks!</p>")
+          .addTo(map)
+
+      var alamoPopup = new mapboxgl.Popup()
+          .setHTML("<p>Remember The Alamo!</p>")
+          .addTo(map)
+
+      marker.setPopup(alamoPopup);// marker
+
+
+
+  // using geocoding to set up popup dynamically to bring up certain locations
+    var locationToSearchFor = '300 Alamo Plaza, San Antonio, TX 78205'
+
+  function findByAddress (searchTerm) {// variable way to go through this
+      geocode(locationToSearchFor, mapboxAPIKey).then(function (alamoCoordinates) {
+          console.log(`Here are the coordinates for the following location ${locationToSearchFor}`);
+          console.log(alamoCoordinates)
+
+          var alamoMarker = new mapboxgl.Marker()// marks location
+              .setLngLat(alamoCoordinates)
+              .addTo(map);
+
+          var alamoPopup = new mapboxgl.Popup()// used to provide info about popup
+              .setHTML("<p>The Alamo!</p>")
+              //.setMaxWidth("100px")
+              .addTo(map)
+          alamoMarker.setPopup(alamoPopup);
+      });
+  }
+  // findByAddress("the, pearl pkwy, san antonio, tx 78215");
+    var userLacation = prompt("What place would you like to look at");
+    findByAddress(userLacation);
+
+    //reverse geo Coding
+  // 29.866328365476097, -98.26720133785994
+  var coordinatesToSearchBy = {lng: -98.26720133785994, lat: 29.866328365476097,}
+  // 1611 Canyon Ridge Drive, Canyon Lake, Texas 78133, United States as example
+
+   reverseGeocode(coordinatesToSearchBy, mapboxAPIKey).then(function (data){
+       console.log("This is the corresponding address with those coordinates " + data);
+   })
+  function onDragEnd(){
+      var lngLat = marker.getLngLat();
+      reverseGeocode(lngLat, mapboxAPIKey).then(function (data){
+      console.log("Longitude: "+ LngLat.lng + "Latitude: " + LngLat.lat);
+  })
+  }
+
+</script>
+</body>
+</html>
