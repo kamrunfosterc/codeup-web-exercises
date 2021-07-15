@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="posts"></div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    //using ajax to load contents of blog.json and add data from it to your #posts div
+    // add additional entries to blog.json and make sure your changes are reflected on the page
+  (function () {
+    'use strict';
+    $.ajax("data/blog.json").done(function (data) {
+      console.log(data);
+
+      var html = "";//creating bucket variable
+
+      data.forEach(function (post){
+        var categoryString = post.categories.join(", ");
+        html = `<div>
+                <h3>${post.title}</h3>
+                <h5>${post.date}</h5>
+                <p>${post.content}</p>
+                <p>${categoryString}</p>
+              </div>`;
+
+        $('#posts').append(html);// using append method to put html change into display
+      })
+    }).fail(function(error) {
+      console.log("Error object: " + error);
+    })
+  })();
+</script>
+</body>
+</html>
