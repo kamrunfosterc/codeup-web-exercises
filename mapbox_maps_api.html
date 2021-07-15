@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate a Mapbox API Key</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+
+<div id='map' style='width: 98vw; height: 98vh;'></div>
+<script src="./js/keys.js"></script>
+<script src="./js/mapbox-geocoder-utils.js"></script>
+
+<script>
+  mapboxgl.accessToken = mapboxAPIKey;
+  var map = new mapboxgl.Map({// initial load out location
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v9',
+      zoom: 14,//zoom: 15, zoom: 20, zoom: 10,
+      center: [-98.4916, 29.4252]// san antonio
+  });
+
+  // var BoudrosTexasBistro_marker = new mapboxgl.Marker({ draggable:true})
+  //     .setLngLat([-98.48834853147858, 29.424265969647738])//On The Riverwalk Level, 421 E Commerce St, San Antonio, TX 78205
+  //     .addTo(map);
+  //
+  // var BoudrosTexasBistro_popUp = new mapboxgl.Popup()
+  //     // .setLngLat([-98.45251678925071,29.567244316609294])
+  //     .setHTML("<img width='50px' height='auto' src='https://media-cdn.tripadvisor.com/media/photo-s/0f/46/05/ec/photo2jpg.jpg' >")
+  //     // .setMaxWidth("100px")
+  //     .addTo(map)
+
+//******* ******** ******* ******** ******* ******** ******* ********
+  var searchTerm = ["On The Riverwalk Level, 421 E Commerce St, San Antonio, TX 78205",
+      "312 Pearl Pkwy Building 6, Suite 6001, San Antonio, TX 78215",
+  ]
+  var searchTerm2 = "312 Pearl Pkwy Building 6, Suite 6001, San Antonio, TX 78215"
+  var searchTerm3 = ""
+
+  geocode(searchTerm, mapboxAPIKey).then(function (foodieCoordinates) {
+      // console.log(`Here are the coordinates for the following location ${locationToSearchFor}`)
+      // the above this was blocking image, from popup and marker
+      console.log(foodieCoordinates)
+
+      // xxxxxxxxxx Restaurant 1 xxxxxxxxxx
+      var boudrosMarker = new mapboxgl.Marker()
+          .setLngLat(foodieCoordinates)
+          .addTo(map);
+
+      var boudrosPopup = new mapboxgl.Popup()
+          .setLngLat(foodieCoordinates)
+          .setHTML("<img width='50px' height='auto' src='https://media-cdn.tripadvisor.com/media/photo-s/0f/46/05/ec/photo2jpg.jpg' >" +
+              "<h3>Bourdro's Bistro</h3><p>Hip New American bistro with wood-grilled steaks, seafood, tableside guacamole, cocktails & a patio.</p>")
+          // .setMaxWidth("100px")
+          .addTo(map)
+      boudrosMarker.setPopup(boudrosPopup);
+
+      // xxxxxxxxxx Restaurant 2 xxxxxxxxxx
+      geocode(searchTerm2, mapboxAPIKey).then(function (foodieCoordinates){
+          var JazzTxMarker = new mapboxgl.Marker()
+              .setLngLat(foodieCoordinates)
+              .addTo(map);
+
+          var JazzTxPopup = new mapboxgl.Popup()
+              .setLngLat(foodieCoordinates)
+              .setHTML("<img width='50px' height='auto' src='https://jazztx.com/wp-content/uploads/2018/05/jazz_soft_continued-16-of-25-2048x1365.jpg >" +
+                  "<h3>Jazz Texas</h3><p>Live-music venue & restaurant offering refined Texan cuisine, craft cocktails & draft beer.</p>")
+              // .setMaxWidth("100px")
+              .addTo(map)
+          JazzTxMarker.setPopup(JazzTxPopup);
+      })
+
+      for.Each(){};// for each with a geocode inside
+
+
+      // xxxxxxxxxx Restaurant 3 xxxxxxxxxx
+      geocode(searchTerm3, mapboxAPIKey).then(function (foodieCoordinates) {
+          var boudrosMarker = new mapboxgl.Marker()
+              .setLngLat(foodieCoordinates)
+              .addTo(map);
+
+          var boudrosPopup = new mapboxgl.Popup()
+              .setLngLat(foodieCoordinates)
+              .setHTML("<img width='50px' height='auto' src='https://media-cdn.tripadvisor.com/media/photo-s/0f/46/05/ec/photo2jpg.jpg' >" +
+                  "<h3>Bourdro's Bistro</h3><p>Hip New American bistro with wood-grilled steaks, seafood, tableside guacamole, cocktails & a patio.</p>")
+              // .setMaxWidth("100px")
+              .addTo(map)
+          boudrosMarker.setPopup(boudrosPopup);
+      }
+  })
+
+  // For Each example
+  // var restaurants = ["bob's burgers","wendy's","Ruby Tuesdays","whataburger"]
+  // restaurants.forEach(function (singleRestaurant) {
+  //     console.log(singleRestaurant)
+  // })
+
+</script>
+</body>
+</html>
