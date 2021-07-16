@@ -5,3 +5,7 @@
 .my-row {
     border: 2px solid black;
 }
+#weatherHead{
+    color: white;
+    background-color: #3B94D9;
+}
