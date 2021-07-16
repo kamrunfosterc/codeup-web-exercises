@@ -11,15 +11,19 @@
 <script src="./js/keys.js"></script>
 <script>
   'use strict'
+  var weatherOptions = {
+      appid: OPEN_WEATHER_API_KEY,
+      q: "San Antonio, US",
+      units: "imperial",
+  }
+  var weatherURL = `https://api.openweathermap.org/data/2.5/weather`
   $(document).ready(function(){
-    // console.log('jquery is here')// working
-    $.get(`api.openweathermap.org/data/2.5/weather?`, {
-      appid: openWeatherAPIKey,
-      q:     "San Antonio, US"
-    });
 
+    $.get(weatherURL, weatherOptions);
 
   })
+  // api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
 </script>
 
 </body>
