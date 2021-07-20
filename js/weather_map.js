@@ -70,7 +70,6 @@ $(document).ready(function () {
 
                 weatherData()// reseting after
         })
-
     })
 
 
@@ -82,18 +81,5 @@ $(document).ready(function () {
     //     .addTo(map);
     //
     // marker.setPopup(popup)// attaches popup to marker
-    //
-    // function geocode(locationToSearchFor, mapboxAPIKey)
-    //         .then(function (coordinates) {
-    //         console.log(`Here are the coordinates for the following location ${locationToSearchFor}`);
-    //         console.log(coordinates)
-    //     })
 })// end of document
 
-
-// $(document).ready(function (data) {
-//     console.log(data);// produces array of object
-//     // mapboxgl.accessToken = mapboxAPIKey;
-//     $.get(weatherURL, weatherOptions);
-//     $.get(`.card`).html()
-// })
