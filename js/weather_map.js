@@ -31,7 +31,7 @@ $(document).ready(function () {
     // mapboxgl.accessToken = OPEN_WEATHER_API_KEY;// conflicting entries,
     weatherData()// does initial run of function
 
-    // Section will display 5day forecast and info in each card dynamically
+    //  function will display 5day forecast and info in each card dynamically
     function weatherData() {
         $.get(weatherURL, weatherOptions).done(function (data) {
             // console.log(data.daily);
@@ -43,42 +43,33 @@ $(document).ready(function () {
                     // var iconCode = day.weather[0].icon;
                     // var weatherIcon = `http://openweathermap.org/img/wn/10d@2x/.png`;
 
-                    var date = new Date((day.dt)*1000).toDateString();// date conversion part
-                    // var formattedDate = [year, month, day]
-                    var html = "";// as we loop through we add to html starting with this empty string
-                    html = `<div class="card" style="width: 18rem;">
+                    var date = new Date((day.dt)*1000).toDateString();// date conversion part numerically then to a string
+
+                     var html = "";// as we loop through we add to html starting with this empty string
+                    html = `<div class="card" style="width: 18rem;"> 
                                   <div class="card-header">
                                     <strong>${date}</strong><!--need to convert-->
                                   </div>
                                   <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">High ${day.temp.max}/Low ${day.temp.min}</li>
-                                    <li class="list-group-item align-content-center"><img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png" alt="weather indicator"></li>
+                                    <li class="list-group-item">
+                                    High ${day.temp.max}/Low ${day.temp.min}
+                                    <img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png" alt="weather indicator">
+                                    </li>
                                     <li class="list-group-item"><strong>Description:</strong> ${day.weather[0].description}</li>
                                     <li class="list-group-item"><strong>Humidity:</strong> ${day.humidity}</li>
                                     <li class="list-group-item"><strong>Wind:</strong> ${day.wind_speed}mph</li>
                                     <li class="list-group-item"><strong>Pressure:</strong> ${day.pressure}hPa</li>
                                   </ul>                        
-                            </div>`
-                    
+                            </div>`// section covers adding to html our bootstrap cards
                     //${} tells to put in dynamic data, variable, property anything
-                    $(".card-deck").append(html);// add cards into our html
+
+                    $(".card-deck").append(html);// adds card into our html for display on site using specified id
                 }
             })
         });// used to get weather data from api
     }
 
-    // map.flyTo({
-    //     center: [
-    //         lati,
-    //         long
-    //     ],
-    //     zoom: 10,
-    //     essential: true
-    // });
-    // marker.setLngLat()
-
-
-    //Function assoc w the find button that changes map pos & card info based on that map pos
+    //CLICK Function assoc w the find button that changes map pos & card info based on that map pos
     $("#find").click(function (e){
         e.preventDefault();
         //need geo code
@@ -95,8 +86,8 @@ $(document).ready(function () {
                 $(".currentCity").html(`Current City: ${$("#search").val()}`)
 
                 // "current city" + $("#search").val()
+                // marker.setLngLat() // this was causing an error with the fly-to call
 
-                // marker.setLngLat() // this was causing an error with the flyto call
                 // flys to a location vs jumping with this
                 map.flyTo({
                     center: [
@@ -106,9 +97,9 @@ $(document).ready(function () {
                     zoom: 10,
                     essential: true
                 });
-                marker.setLngLat(coordinates)// hav to set something inside here to work
+                marker.setLngLat(coordinates)// have to set something inside here to work
 
-                weatherData()// reseting after
+                weatherData()// reset after each call
         })
     })
 
