@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <title>Hello, Users</title>
+  <style>
+    /* All classes that you create can go in here!! */
+
+
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">User Corp.</span>
+  <div class=" navbar-collapse flex-row-reverse" id="navbar-nav-dropdown">
+    <ul class="navbar-nav">
+      <li>
+        <button id="striped-table-button" class="btn btn-primary mr-2" type="submit">Striped Mode</button>
+      </li>
+      <li>
+        <button id="cell-border-button" class="btn btn-primary mr-2" type="submit">Cell Borders</button>
+      </li>
+      <li>
+        <button id="dark-mode-button" class="btn btn-primary mr-2" type="submit">Dark Mode</button>
+      </li>
+      <li class="nav-item">
+        <select class="form-control" id="employee-type-dropdown">
+          <option value="All" selected >All Jobs</option>
+          <option value="Intern">Interns</option>
+          <option value="Associate">Associates</option>
+          <option value="Manager">Managers</option>
+          <option value="Executive">Executives</option>
+        </select>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-flex">
+  <table id="main-table" class="table">
+    <thead id="main-table-header-row">
+    </thead>
+    <tbody id="main-table-body">
+    </tbody>
+  </table>
+</div>
+
+<script src="./js/jquery-2.2.4.js"></script>
+<script src="./js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
