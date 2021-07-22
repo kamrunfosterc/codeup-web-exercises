@@ -66,5 +66,26 @@
 <script src="./js/jquery-2.2.4.js"></script>
 <script src="./js/blank.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+<script>
+    const myNumbers = [1,42,33,24,75];
+    // for loop version
+    for (let i = 0; i < myNumbers.length; i++) {
+        console.log(myNumbers[i]);
+    };
+
+    // forEach method
+    //func executed for each element of array
+    myNumbers.forEach(function (myNumber, index, array){
+        // console.log(myNumber);
+        // console.log('index' + index, myNumber);// for myNumbers.forEach(function (myNumber, index){
+        console.log(array);//for myNumbers.forEach(function (myNumber, index, array){
+    });
+
+    // arrow method
+    myNumbers.forEach((myNumber, index, array) => {
+        console.log(array);
+    });
+</script>
 </body>
 </html>
