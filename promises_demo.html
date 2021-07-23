@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  //do js here or link in a js file
+  "use strict";
+  // //1. call fetch & see asynchronous stuff
+  // fetch("http://localhost:3000/timer/4");// // wont run bc this is a fake server
+  // console.log("end of script");// executes immediately after start
+
+  //NOTE:
+  //'fetch' something, 'then' do something with it
+  // sim to 'ajax'/ 'get' something then execute function when 'done'
+
+  //2. work w response from fetch call
+  fetch("https://api.github.com/users")//site from lecture
+          .then(function (response){
+            console.log(response);
+          });
+  console.log("end of script");
+//how do we grab data from these fetch calls
+
+  // fetch("https://api.github.com/users")//site from lecture
+  //         .then(function (response){
+  //           // console.log(response);
+  //           // console.log(response.json());// logs another promise
+  //           return response.json();//returning a promise here
+  //         }).then(function (jsonData){
+  //             console.log(jsonData);
+  //         });
+  // console.log("end of 2nd promise created script");
+
+  // fetch("https://api.github.com/users")// step1: make fetch call to github
+  //         .then(function (response) {
+  //           // console.log(response);
+  //           // console.log(response.json());
+  //           let aPromise = response.json();//step2: grab json data from response
+  //           console.log(aPromise);
+  //           return aPromise;
+  //         }).then(function (jsonData) {
+  //   console.log(jsonData);//step3: do something w/ that json data
+  // }); // something is off
+  // console.log("end of 2nd promise created script");
+
+//3. How to handle an error
+  fetch("https://api.github.com/users")// step1: make fetch call to github
+          .then(function (response) {
+            // console.log(response);
+            // console.log(response.json());
+            let aPromise = response.json();//step2: grab json data from response
+            console.log(aPromise);
+            return aPromise;
+          }).then(function (jsonData) {
+            console.log(jsonData);//step3: do something w/ that json data
+          }).catch(function (errorData){
+            console.log(`ERROR!`, errorData);
+            console.log("since this sequence of code failed, we can do other things to repsond to ");
+            return Promise.reject();
+          }); // something is off
+                  console.log("end of script");
+
+//4. move fetch json result into a func resulting in cleaner initial call/ reworking #2.
+// function will return a promise
+  function getUsersFromGithubAsJSON(){
+      //1. make fetch call to github
+      //2. return json() promise
+      return fetch("https://api.github.com/users")
+          .then(function (response){
+                return response.json();
+      });
+  }
+  //calls function
+  getUsersFromGithubAsJSON()
+      .then(function (userData){
+          for (const user of userData){
+              console.log(user);
+          }
+  });
+  console.log(`end of script`);
+
+  // fetch("https://api.github.com/users")//site from lecture
+  //         .then(function (response){
+  //           // console.log(response);
+  //           // console.log(response.json());// logs another promise
+  //             let aPromise = response.json();//step2: grab json data from response
+  //             console.log(aPromise);
+  //             return aPromise;
+  //         }).then(function (jsonData){
+  //             console.log(jsonData);
+  //         });
+  // console.log("end of 2nd promise created script");
+
+  //5. make a function that returns a new promise
+  // resolve, promise, response, reject --> what are these
+  function makeNewPromise(){
+      let myPromise = new Promise(function (resolve, reject){
+          // return resolve("hey the promise created successfully!");// cnts to then part
+          reject(`so sad, broken promises`);// will return failed.. sends to catch part
+      });
+      return myPromise //promises are type of class
+      }
+      makeNewPromise()
+          .then(function (msg){
+              console.log(msg);
+          }).catch(function (error){
+          console.log(`ERROR!`, error);
+      });
+  console.log(`end of part 5 script`);
+</script>
+</body>
+</html>
