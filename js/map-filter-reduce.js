@@ -111,27 +111,42 @@ let nameStringMap = users.map(function (user){
 })
 console.log(`Your instructors are: `,nameStringMap,`.`);
 
+
+//$$$$$$$$$$$ $$$$$$$$$$$ $$$$$$$$$$$ $$$$$$$$$$$ $$$$$$$$$$$ $$$$$$$$$$$
 // BONUS
+//$$$$$$$$$$$ $$$$$$$$$$$ $$$$$$$$$$$ $$$$$$$$$$$ $$$$$$$$$$$ $$$$$$$$$$$
 // Use .reduce to get the unique list of languages from the list of users.
 
 let concatLangs = users.reduce(function (accumulator, user){
     return accumulator.concat(user.languages);
     // pulls languages but has repeats at this time
-
 }, [])//need to start with empty array
 console.log(`languages known `,concatLangs);
 
 
+// let uniqueLangs = concatLangs.reduce(function (accumulator, currentValue){
+//     if (accumulator.indexOf(currentValue) === -1){// also think of .includes
+//         //only push this in if it is a repeat value
+//         // -1 means it can't be found
+//         accumulator.push(currentValue);
+//     } return accumulator;
+//         //only push this in if it is a repeat value
+// },[])
+// console.log(uniqueLangs);
+
 let uniqueLangs = concatLangs.reduce(function (accumulator, currentValue){
-    if (accumulator.indexOf(currentValue) === -1){// also think of .includes
+    if (accumulator.includes(currentValue)){// also think of .includes
         //only push this in if it is a repeat value
         // -1 means it can't be found
+        return accumulator;
+    } else {
         accumulator.push(currentValue);
-    } return accumulator;
-        //only push this in if it is a repeat value
-},[])
+        return accumulator;
+    }
+    //only push this in if it is a repeat value
+},[])// accumulator where we start/ put values into
 console.log(uniqueLangs);
-
+// could also use the set class to help store unique values
 
 
 
