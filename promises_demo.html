@@ -66,23 +66,25 @@
 
 //4. move fetch json result into a func resulting in cleaner initial call/ reworking #2.
 // function will return a promise
-  function getUsersFromGithubAsJSON(){
-      //1. make fetch call to github
-      //2. return json() promise
-      return fetch("https://api.github.com/users")
-          .then(function (response){
-                return response.json();
-      });
-  }
-  //calls function
-  getUsersFromGithubAsJSON()
-      .then(function (userData){
-          for (const user of userData){
-              console.log(user);
-          }
-  });
-  console.log(`end of script`);
+  //*************** *************** *************** *************** ***************
 
+  // function getUsersFromGithubAsJSON(){
+  //     //1. make fetch call to github
+  //     //2. return json() promise
+  //     return fetch("https://api.github.com/users")
+  //         .then(function (response){
+  //               return response.json();
+  //     });
+  // }
+  // //calls function
+  // getUsersFromGithubAsJSON()
+  //     .then(function (userData){
+  //         for (const user of userData){
+  //             console.log(user);
+  //         }
+  // });
+  // console.log(`end of script`);
+//*************** *************** *************** *************** ***************
   // fetch("https://api.github.com/users")//site from lecture
   //         .then(function (response){
   //           // console.log(response);
@@ -96,21 +98,24 @@
   // console.log("end of 2nd promise created script");
 
   //5. make a function that returns a new promise
+  // RESOLVING VALUES
   // resolve, promise, response, reject --> what are these
   function makeNewPromise(){
       let myPromise = new Promise(function (resolve, reject){
-          // return resolve("hey the promise created successfully!");// cnts to then part
-          reject(`so sad, broken promises`);// will return failed.. sends to catch part
+          return resolve("hey the promise created successfully!");// cnts to then part
+          // reject(`so sad, broken promises`);// will return failed.. sends to catch part
       });
       return myPromise //promises are type of class
       }
-      makeNewPromise()
+      makeNewPromise(`oh my new promise`)
           .then(function (msg){
               console.log(msg);
           }).catch(function (error){
           console.log(`ERROR!`, error);
       });
   console.log(`end of part 5 script`);
+
+
 </script>
 </body>
 </html>
