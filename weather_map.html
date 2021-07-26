@@ -13,14 +13,14 @@
 
 
             <div>
-                <div id="weatherHead" class=" my-row nav">
+                <div id="weatherHead" class=" nav"> <!-- my-row css to change -->
                     <div class="col-8"><h4>Weather App</h4></div>
                     <div class="col-4 align-items-end currentCity">Current City: San Antonio</div><!-- currentCity class -->
                 </div>
-                <div class=" my-row">
+                <div>
                     <p>Place
                         <label for="search"></label><input id="search" type="text" placeholder="City, State">
-                        <button id="find" type="submit" class="btn btn-primary">Find</button>
+                        <button id="find" type="button" class="btn btn-primary">Find</button>
                     </p>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <!-- dynamically entering in information into cards here -->
             </div><!-- 5 city data cards-->
 
-            <div class="row my-row">
+            <div class="row">
                 <div id='map' style='width: 98vw; height: 75vh;'></div>
 <!--                    <script>-->
 <!--                        mapboxgl.accessToken = 'pk.eyJ1Ijoia2FtZm9zdGVyIiwiYSI6ImNrcjUxc3JwbjMxaWUydnFoN3J1NjV2bHgifQ.SEBGqkmE1PW__mtoCMS9FA';-->
@@ -46,6 +46,7 @@
             </div>
             <!-- dynamic mapping positioning completed above, need to import map into this area-->
     </div>
+
 
 
 

@@ -1,7 +1,6 @@
 // https://api.openweathermap.org/data/2.5/onecall?
 // lat={lat}&lon={lon}&exclude={part}&appid={API key}
 "use strict"
-
 $(document).ready(function () {
     var long = -98.4916;//default longitude
     var lati = 29.4252;//default latitude
@@ -70,11 +69,12 @@ $(document).ready(function () {
     }
 
     //CLICK Function assoc w the find button that changes map pos & card info based on that map pos
+    // $("#find").keydown('keydown', logkey){
+    // }
     $("#find").click(function (e){
         e.preventDefault();
         //need geo code
         // console.log($("#search").val());// .val allows us to accept value being put in any element
-
         geocode($("#search").val(), mapboxgl.accessToken)
             .then(function (coordinates) {
                 long = coordinates[0];

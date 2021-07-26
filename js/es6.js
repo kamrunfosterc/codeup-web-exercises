@@ -52,8 +52,9 @@ let names = [];
 // users.forEach(function(user) {
 //     return emails.push(user.email);
 // });
-users.forEach(user => emails.push(user.email));
-users.forEach(user => names.push(user.email));
+console.log(`rewriten using arrow functions`);
+console.log(users.forEach(user => emails.push(user.email)));
+console.log(users.forEach(user => names.push(user.email)));
 
 
 // users.forEach(function(user) {
@@ -62,22 +63,28 @@ users.forEach(user => names.push(user.email));
 
 // TODO: replace `var` with `let` in the following declaration
 let developers = [];
-users.forEach(function(user) {
-    // TODO: rewrite the code below to use object destructuring assignment
-    //       note that you can also use destructuring assignment in the function
-    //       parameter definition
-
-    // const name = user.name;
-    // const email = user.email;
-    // const languages = user.languages;
-    const {name, email, languages} = user;// NEW WAY
-
-    // TODO: rewrite the assignment below to use template strings
-    // developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
-    developers.push(`${name}'s email is ${email} and ${name} knows ${languages.join(", ")}`);
-    // good to look into this one, used join bc languages was an array
-    console.log(developers)
-});
+// users.forEach(function(user) {
+//     // TODO: rewrite the code below to use object destructuring assignment
+//     //       note that you can also use destructuring assignment in the function
+//     //       parameter definition
+//
+//     // const name = user.name; // original
+//     // const email = user.email; // original
+//     // const languages = user.languages; // original
+//     const {name, email, languages} = user;// NEW WAY, object destructuring version
+//
+//     // TODO: rewrite the assignment below to use template strings
+//     // developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
+//     developers.push(`${name}'s email is ${email} and ${name} knows ${languages.join(", ")}`);
+//     // good to look into this one, used join bc languages was an array
+//     console.log(developers)
+// }); // uncomment starting here up to beginning of FUNCTION
+// function rewritten w/out notes
+users.forEach(function (user){
+    const {name, email, languages} = user
+    console.log(`${name}'s email is ${email}. ${name} knows ${languages.join(", ")}`);
+    console.log(developers);
+})
 
 
 // TODO: Use `let` for the following variable

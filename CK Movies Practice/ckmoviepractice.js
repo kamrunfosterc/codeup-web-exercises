@@ -1,0 +1,154 @@
+'use strict';
+
+$(document).ready(function () {
+
+    const serverURL = `https://alluring-nutritious-calendula.glitch.me/movies`
+
+
+    function AJAXRequest(URL, method = `GET`, data){// sim to ajax request
+        const options = {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        };
+        return fetch(URL, options)
+            .then(res => res.json())
+            .then(responseData => responseData)
+            .catch( err => err)
+    }
+
+    //    AJAXRequest(serverURL).then()// returns promise, need .then to get to data
+    // ----------- Get ALL MOVIE INFORMATION ------------
+    function getAllMovies() {
+        AJAXRequest(serverURL).then(responseData => console.log(responseData))
+
+    }
+    getAllMovies();
+
+    // ----------- Get ONE MOVIE INFORMATION ------------
+
+    function getOneMovie(id) {
+        AJAXRequest(`${serverURL}/${id}`).then(responseData => console.log(responseData))
+
+    }
+    getOneMovie(2);//example of grabbing movie with id = 2
+
+    // ----------- Get DELETE A MOVIE INFORMATION ------------
+
+    function deleteMovie(id) {
+        AJAXRequest(`${serverURL}/${id}`,'DELETE').then(responseData => console.log(responseData))
+
+    }
+    // deleteMovie(7);// EXAMPLE of deleting a movie w/ id = 7
+
+    //TODO complete creation of  add
+    function addMovie(id,data) {
+        AJAXRequest(`${serverURL}/${id}/${data}`,'POST').then(responseData => console.log(responseData + `add function`))
+
+    }
+    // addMovie(7,`We've added in `);
+
+    //TODO complete creation of update
+    function updateMovie(id, data) {
+        AJAXRequest(`${serverURL}/${id}`,'PUT').then(responseData => console.log(responseData))
+    }
+    // addMovie();
+
+    // EXAMPLE HELP
+    // setInterval(getData,3000);// should refresh ever 3sec
+    // $('#refresh').click(getData);// button to append
+
+    // function loading(num) {
+    //     return new Promise((resolve) => {
+    //         setTimeout(() => {
+    //             resolve("Success");
+    //         } ,num);
+    //     })
+    // }
+
+    // loading(3000).then((message) => console.log(`Loading... ${message}`));
+
+// pulling info from glitch
+// fetch(serverURL).then( response => {
+//     response.json().then( movies => {
+//         console.log(movies);
+//     })
+// })
+
+//simple get request (shows all movies in data base)
+//     fetch(serverURL)
+//         .then(res => res.json())
+//         .then(data => console.log(data))
+
+
+// //post request(add/ send to database)
+//     const objToSend = {//object sending to server
+//         user: `Samuel`,
+//         message: `Really enjoyed the movies application!`
+//     };
+//     // const url = 'https://codeup-restful-example.glitch.me/reviews';
+//     const options = {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(objToSend),//converts obj into pure json object
+//     };
+//     fetch(serverURL, options)
+//         .then( response => console.log(response) ) /* review was created successfully */
+//         .catch( error => console.error(error) ); /* handle errors */
+
+
+
+    // function AJAXRequest(URL, method = `GET`, data){// sim to ajax request
+    //     const options = {
+    //         method: method,
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(data),
+    //     };
+    //    return fetch(URL, options)
+    //         .then(res => res.json())
+    //         .then(responseData => responseData)
+    //        .catch( err => err)
+    // }
+
+
+    // AJAXRequest(serverURL,`POST`,{title: `Jquery ain't got nothing on me`})
+    //     .then(function (data){
+    //         console.log(data);
+    //     }) // NOT SURE WHAT THIS IS FOR HAVE TO CHECK AGAIN
+
+
+    // // THIS is to fetch a single movie
+    // AJAXRequest(serverURL + `/3`)
+    //     .then(data => console.log(data))
+
+
+// //THIS IS to update an individual record using PUT method (update/ change entire obj)
+// AJAXRequest(serverURL + `/9`,`PUT`,{// overriding data in pos 9 here
+//     name: "Polaris",
+//     message: "We are ready for the weekend!!"
+// }).then(data => console.log(data))
+
+
+// PATCH METHOD, good to make change in specific area but with out replacing whole obj
+// AJAXRequest(serverURL + `/9`,`PATCH`,{// overriding data in pos 9 here
+//     message: "We are really ready for the weekend!!"
+// }).then(data => console.log(data))
+
+
+//REMOVING/ DELETE METHOD
+// AJAXRequest(serverURL + `/6`,`DELETE`,{// overriding data in pos 9 here
+// }).then(data => console.log(data))
+//
+// AJAXRequest(serverURL)
+//     .then(data => console.log(data))
+
+
+});
+
+
