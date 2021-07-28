@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="ckmoviepractice.css">
-  <title>Title</title>
-  <script src="../js/jquery-2.2.4.js"></script>
-  <script src="ckmoviepractice.js"></script> <!--change name -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="ckmoviepractice.css">
+    <title>CK Movie Practice project</title>
+    <script src="../js/jquery-2.2.4.js"></script>
+    <script src="ckmoviepractice.js"></script> <!--change name -->
 </head>
 
 
 <body>
-  <div>
+<div class="row my-row">
     <h1>CK Movie Project</h1>
-  </div>
+</div>
+<!--<div>-->
+<!--  <img src="img/loading.gif" id="loading">-->
+<!--</div>-->
 
-  <div id="loading">
-    <img id= 'loadGif' src="./gif/laoding1.gif"> <!-- check file location-->
-  </div>
+<div class="card-group my-row">
+    <div id="allMovies" class="col-3 my-col"></div>
+</div>
 
-  <form>
-    <div class="row my-row">
-
-      <div class="col my-col">
-        <input id = 'submit' type="text" class="form-control" placeholder="Movie Title">
-      </div>
-
-      <div class="col my-col">
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-          <option selected>Rating</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-          <option value="4">Four</option>
-          <option value="5">Five</option>
+<div class="ourForm">
+    <form class="submitMovie">
+        <input id="title-input" type="search" placeholder="Movie Title">
+        <input id="plot-input" type="search" placeholder="Plot">
+        <select class="custom-select" id="rating-select">
+            <option selected>Rating</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+            <option value="5">Five</option>
         </select>
-      </div>
-    </div>
+        <button id="submit-movie" type="submit">
+            Submit
+            <img src="gif/loading2.gif" id="loadGif" class="loading">
+        </button>
+    </form>
+</div>
 
-    <div class="col-auto my-1">
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-  </form>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
