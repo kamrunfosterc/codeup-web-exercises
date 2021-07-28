@@ -30,7 +30,7 @@ $(document).ready(function () {
             data.forEach(function (movie) {
 
                 html = `
-                     <div className="card" class="col my-col"><!-- trying to dynamically add in columns to place each card next to each other-->
+                     <div className="card"  class="col-3 my-col"><!-- trying to dynamically add in columns to place each card next to each other-->
                            <img src=${movie.poster} className="card-img-top" alt="movie poster">
                             <div className="card-body">
                                 <h5 className="card-title">${movie.title}</h5>
@@ -52,7 +52,7 @@ $(document).ready(function () {
 
     // --------- EventListener functionality buttons here --------
     function addEventListeners() {
-        $(`.deleteButton`).click(function (e) {// delete funciton
+        $(`.deleteButton`).click(function (e) {// delete function
             e.preventDefault();
             const movieIdToDelete = $(this).attr(`data-id`);
             console.log(movieIdToDelete);
@@ -60,7 +60,7 @@ $(document).ready(function () {
         })
         $('#submit-movie').click(function (e) {// add movie function
             e.preventDefault();
-            let movieTitle = $('#title-input').val();
+            let movieTitle = $('#title-input').val();//grabs what is typed in html and puts it into new card poster
             let moviePlot = $("#plot-input").val();
             let movieRating = $("#rating-select").val();
             let addedMovie = {title: movieTitle, plot: moviePlot, rating: movieRating};
@@ -69,15 +69,19 @@ $(document).ready(function () {
         })
         $('.editMovie').click(function (e) {// edit movie info/ rating function
             e.preventDefault();
+            // .modal(`show`)
+            //     .modal(`hide`)
+
             const movieToBeEdited = $(this).attr(`data-id`);
-            AJAXRequest(serverURL).then(function (data) {
-                $(movieToBeEdited).click(function () {
-                    console.log(`here is what we want to edit the film`);
-                })
+            // const originalMovie = localMovies.filter(movie => movieID == movie.id)[0]
+            // $('#titles-input').val(originalMovie.year)
+            console.log(movieToBeEdited);
+            updateMovie(movieToBeEdited)
+
                 // let movieRating = $("#rating-select").val();
                 updateMovie(movieToBeEdited); //old version updateMovie(addedMovie)
                 console.log(updateMovie);
-            })// NOTE THIS IS DOING SOMETHING, BUT DON'T UNDERSTAND WHAT AT THIS TIME
+            //     .modal(`hide`)
         })
         $('.loading').hide();
 
@@ -113,11 +117,11 @@ $(document).ready(function () {
 
     function updateMovie(id) {
         AJAXRequest(`${serverURL}/${id}`, 'PUT', {
-            id: id,
-            title: 'updated movies',
-            year: 2021
+
+            rating: $(``).val(),
+            review: $(``),
         }).then(getAllMovies)// old: responseData => console.log(responseData)
-    }
+    }// make it able to edit rating and leave review
 
 // updateMovie(10);
 
