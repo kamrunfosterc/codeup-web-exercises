@@ -84,6 +84,10 @@ $(document).ready(function () {
             //     .modal(`hide`)
         })
         $('.loading').hide();
+        // $('.loading').hide();
+        //
+        // $('.loading').hide();
+
 
     }
 
