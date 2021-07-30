@@ -84,14 +84,7 @@ $(document).ready(function () {
             //     .modal(`hide`)
         })
         $('.loading').hide();
-        // $('.loading').hide();
-        //
-        // $('.loading').hide();
-
-
     }
-
-
 
 // ----------- Get SINGLE MOVIE INFORMATION ------------
     function getOneMovie(id) {
@@ -108,8 +101,6 @@ $(document).ready(function () {
 
 
 // ----------- ADDS SINGLE MOVIE INFORMATION ------------
-
-
     function addMovie(addedMovie) {
         AJAXRequest(serverURL, 'POST', addedMovie).then(getAllMovies)
     }
@@ -118,10 +109,9 @@ $(document).ready(function () {
 
 
 // ----------- UPDATE MOVIE INFORMATION ------------
-
+    //TODO need to figure out what to pull inorder to update movie dynamically
     function updateMovie(id) {
         AJAXRequest(`${serverURL}/${id}`, 'PUT', {
-
             rating: $(``).val(),
             review: $(``),
         }).then(getAllMovies)// old: responseData => console.log(responseData)
