@@ -41,7 +41,13 @@ nav {
     font-size: 4em;
 
 }
+.my-col {
+    border: 5px dotted red;
+}
 
+.my-row {
+    border: 2px solid black;
+}
 
 /*small device*/
 @media screen and (min-width: 200px) and (max-width: 767px){
@@ -51,7 +57,10 @@ nav {
         justify-content: center;
         /*display: none;*/
     }
-    .header-img{}
+    .header-img{
+        width: 75%;
+        height: 75%;
+    }
 
 }
 
